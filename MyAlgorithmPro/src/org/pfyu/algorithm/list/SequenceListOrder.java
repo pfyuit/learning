@@ -2,26 +2,51 @@ package org.pfyu.algorithm.list;
 
 public class SequenceListOrder {
 
-	private long[] data = new long[100];
+	private long[] data;
+	private int maxSize = 0;
 	private int size = 0;
+	
+	/**
+	 * Constructor
+	 * @param maxSize
+	 */
+	public SequenceListOrder(int maxSize){
+		this.maxSize = maxSize;
+		data = new long[this.maxSize];
+	}
 
+	/**
+	 * Is the sequence list empty
+	 * @return
+	 */
+	public boolean isEmpty(){
+		return size ==0;
+	}
+	
+	/**
+	 * Is the sequence list full
+	 * @return
+	 */
+	public boolean isFull(){
+		return size == maxSize;
+	}
+
+	/**
+	 * Get the size of sequence list
+	 * @return
+	 */
 	public int getSize() {
 		return size;
 	}
 
-	public void display() {
-		for (int i = 0; i < size; i++) {
-			System.out.println(data[i]);
-		}
-	}
-
 	/**
-	 * O(N)
+	 * O(N): insert data with the given key
 	 * @param key
 	 * @return
 	 */
 	public int insert(long key) {
 		int i;
+		//find the correct position
 		for (i = 0; i < size; i++) {
 			if (data[i] > key) {
 				break;
@@ -29,7 +54,7 @@ public class SequenceListOrder {
 		}
 
 		//shift
-		for (int j = size; j > i; j--) {
+		for (int j = size; j >= i+1; j--) {
 			data[j] = data[j - 1];
 		}
 
@@ -39,16 +64,18 @@ public class SequenceListOrder {
 	}
 
 	/**
-	 * O(N)
+	 * O(N): delete value with given key
 	 * @param key
 	 * @return
 	 */
 	public int delete(long key) {
 		int index = binarySearch(key);
+		//not found
 		if (index == data.length) {
 			System.out.println("key not found");
 		} else {
-			for (int i = index; i < size - 1; i++) {
+			//shift left
+			for (int i = index; i <= size - 2; i++) {
 				data[i] = data[i + 1];
 			}
 			size--;
@@ -57,7 +84,7 @@ public class SequenceListOrder {
 	}
 
 	/**
-	 * O(logN)
+	 * O(logN): binary search
 	 * @param key
 	 * @return
 	 */
@@ -80,9 +107,19 @@ public class SequenceListOrder {
 		}
 
 	}
+	
+	/**
+	 * Display all the data in the sequence list
+	 */
+	public void display() {
+		for (int i = 0; i < size; i++) {
+			System.out.println(data[i]);
+		}
+	}
+
 
 	public static void main(String[] args) {
-		SequenceListOrder array = new SequenceListOrder();
+		SequenceListOrder array = new SequenceListOrder(100);
 
 		// insert
 		array.insert(13);

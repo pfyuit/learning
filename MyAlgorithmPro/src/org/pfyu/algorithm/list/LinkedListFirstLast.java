@@ -13,12 +13,22 @@ public class LinkedListFirstLast {
 		public void displayLink() {
 			System.out.println(data);
 		}
-
 	}
 
+	/**
+	 * Reference of the first link
+	 */
 	private Link first;
+	
+	/**
+	 * Reference of the last link
+	 */
 	private Link last;
 
+	/**
+	 * Is the linked list empty
+	 * @return
+	 */
 	public boolean isEmpty() {
 		return first == null;
 	}
@@ -56,8 +66,7 @@ public class LinkedListFirstLast {
 	 */
 	public Link removeFirst() {
 		Link temp = first;
-
-		if (first.next == null) {
+		if (first.next == null) {//only one link
 			last = null;
 		}
 		first = first.next;
@@ -87,6 +96,10 @@ public class LinkedListFirstLast {
 		list.insertFirst(43);
 		list.insertFirst(20);
 		list.insertFirst(48);
+		list.insertLast(1333);
+		list.insertLast(12);
+		list.insertLast(322);
+		list.insertLast(1222);
 
 		// display
 		list.displayList();

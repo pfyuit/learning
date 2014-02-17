@@ -2,21 +2,45 @@ package org.pfyu.algorithm.list;
 
 public class SequenceList {
 
-	private long[] data = new long[100];
+	private long[] data;
+	private int maxSize = 0;
 	private int size = 0;
-
-	public int getSize() {
-		return size;
+	
+	/**
+	 * Constructor
+	 * @param maxSize
+	 */
+	public SequenceList(int maxSize){
+		this.maxSize = maxSize;
+		data = new long[this.maxSize];
 	}
-
-	public void display() {
-		for (int i = 0; i < size; i++) {
-			System.out.println(data[i]);
-		}
+	
+	/**
+	 * Is the sequence list empty
+	 * @return
+	 */
+	public boolean isEmpty(){
+		return size ==0;
+	}
+	
+	/**
+	 * Is the sequence list full
+	 * @return
+	 */
+	public boolean isFull(){
+		return size == maxSize;
 	}
 
 	/**
-	 * O(1)
+	 * Get the size of sequence list
+	 * @return
+	 */
+	public int getSize() {
+		return size;
+	}
+	
+	/**
+	 * O(1): Insert data at last
 	 * @param key
 	 * @return
 	 */
@@ -26,17 +50,18 @@ public class SequenceList {
 	}
 
 	/**
-	 * O(N)
+	 * O(N): delete data with given key
 	 * @param key
 	 * @return
 	 */
 	public int delete(long key) {
 		int index = linearSearch(key);
+		//not found
 		if (index == data.length) {
 			System.out.println("key not found");
 		} else {
 			//shift
-			for (int i = index; i < size - 1; i++) {
+			for (int i = index; i <= size - 2; i++) {
 				data[i] = data[i + 1];
 			}
 			size--;
@@ -45,7 +70,7 @@ public class SequenceList {
 	}
 
 	/**
-	 * O(N)
+	 * O(N): linear search
 	 * @param key
 	 * @return
 	 */
@@ -57,29 +82,38 @@ public class SequenceList {
 		}
 		return data.length;
 	}
+	
+	/**
+	 * Display all the data in the sequence list
+	 */
+	public void display() {
+		for (int i = 0; i < size; i++) {
+			System.out.println(data[i]);
+		}
+	}
+
 
 	public static void main(String[] args) {
-		SequenceList array = new SequenceList();
+		SequenceList list = new SequenceList(100);
 
 		// insert
-		array.insert(13);
-		array.insert(2);
-		array.insert(45);
-		array.insert(7);
-		array.insert(15);
-		array.insert(47);
-		array.insert(28);
-		array.insert(99);
-		array.display();
+		list.insert(13);
+		list.insert(2);
+		list.insert(45);
+		list.insert(7);
+		list.insert(15);
+		list.insert(47);
+		list.insert(28);
+		list.insert(99);
+		list.display();
 
 		// search
-		int result = array.linearSearch(47);
+		int result = list.linearSearch(47);
 		System.out.println("search result:" + result);
 
 		// delete
-		array.delete(45);
-		array.display();
-
+		list.delete(45);
+		list.display();
 	}
 
 }

@@ -15,8 +15,15 @@ public class LinkedList {
 		}
 	}
 
+	/**
+	 * Reference of the first link
+	 */
 	private Link first;
 
+	/**
+	 * Is the linked list empty
+	 * @return
+	 */
 	public boolean isEmpty() {
 		return first == null;
 	}
@@ -50,6 +57,7 @@ public class LinkedList {
 		Link current = first;
 		Link previous = first;
 		while (current != null) {
+			//find the link
 			if (current.data == key) {
 				if (current == first) {
 					first = current.next;
@@ -58,6 +66,7 @@ public class LinkedList {
 				}
 				return current;
 			} else {
+				//move next
 				previous = current;
 				current = current.next;
 			}
@@ -73,9 +82,11 @@ public class LinkedList {
 	public Link find(long key) {
 		Link current = first;
 		while (current != null) {
+			//find the link
 			if (current.data == key) {
 				return current;
 			} else {
+				//move next
 				current = current.next;
 			}
 		}
