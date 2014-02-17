@@ -8,6 +8,10 @@ public class SequenceQueue {
 	private int front;
 	private int rear;
 
+	/**
+	 * Constructor
+	 * @param maxSize
+	 */
 	public SequenceQueue(int maxSize) {
 		this.maxSize = maxSize;
 		data = new long[maxSize];
@@ -16,18 +20,34 @@ public class SequenceQueue {
 		rear = -1;
 	}
 
-	public int getSize() {
-		return size;
-	}
-
+	/**
+	 * Is the queue empty
+	 * @return
+	 */
 	public boolean isEmpty() {
 		return size == 0;
 	}
 
+	/**
+	 * Is the queue full
+	 * @return
+	 */
 	public boolean isFull() {
 		return size == maxSize;
 	}
+	
+	/**
+	 * Get the size of queue
+	 * @return
+	 */
+	public int getSize() {
+		return size;
+	}
 
+	/**
+	 * Insert data at last
+	 * @param value
+	 */
 	public void insert(long value) {
 		if (rear == maxSize - 1) {
 			rear = -1;
@@ -36,6 +56,10 @@ public class SequenceQueue {
 		size++;
 	}
 
+	/**
+	 * Delete data at first
+	 * @return
+	 */
 	public long remove() {
 		long value = data[front++];
 		if (front == maxSize) {
@@ -45,6 +69,10 @@ public class SequenceQueue {
 		return value;
 	}
 
+	/**
+	 * Peek value at first
+	 * @return
+	 */
 	public long peek() {
 		return data[front];
 	}
