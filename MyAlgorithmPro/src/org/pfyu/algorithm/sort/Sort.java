@@ -1,6 +1,7 @@
 package org.pfyu.algorithm.sort;
 
 public class Sort {
+	
 	public static void display(long[] data) {
 		for (long d : data) {
 			System.out.println(d);
