@@ -2,17 +2,12 @@ package org.pfyu.algorithm.search;
 
 public class Search {
 
-	public static void main(String[] args) {
-		int[] data = { 1, 3, 5, 7, 9, 23, 145, 368, 999, 1009 };
-
-		int result = linearSearch(data, 999);
-		System.out.println("linear search result: " + result);
-
-		result = binarySearch(data, 999);
-		System.out.println("binary search result: " + result);
-
-	}
-
+	/**
+	 * Linear search
+	 * @param data
+	 * @param key
+	 * @return
+	 */
 	public static int linearSearch(int[] data, int key) {
 		int i;
 		for (i = 0; i < data.length; i++) {
@@ -23,6 +18,12 @@ public class Search {
 		return data.length;
 	}
 
+	/**
+	 * Binary search: must be ordered list
+	 * @param data
+	 * @param key
+	 * @return
+	 */
 	public static int binarySearch(int[] data, int key) {
 		int low = 0;
 		int high = data.length - 1;
@@ -40,6 +41,16 @@ public class Search {
 				low = mid + 1;
 			}
 		}
+	}
+
+	public static void main(String[] args) {
+		int[] data = { 1, 3, 5, 7, 9, 23, 145, 368, 999, 1009 };
+
+		int result = linearSearch(data, 999);
+		System.out.println("linear search result: " + result);
+
+		result = binarySearch(data, 999);
+		System.out.println("binary search result: " + result);
 	}
 
 }
