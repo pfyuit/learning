@@ -4,24 +4,42 @@ import org.pfyu.algorithm.list.LinkedList;
 
 public class LinkedStack {
 
+	/**
+	 * Linked list as the inner implementation
+	 */
 	private LinkedList list = new LinkedList();
-
-	public void push(long value) {
-		list.insertFirst(value);
-	}
-
-	public long pop() {
-		return list.removeFirst().data;
-	}
-
-	public void displayStack() {
-		list.displayList();
-	}
-
+	
+	/**
+	 * Is the stack empty
+	 * @return
+	 */
 	public boolean isEmpty() {
 		return list.isEmpty();
 	}
 
+	/**
+	 * Push data: insert data at fist
+	 * @param value
+	 */
+	public void push(long value) {
+		list.insertFirst(value);
+	}
+
+	/**
+	 * Pop data: remove data at first
+	 * @return
+	 */
+	public long pop() {
+		return list.removeFirst().data;
+	}
+
+	/**
+	 * Display all the data
+	 */
+	public void displayStack() {
+		list.displayList();
+	}
+	
 	public static void main(String[] args) {
 		LinkedStack stack = new LinkedStack();
 		stack.push(123);
