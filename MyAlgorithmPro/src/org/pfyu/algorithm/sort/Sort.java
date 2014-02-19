@@ -1,5 +1,7 @@
 package org.pfyu.algorithm.sort;
 
+import org.pfyu.algorithm.tree.Heap;
+
 public class Sort {
 
 	/**
@@ -138,6 +140,16 @@ public class Sort {
 		}
 
 	}
+	
+	public static void heapSort(long[] data) {
+		Heap heap = new Heap(100);
+		for(long value : data){
+			heap.insert(value);
+		}
+		for(int i =0; i< data.length; i++){
+			data[i] = heap.remove().data;
+		}
+	}
 
 	public static void main(String[] args) {
 		long[] data = { 12, 34, 5, 29, 230, 112, 1, 2, 47, 998, 123, 356, 90,
@@ -146,7 +158,8 @@ public class Sort {
 		// selectionSort(data);
 		// insertionSort(data);
 		// shellSort(data);
-		quickSort(data);
+		//quickSort(data);
+		heapSort(data);
 		display(data);
 	}
 
