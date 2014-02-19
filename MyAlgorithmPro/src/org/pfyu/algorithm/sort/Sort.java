@@ -150,6 +150,56 @@ public class Sort {
 			data[i] = heap.remove().data;
 		}
 	}
+	
+	/**
+	 * O(): merge sort
+	 * @param data
+	 */
+	public static void mergeSort(long[] data) {
+		long[] workspace = new long[data.length];
+		int low = 0;
+		int high = data.length -1;
+		
+		recMergeSort(data, workspace, low, high);
+	}
+
+	private static void recMergeSort(long[] data, long[] workspace, int low, int high) {
+		if(low == high){
+			return;
+		}
+		
+		int mid = (low+high)/2;
+		recMergeSort(data, workspace, low, mid);
+		recMergeSort(data, workspace, mid+1, high);
+		merge(data, workspace, low, mid, high);
+	}
+
+	private static void merge(long[] data, long[] workspace, int low, int mid, int high) {
+		int lowIndex = low;
+		int highIndex = mid+1;
+		int index = 0;
+		
+		while(lowIndex <= mid && highIndex <= high){
+			if(data[lowIndex] < data[highIndex]){
+				workspace[index++] = data[lowIndex++];
+			} else {
+				workspace[index++] = data[highIndex++];
+			}
+		}
+		
+		while(lowIndex <= mid){
+			workspace[index++] = data[lowIndex++];
+		}
+		
+		while(highIndex <= high){
+			workspace[index++] = data[highIndex++];
+		}
+		
+		for(int i= 0; i<(high-low+1) ;i++){
+			data[low+i] = workspace[i];
+		}
+
+	}
 
 	public static void main(String[] args) {
 		long[] data = { 12, 34, 5, 29, 230, 112, 1, 2, 47, 998, 123, 356, 90,
@@ -159,7 +209,8 @@ public class Sort {
 		// insertionSort(data);
 		// shellSort(data);
 		//quickSort(data);
-		heapSort(data);
+		//heapSort(data);
+		mergeSort(data);
 		display(data);
 	}
 
