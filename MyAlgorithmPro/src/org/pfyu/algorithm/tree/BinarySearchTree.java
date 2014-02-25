@@ -18,6 +18,7 @@ public class BinarySearchTree {
 	public Node root;
 
 	/**
+	 * O(logN)
 	 * Add node to the tree
 	 * @param value
 	 */
@@ -52,6 +53,7 @@ public class BinarySearchTree {
 	}
 
 	/**
+	 * O(LogN)
 	 * Delete node with given key
 	 * @param key
 	 * @return
@@ -162,6 +164,7 @@ public class BinarySearchTree {
 	}
 
 	/**
+	 * O(logN)
 	 * Find node with given key
 	 * @param key
 	 * @return
@@ -183,6 +186,7 @@ public class BinarySearchTree {
 	}
 
 	/**
+	 * O(N)
 	 * Display all the nodes in the tree
 	 */
 	public void display() {

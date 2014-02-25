@@ -109,6 +109,7 @@ public class SequenceListOrder {
 	}
 	
 	/**
+	 * O(N)
 	 * Display all the data in the sequence list
 	 */
 	public void display() {

@@ -76,7 +76,7 @@ public class Sort {
 	}
 
 	/**
-	 * O(log(N)): shell sort
+	 * O(N^3/2): shell sort
 	 * @param data
 	 */
 	public static void shellSort(long[] data) {
@@ -114,7 +114,7 @@ public class Sort {
 	}
 
 	/**
-	 * O(log(N)): quick sort
+	 * O(NlogN): quick sort
 	 * @param data
 	 */
 	public static void quickSort(long[] data) {
@@ -153,6 +153,10 @@ public class Sort {
 
 	}
 	
+	/**
+	 * O(NlogN)
+	 * @param data
+	 */
 	public static void heapSort(long[] data) {
 		Heap heap = new Heap(100);
 		for(long value : data){
@@ -164,7 +168,7 @@ public class Sort {
 	}
 	
 	/**
-	 * O(log(N)): merge sort
+	 * O(NlogN): merge sort
 	 * @param data
 	 */
 	public static void mergeSort(long[] data) {
