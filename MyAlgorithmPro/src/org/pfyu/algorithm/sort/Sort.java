@@ -60,49 +60,61 @@ public class Sort {
 		int size = data.length;
 		for (int out = 1; out <= size-1; out++) {
 			long temp = data[out];
+			
 			int in;
 			for (in = out - 1; in >= 0; in--) {
-				// swap
+				// shift right
 				if (data[in] > temp) {
 					data[in + 1] = data[in];
-					data[in] = temp;
+				} else {
+					break;
 				}
 			}
+			data[in+1] = temp;
+			
 		}
 	}
 
 	/**
-	 * O(): shell sort
+	 * O(log(N)): shell sort
 	 * @param data
 	 */
 	public static void shellSort(long[] data) {
 		int size = data.length;
+		
 		// generate the h
 		int h = 1;
 		while (h <= size / 3) {
 			h = 3 * h + 1;
 		}
+		
 		while (h > 0) {
 			System.out.println("h=" + h);
+			
 			// insertion sort
 			for (int out = h; out <= size-h; out+=h) {
 				long temp = data[out];
-				int in;
+				
+				int in = out -h;
 				for (in = out - h; in >= h - 1; in -= h) {
-					// swap
+					// shift right
 					if (data[in] > temp) {
 						data[in + h] = data[in];
-						data[in] = temp;
+					} else {
+						break;
 					}
 				}
+				data[in+h] = temp;
+				
 			}
+			
 			// decrease h
 			h = (h - 1) / 3;
 		}
 	}
 
 	/**
-	 * O(): quick sort
+	 * O(log(N)): quick sort
 	 * @param data
 	 */
 	public static void quickSort(long[] data) {
@@ -152,7 +164,7 @@ public class Sort {
 	}
 	
 	/**
-	 * O(): merge sort
+	 * O(log(N)): merge sort
 	 * @param data
 	 */
 	public static void mergeSort(long[] data) {
@@ -206,11 +218,11 @@ public class Sort {
 				17, 4, 56 };
 		 //bubbleSort(data);
 		// selectionSort(data);
-		// insertionSort(data);
-		// shellSort(data);
+		 //insertionSort(data);
+		shellSort(data);
 		//quickSort(data);
 		//heapSort(data);
-		mergeSort(data);
+		//mergeSort(data);
 		display(data);
 	}
 
