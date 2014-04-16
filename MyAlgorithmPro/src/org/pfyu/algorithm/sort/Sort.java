@@ -5,7 +5,7 @@ import org.pfyu.algorithm.tree.Heap;
 public class Sort {
 
 	/**
-	 * Display all the data
+	 * Display all the datad
 	 * @param data
 	 */
 	public static void display(long[] data) {
