@@ -5,7 +5,7 @@ import org.pfyu.algorithm.tree.Heap;
 public class Sort {
 
 	/**
-	 * Display all the datap
+	 * Display all the datad
 	 * @param data
 	 */
 	public static void display(long[] data) {
@@ -128,7 +128,7 @@ public class Sort {
 			int i = left;
 			int j = right;
 			while (i < j) {
-				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				// ´ÓÓÒÍù×óÕÒµ½Ð¡µÄÊý£¬Ìî¿Ó
 				while (i < j && data[j] >= temp) {
 					j--;
 				}
@@ -136,7 +136,7 @@ public class Sort {
 					data[i] = data[j];
 					i++;
 				}
-				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+				// ´Ó×óÍùÓÒÕÒµ½´óµÄÊý£¬Ìî¿Ó
 				while (i < j && data[i] < temp) {
 					i++;
 				}
@@ -146,7 +146,7 @@ public class Sort {
 				}
 			}
 			data[i] = temp;
-			// ï¿½Ý¹ï¿½
+			// µÝ¹é
 			quick_sort(data, left, i - 1);
 			quick_sort(data, i + 1, right);
 		}
