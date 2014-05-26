@@ -12,6 +12,12 @@ public class LinkedList {
 
 		public void displayLink() {
 			System.out.println(data);
+			System.out.println("hello");
+			System.out.println("world");
+			
+
+
+
 		}
 	}
 
