@@ -1,6 +1,6 @@
-package org.pfyu.algorithm.stack;
+package com.pfyuit.algorithm.stack;
 
-import org.pfyu.algorithm.list.LinkedList;
+import com.pfyuit.algorithm.list.LinkedList;
 
 public class LinkedStack {
 
@@ -8,7 +8,7 @@ public class LinkedStack {
 	 * Linked list as the inner implementation
 	 */
 	private LinkedList list = new LinkedList();
-	
+
 	/**
 	 * Is the stack empty
 	 * @return
@@ -39,7 +39,7 @@ public class LinkedStack {
 	public void displayStack() {
 		list.displayList();
 	}
-	
+
 	public static void main(String[] args) {
 		LinkedStack stack = new LinkedStack();
 		stack.push(123);

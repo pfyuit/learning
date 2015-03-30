@@ -1,4 +1,4 @@
-package org.pfyu.algorithm.tree;
+package com.pfyuit.algorithm.tree;
 
 public class Heap {
 

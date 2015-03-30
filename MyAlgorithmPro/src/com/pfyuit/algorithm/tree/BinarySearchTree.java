@@ -1,4 +1,4 @@
-package org.pfyu.algorithm.tree;
+package com.pfyuit.algorithm.tree;
 
 public class BinarySearchTree {
 
@@ -18,8 +18,7 @@ public class BinarySearchTree {
 	public Node root;
 
 	/**
-	 * O(logN)
-	 * Add node to the tree
+	 * O(logN) Add node to the tree
 	 * @param value
 	 */
 	public void insert(long value) {
@@ -53,8 +52,7 @@ public class BinarySearchTree {
 	}
 
 	/**
-	 * O(LogN)
-	 * Delete node with given key
+	 * O(LogN) Delete node with given key
 	 * @param key
 	 * @return
 	 */
@@ -62,55 +60,55 @@ public class BinarySearchTree {
 		Node current, parent;
 		parent = current = root;
 		boolean isLeftChild = false;
-		
-		//find the node
-		while(true){
-			//didn't find it
-			if(current == null){
+
+		// find the node
+		while (true) {
+			// didn't find it
+			if (current == null) {
 				return false;
 			}
-			
-			if(current.data == key){
+
+			if (current.data == key) {
 				break;
-			} else if(current.data < key){
+			} else if (current.data < key) {
 				parent = current;
 				current = current.rightChild;
 				isLeftChild = false;
-			} else if(current.data > key){
+			} else if (current.data > key) {
 				parent = current;
 				current = current.leftChild;
 				isLeftChild = true;
 			}
 		}
-		
-		//process node without child
-		if(current.leftChild == null && current.rightChild ==null){
-			if(current == root){
+
+		// process node without child
+		if (current.leftChild == null && current.rightChild == null) {
+			if (current == root) {
 				root = null;
-			} else if(isLeftChild){
+			} else if (isLeftChild) {
 				parent.leftChild = null;
 			} else {
 				parent.rightChild = null;
 			}
 			return true;
 		}
-		
-		//process node with one child
-		if(current.leftChild != null || current.rightChild != null){
-			if(current.leftChild != null){
-				if(current == root){
+
+		// process node with one child
+		if (current.leftChild != null || current.rightChild != null) {
+			if (current.leftChild != null) {
+				if (current == root) {
 					root = current.leftChild;
-				} else if(isLeftChild){
+				} else if (isLeftChild) {
 					parent.leftChild = current.leftChild;
 				} else {
 					parent.rightChild = current.leftChild;
 				}
 				return true;
 			}
-			if(current.rightChild != null){
-				if(current == root){
+			if (current.rightChild != null) {
+				if (current == root) {
 					root = current.rightChild;
-				} else if(isLeftChild){
+				} else if (isLeftChild) {
 					parent.leftChild = current.rightChild;
 				} else {
 					parent.rightChild = current.rightChild;
@@ -118,22 +116,22 @@ public class BinarySearchTree {
 				return true;
 			}
 		}
-		
-		//process node with two child
-		if(current.leftChild != null && current.rightChild != null){
+
+		// process node with two child
+		if (current.leftChild != null && current.rightChild != null) {
 			Node successor = getSuccessor(current);
-			if(current == root){
+			if (current == root) {
 				root = successor;
-			} else if(isLeftChild){
+			} else if (isLeftChild) {
 				parent.leftChild = successor;
-			} else{
+			} else {
 				parent.rightChild = successor;
 			}
 			return true;
 		}
-		
+
 		return true;
-		
+
 	}
 
 	/***
@@ -144,50 +142,48 @@ public class BinarySearchTree {
 	private Node getSuccessor(Node delNode) {
 		Node successorParent, successor, current;
 		successorParent = successor = current = delNode;
-		
-		//find successor
+
+		// find successor
 		current = current.rightChild;
-		while(current != null){
+		while (current != null) {
 			successorParent = successor;
 			successor = current;
 			current = current.leftChild;
 		}
-		
-		//reconnect
-		if(successor != delNode.rightChild){
+
+		// reconnect
+		if (successor != delNode.rightChild) {
 			successorParent.leftChild = successor.rightChild;
 			successor.rightChild = delNode.rightChild;
 		}
 		successor.leftChild = delNode.leftChild;
-		
+
 		return successor;
 	}
 
 	/**
-	 * O(logN)
-	 * Find node with given key
+	 * O(logN) Find node with given key
 	 * @param key
 	 * @return
 	 */
 	public Node find(long key) {
-		Node current  = root;
-		
-		while(current != null){
-			if(current.data == key){
+		Node current = root;
+
+		while (current != null) {
+			if (current.data == key) {
 				return current;
-			} else if(current.data > key){
+			} else if (current.data > key) {
 				current = current.leftChild;
-			} else if(current.data < key){
+			} else if (current.data < key) {
 				current = current.rightChild;
 			}
 		}
-		
+
 		return null;
 	}
 
 	/**
-	 * O(N)
-	 * Display all the nodes in the tree
+	 * O(N) Display all the nodes in the tree
 	 */
 	public void display() {
 		inOrder(root);
@@ -198,10 +194,10 @@ public class BinarySearchTree {
 	 * @param node
 	 */
 	private void inOrder(Node node) {
-		if(node != null){
+		if (node != null) {
 			inOrder(node.leftChild);
 			System.out.println(node.data);
-			inOrder(node.rightChild);	
+			inOrder(node.rightChild);
 		}
 	}
 
@@ -210,8 +206,8 @@ public class BinarySearchTree {
 	 */
 	public static void main(String[] args) {
 		BinarySearchTree tree = new BinarySearchTree();
-		
-		//insert
+
+		// insert
 		tree.insert(12);
 		tree.insert(4);
 		tree.insert(38);
@@ -221,16 +217,16 @@ public class BinarySearchTree {
 		tree.insert(1136);
 		tree.insert(223);
 		tree.insert(98);
-		
-		//traverse
+
+		// traverse
 		tree.display();
 		System.out.println();
-		
-		//search
+
+		// search
 		System.out.println(tree.find(38).data);
 		System.out.println();
-		
-		//delete
+
+		// delete
 		tree.delete(223);
 		tree.delete(38);
 		tree.delete(1136);

@@ -1,4 +1,4 @@
-package org.pfyu.algorithm.list;
+package com.pfyuit.algorithm.list;
 
 public class LinkedList {
 
@@ -14,10 +14,6 @@ public class LinkedList {
 			System.out.println(data);
 			System.out.println("hello");
 			System.out.println("world");
-			
-
-
-
 		}
 	}
 
@@ -63,7 +59,7 @@ public class LinkedList {
 		Link current = first;
 		Link previous = first;
 		while (current != null) {
-			//find the link
+			// find the link
 			if (current.data == key) {
 				if (current == first) {
 					first = current.next;
@@ -72,7 +68,7 @@ public class LinkedList {
 				}
 				return current;
 			} else {
-				//move next
+				// move next
 				previous = current;
 				current = current.next;
 			}
@@ -88,11 +84,11 @@ public class LinkedList {
 	public Link find(long key) {
 		Link current = first;
 		while (current != null) {
-			//find the link
+			// find the link
 			if (current.data == key) {
 				return current;
 			} else {
-				//move next
+				// move next
 				current = current.next;
 			}
 		}

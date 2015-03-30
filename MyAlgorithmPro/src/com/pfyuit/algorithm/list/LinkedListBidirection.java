@@ -1,4 +1,4 @@
-package org.pfyu.algorithm.list;
+package com.pfyuit.algorithm.list;
 
 
 public class LinkedListBidirection {

@@ -1,16 +1,16 @@
-package org.pfyu.algorithm.list;
+package com.pfyuit.algorithm.list;
 
 public class SequenceListOrder {
 
 	private long[] data;
 	private int maxSize = 0;
 	private int size = 0;
-	
+
 	/**
 	 * Constructor
 	 * @param maxSize
 	 */
-	public SequenceListOrder(int maxSize){
+	public SequenceListOrder(int maxSize) {
 		this.maxSize = maxSize;
 		data = new long[this.maxSize];
 	}
@@ -19,15 +19,15 @@ public class SequenceListOrder {
 	 * Is the sequence list empty
 	 * @return
 	 */
-	public boolean isEmpty(){
-		return size ==0;
+	public boolean isEmpty() {
+		return size == 0;
 	}
-	
+
 	/**
 	 * Is the sequence list full
 	 * @return
 	 */
-	public boolean isFull(){
+	public boolean isFull() {
 		return size == maxSize;
 	}
 
@@ -46,15 +46,15 @@ public class SequenceListOrder {
 	 */
 	public int insert(long key) {
 		int i;
-		//find the correct position
+		// find the correct position
 		for (i = 0; i < size; i++) {
 			if (data[i] > key) {
 				break;
 			}
 		}
 
-		//shift
-		for (int j = size; j >= i+1; j--) {
+		// shift
+		for (int j = size; j >= i + 1; j--) {
 			data[j] = data[j - 1];
 		}
 
@@ -70,11 +70,11 @@ public class SequenceListOrder {
 	 */
 	public int delete(long key) {
 		int index = binarySearch(key);
-		//not found
+		// not found
 		if (index == data.length) {
 			System.out.println("key not found");
 		} else {
-			//shift left
+			// shift left
 			for (int i = index; i <= size - 2; i++) {
 				data[i] = data[i + 1];
 			}
@@ -107,17 +107,15 @@ public class SequenceListOrder {
 		}
 
 	}
-	
+
 	/**
-	 * O(N)
-	 * Display all the data in the sequence list
+	 * O(N) Display all the data in the sequence list
 	 */
 	public void display() {
 		for (int i = 0; i < size; i++) {
 			System.out.println(data[i]);
 		}
 	}
-
 
 	public static void main(String[] args) {
 		SequenceListOrder array = new SequenceListOrder(100);

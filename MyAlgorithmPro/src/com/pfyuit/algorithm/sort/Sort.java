@@ -1,11 +1,11 @@
-package org.pfyu.algorithm.sort;
+package com.pfyuit.algorithm.sort;
 
-import org.pfyu.algorithm.tree.Heap;
+import com.pfyuit.algorithm.tree.Heap;
 
 public class Sort {
 
 	/**
-	 * Display all the datad
+	 * Display all the data
 	 * @param data
 	 */
 	public static void display(long[] data) {
@@ -21,9 +21,9 @@ public class Sort {
 	public static void bubbleSort(long[] data) {
 		int size = data.length;
 		for (int out = size - 1; out >= 1; out--) {
-			for (int in = 0; in <= out-1; in++) {
+			for (int in = 0; in <= out - 1; in++) {
 				if (data[in] > data[in + 1]) {
-					//swap
+					// swap
 					long temp = data[in];
 					data[in] = data[in + 1];
 					data[in + 1] = temp;
@@ -40,12 +40,12 @@ public class Sort {
 		int size = data.length;
 		for (int out = 0; out <= size - 2; out++) {
 			int min = out;
-			for (int in = out + 1; in <= size-1; in++) {
+			for (int in = out + 1; in <= size - 1; in++) {
 				if (data[in] < data[min]) {
 					min = in;
 				}
 			}
-			//swap
+			// swap
 			long temp = data[out];
 			data[out] = data[min];
 			data[min] = temp;
@@ -58,9 +58,9 @@ public class Sort {
 	 */
 	public static void insertionSort(long[] data) {
 		int size = data.length;
-		for (int out = 1; out <= size-1; out++) {
+		for (int out = 1; out <= size - 1; out++) {
 			long temp = data[out];
-			
+
 			int in;
 			for (in = out - 1; in >= 0; in--) {
 				// shift right
@@ -70,8 +70,8 @@ public class Sort {
 					break;
 				}
 			}
-			data[in+1] = temp;
-			
+			data[in + 1] = temp;
+
 		}
 	}
 
@@ -81,21 +81,21 @@ public class Sort {
 	 */
 	public static void shellSort(long[] data) {
 		int size = data.length;
-		
+
 		// generate the h
 		int h = 1;
 		while (h <= size / 3) {
 			h = 3 * h + 1;
 		}
-		
+
 		while (h > 0) {
 			System.out.println("h=" + h);
-			
+
 			// insertion sort
-			for (int out = h; out <= size-h; out+=h) {
+			for (int out = h; out <= size - h; out += h) {
 				long temp = data[out];
-				
-				int in = out -h;
+
+				int in = out - h;
 				for (in = out - h; in >= h - 1; in -= h) {
 					// shift right
 					if (data[in] > temp) {
@@ -104,10 +104,10 @@ public class Sort {
 						break;
 					}
 				}
-				data[in+h] = temp;
-				
+				data[in + h] = temp;
+
 			}
-			
+
 			// decrease h
 			h = (h - 1) / 3;
 		}
@@ -152,21 +152,21 @@ public class Sort {
 		}
 
 	}
-	
+
 	/**
 	 * O(NlogN)
 	 * @param data
 	 */
 	public static void heapSort(long[] data) {
 		Heap heap = new Heap(100);
-		for(long value : data){
+		for (long value : data) {
 			heap.insert(value);
 		}
-		for(int i =0; i< data.length; i++){
+		for (int i = 0; i < data.length; i++) {
 			data[i] = heap.remove().data;
 		}
 	}
-	
+
 	/**
 	 * O(NlogN): merge sort
 	 * @param data
@@ -174,45 +174,47 @@ public class Sort {
 	public static void mergeSort(long[] data) {
 		long[] workspace = new long[data.length];
 		int low = 0;
-		int high = data.length -1;
-		
+		int high = data.length - 1;
+
 		recMergeSort(data, workspace, low, high);
 	}
 
-	private static void recMergeSort(long[] data, long[] workspace, int low, int high) {
-		if(low == high){
+	private static void recMergeSort(long[] data, long[] workspace, int low,
+			int high) {
+		if (low == high) {
 			return;
 		}
-		
-		int mid = (low+high)/2;
+
+		int mid = (low + high) / 2;
 		recMergeSort(data, workspace, low, mid);
-		recMergeSort(data, workspace, mid+1, high);
+		recMergeSort(data, workspace, mid + 1, high);
 		merge(data, workspace, low, mid, high);
 	}
 
-	private static void merge(long[] data, long[] workspace, int low, int mid, int high) {
+	private static void merge(long[] data, long[] workspace, int low, int mid,
+			int high) {
 		int lowIndex = low;
-		int highIndex = mid+1;
+		int highIndex = mid + 1;
 		int index = 0;
-		
-		while(lowIndex <= mid && highIndex <= high){
-			if(data[lowIndex] < data[highIndex]){
+
+		while (lowIndex <= mid && highIndex <= high) {
+			if (data[lowIndex] < data[highIndex]) {
 				workspace[index++] = data[lowIndex++];
 			} else {
 				workspace[index++] = data[highIndex++];
 			}
 		}
-		
-		while(lowIndex <= mid){
+
+		while (lowIndex <= mid) {
 			workspace[index++] = data[lowIndex++];
 		}
-		
-		while(highIndex <= high){
+
+		while (highIndex <= high) {
 			workspace[index++] = data[highIndex++];
 		}
-		
-		for(int i= 0; i<(high-low+1) ;i++){
-			data[low+i] = workspace[i];
+
+		for (int i = 0; i < (high - low + 1); i++) {
+			data[low + i] = workspace[i];
 		}
 
 	}
@@ -220,13 +222,13 @@ public class Sort {
 	public static void main(String[] args) {
 		long[] data = { 12, 34, 5, 29, 230, 112, 1, 2, 47, 998, 123, 356, 90,
 				17, 4, 56 };
-		 //bubbleSort(data);
+		// bubbleSort(data);
 		// selectionSort(data);
-		 //insertionSort(data);
+		// insertionSort(data);
 		shellSort(data);
-		//quickSort(data);
-		//heapSort(data);
-		//mergeSort(data);
+		// quickSort(data);
+		// heapSort(data);
+		// mergeSort(data);
 		display(data);
 	}
 

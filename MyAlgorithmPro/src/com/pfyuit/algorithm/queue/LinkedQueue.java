@@ -1,6 +1,6 @@
-package org.pfyu.algorithm.queue;
+package com.pfyuit.algorithm.queue;
 
-import org.pfyu.algorithm.list.LinkedListFirstLast;
+import com.pfyuit.algorithm.list.LinkedListFirstLast;
 
 public class LinkedQueue {
 

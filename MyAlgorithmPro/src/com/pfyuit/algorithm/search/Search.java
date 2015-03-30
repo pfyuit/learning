@@ -1,7 +1,7 @@
-package org.pfyu.algorithm.search;
+package com.pfyuit.algorithm.search;
 
-import org.pfyu.algorithm.tree.BinarySearchTree;
-import org.pfyu.algorithm.tree.BinarySearchTree.Node;
+import com.pfyuit.algorithm.tree.BinarySearchTree;
+import com.pfyuit.algorithm.tree.BinarySearchTree.Node;
 
 public class Search {
 
@@ -45,7 +45,7 @@ public class Search {
 			}
 		}
 	}
-	
+
 	/**
 	 * BinarySearchTree search: must build a BinarySearchTree
 	 * @param data
@@ -54,7 +54,7 @@ public class Search {
 	 */
 	public static Node binarySearchTreeSearch(int[] data, int key) {
 		BinarySearchTree tree = new BinarySearchTree();
-		for(int i : data){
+		for (int i : data) {
 			tree.insert(i);
 		}
 		return tree.find(key);
@@ -68,7 +68,7 @@ public class Search {
 
 		result = binarySearch(data, 999);
 		System.out.println("binary search result: " + result);
-		
+
 		Node result1 = binarySearchTreeSearch(data, 999);
 		System.out.println("binary search tree search result: " + result1.data);
 	}

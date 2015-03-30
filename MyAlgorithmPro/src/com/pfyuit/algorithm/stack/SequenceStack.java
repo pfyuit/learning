@@ -1,7 +1,7 @@
-package org.pfyu.algorithm.stack;
+package com.pfyuit.algorithm.stack;
 
 public class SequenceStack {
-	
+
 	private long[] data;
 	private int maxSize;
 	private int top;
@@ -31,7 +31,7 @@ public class SequenceStack {
 	public boolean isFull() {
 		return getSize() == maxSize;
 	}
-	
+
 	/**
 	 * Get the size of stack
 	 * @return

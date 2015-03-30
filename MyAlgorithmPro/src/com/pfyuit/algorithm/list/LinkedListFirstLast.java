@@ -1,4 +1,4 @@
-package org.pfyu.algorithm.list;
+package com.pfyuit.algorithm.list;
 
 public class LinkedListFirstLast {
 
@@ -19,7 +19,7 @@ public class LinkedListFirstLast {
 	 * Reference of the first link
 	 */
 	private Link first;
-	
+
 	/**
 	 * Reference of the last link
 	 */
@@ -66,7 +66,7 @@ public class LinkedListFirstLast {
 	 */
 	public Link removeFirst() {
 		Link temp = first;
-		if (first.next == null) {//only one link
+		if (first.next == null) {// only one link
 			last = null;
 		}
 		first = first.next;

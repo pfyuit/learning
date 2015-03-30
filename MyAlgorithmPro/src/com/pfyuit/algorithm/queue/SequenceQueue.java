@@ -1,4 +1,4 @@
-package org.pfyu.algorithm.queue;
+package com.pfyuit.algorithm.queue;
 
 public class SequenceQueue {
 
@@ -35,7 +35,7 @@ public class SequenceQueue {
 	public boolean isFull() {
 		return size == maxSize;
 	}
-	
+
 	/**
 	 * Get the size of queue
 	 * @return

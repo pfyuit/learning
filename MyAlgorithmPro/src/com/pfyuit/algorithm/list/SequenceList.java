@@ -1,33 +1,33 @@
-package org.pfyu.algorithm.list;
+package com.pfyuit.algorithm.list;
 
 public class SequenceList {
 
 	private long[] data;
 	private int maxSize = 0;
 	private int size = 0;
-	
+
 	/**
 	 * Constructor
 	 * @param maxSize
 	 */
-	public SequenceList(int maxSize){
+	public SequenceList(int maxSize) {
 		this.maxSize = maxSize;
 		data = new long[this.maxSize];
 	}
-	
+
 	/**
 	 * Is the sequence list empty
 	 * @return
 	 */
-	public boolean isEmpty(){
-		return size ==0;
+	public boolean isEmpty() {
+		return size == 0;
 	}
-	
+
 	/**
 	 * Is the sequence list full
 	 * @return
 	 */
-	public boolean isFull(){
+	public boolean isFull() {
 		return size == maxSize;
 	}
 
@@ -38,7 +38,7 @@ public class SequenceList {
 	public int getSize() {
 		return size;
 	}
-	
+
 	/**
 	 * O(1): Insert data at last
 	 * @param key
@@ -56,11 +56,11 @@ public class SequenceList {
 	 */
 	public int delete(long key) {
 		int index = linearSearch(key);
-		//not found
+		// not found
 		if (index == data.length) {
 			System.out.println("key not found");
 		} else {
-			//shift
+			// shift
 			for (int i = index; i <= size - 2; i++) {
 				data[i] = data[i + 1];
 			}
@@ -82,7 +82,7 @@ public class SequenceList {
 		}
 		return data.length;
 	}
-	
+
 	/**
 	 * Display all the data in the sequence list
 	 */
@@ -91,7 +91,6 @@ public class SequenceList {
 			System.out.println(data[i]);
 		}
 	}
-
 
 	public static void main(String[] args) {
 		SequenceList list = new SequenceList(100);
