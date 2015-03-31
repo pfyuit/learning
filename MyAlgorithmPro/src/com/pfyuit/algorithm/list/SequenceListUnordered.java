@@ -1,6 +1,6 @@
 package com.pfyuit.algorithm.list;
 
-public class SequenceList {
+public class SequenceListUnordered {
 
 	private long[] data;
 	private int maxSize = 0;
@@ -10,7 +10,7 @@ public class SequenceList {
 	 * Constructor
 	 * @param maxSize
 	 */
-	public SequenceList(int maxSize) {
+	public SequenceListUnordered(int maxSize) {
 		this.maxSize = maxSize;
 		data = new long[this.maxSize];
 	}
@@ -93,7 +93,7 @@ public class SequenceList {
 	}
 
 	public static void main(String[] args) {
-		SequenceList list = new SequenceList(100);
+		SequenceListUnordered list = new SequenceListUnordered(100);
 
 		// insert
 		list.insert(13);
