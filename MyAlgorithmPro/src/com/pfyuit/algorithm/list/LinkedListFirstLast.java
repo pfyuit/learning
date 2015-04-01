@@ -15,28 +15,14 @@ public class LinkedListFirstLast {
 		}
 	}
 
-	/**
-	 * Reference of the first link
-	 */
 	private Link first;
 
-	/**
-	 * Reference of the last link
-	 */
 	private Link last;
 
-	/**
-	 * Is the linked list empty
-	 * @return
-	 */
 	public boolean isEmpty() {
 		return first == null;
 	}
 
-	/**
-	 * Insert link at first
-	 * @param value
-	 */
 	public void insertFirst(long value) {
 		Link newLink = new Link(value);
 		if (isEmpty()) {
@@ -46,10 +32,6 @@ public class LinkedListFirstLast {
 		first = newLink;
 	}
 
-	/**
-	 * Insert link at last
-	 * @param value
-	 */
 	public void insertLast(long value) {
 		Link newLink = new Link(value);
 		if (isEmpty()) {
@@ -60,10 +42,6 @@ public class LinkedListFirstLast {
 		last = newLink;
 	}
 
-	/**
-	 * Remove link at first
-	 * @return
-	 */
 	public Link removeFirst() {
 		Link temp = first;
 		if (first.next == null) {// only one link
@@ -73,9 +51,6 @@ public class LinkedListFirstLast {
 		return temp;
 	}
 
-	/**
-	 * Display the whole list
-	 */
 	public void displayList() {
 		Link current = first;
 		while (current != null) {

@@ -16,45 +16,24 @@ public class Heap {
 	public int maxSize;
 	public int size;
 
-	/**
-	 * Constructor
-	 * @param maxSize
-	 */
 	public Heap(int maxSize) {
 		this.maxSize = maxSize;
 		nodes = new Node[this.maxSize];
 		size = 0;
 	}
 
-	/**
-	 * Is the heap empty
-	 * @return
-	 */
 	public boolean isEmpty() {
 		return size == 0;
 	}
 
-	/**
-	 * Is the heap full
-	 * @return
-	 */
 	public boolean isFull() {
 		return size == maxSize;
 	}
 
-	/**
-	 * Get the size of heap
-	 * @return
-	 */
 	public int getSize() {
 		return size;
 	}
 
-	/**
-	 * Insert node to the heap
-	 * @param value
-	 * @return
-	 */
 	public boolean insert(long value) {
 		if (isFull()) {
 			return false;
@@ -66,10 +45,6 @@ public class Heap {
 		return true;
 	}
 
-	/**
-	 * Trickle up
-	 * @param index
-	 */
 	private void trickleUp(int index) {
 		int parent = (index - 1) / 2;
 		Node temp = nodes[index];
@@ -81,10 +56,6 @@ public class Heap {
 		nodes[index] = temp;
 	}
 
-	/**
-	 * Remove node from the heap top
-	 * @return
-	 */
 	public Node remove() {
 		if (isEmpty()) {
 			return null;
@@ -97,10 +68,6 @@ public class Heap {
 		return root;
 	}
 
-	/**
-	 * Trickle down
-	 * @param index
-	 */
 	private void trickleDown(int index) {
 		int largerChild;
 		Node temp = nodes[index];

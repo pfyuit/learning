@@ -1,14 +1,16 @@
-package com.pfyuit.algorithm.list;
+package com.pfyuit.algorithm.sandbox;
+
 
 public class SequenceListOrdered {
 
 	private long[] data;
-	private int maxSize = 0;
-	private int size = 0;
-
-	public SequenceListOrdered(int maxSize) {
+	private int size;
+	private int maxSize;
+	
+	public SequenceListOrdered(int maxSize){
 		this.maxSize = maxSize;
-		data = new long[this.maxSize];
+		data = new long[maxSize];
+		size = 0;
 	}
 
 	public boolean isEmpty() {
@@ -16,17 +18,17 @@ public class SequenceListOrdered {
 	}
 
 	public boolean isFull() {
-		return size == maxSize;
+		return maxSize == size;
 	}
 
 	public int getSize() {
 		return size;
 	}
 
-	public int insert(long key) {
+	public int insert(long value) {
 		int i;
 		for (i = 0; i < size; i++) {
-			if (data[i] > key) {
+			if (data[i] > value) {
 				break;
 			}
 		}
@@ -34,39 +36,37 @@ public class SequenceListOrdered {
 		for (int j = size; j >= i + 1; j--) {
 			data[j] = data[j - 1];
 		}
-
-		data[i] = key;
 		size++;
+		data[i] = value;
 		return i;
 	}
 
-	public int delete(long key) {
-		int index = binarySearch(key);
-		if (index == data.length) {
-			System.out.println("key not found");
-		} else {
-			for (int i = index; i <= size - 2; i++) {
-				data[i] = data[i + 1];
-			}
-			size--;
+	public int delete(long value) {
+		int index = binarySearch(value);
+		if (index == size) {
+			System.out.println("data not found");
+			return size;
 		}
+		for (int j = index; j <= size - 2; j++) {
+			data[j] = data[j + 1];
+		}
+		size--;
 		return index;
 	}
 
-	public int binarySearch(long key) {
+	public int binarySearch(long value) {
 		int low = 0;
 		int high = size - 1;
-		int mid;
 		while (true) {
-			mid = (low + high) / 2;
-			if (data[mid] == key) {
+			int mid = (low + high) / 2;
+			if (data[mid] == value) {
 				return mid;
-			} else if (data[mid] < key) {
+			} else if (data[mid] < value) {
 				low = mid + 1;
-			} else if (data[mid] > key) {
+			} else if (data[mid] > value) {
 				high = mid - 1;
-			} else if (low > high) {
-				return data.length;
+			} else if(low>high){
+				return size;
 			}
 		}
 	}
@@ -77,7 +77,7 @@ public class SequenceListOrdered {
 		}
 		System.out.println();
 	}
-
+	
 	public static void main(String[] args) {
 		SequenceListOrdered array = new SequenceListOrdered(100);
 

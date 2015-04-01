@@ -5,12 +5,6 @@ import com.pfyuit.algorithm.tree.BinarySearchTree.Node;
 
 public class Search {
 
-	/**
-	 * Linear search
-	 * @param data
-	 * @param key
-	 * @return
-	 */
 	public static int linearSearch(int[] data, int key) {
 		int i;
 		for (i = 0; i < data.length; i++) {
@@ -21,12 +15,6 @@ public class Search {
 		return data.length;
 	}
 
-	/**
-	 * Binary search: must be ordered list
-	 * @param data
-	 * @param key
-	 * @return
-	 */
 	public static int binarySearch(int[] data, int key) {
 		int low = 0;
 		int high = data.length - 1;
@@ -46,12 +34,6 @@ public class Search {
 		}
 	}
 
-	/**
-	 * BinarySearchTree search: must build a BinarySearchTree
-	 * @param data
-	 * @param key
-	 * @return
-	 */
 	public static Node binarySearchTreeSearch(int[] data, int key) {
 		BinarySearchTree tree = new BinarySearchTree();
 		for (int i : data) {

@@ -6,60 +6,32 @@ public class SequenceStack {
 	private int maxSize;
 	private int top;
 
-	/**
-	 * Constructor
-	 * @param maxSize
-	 */
 	public SequenceStack(int maxSize) {
 		this.maxSize = maxSize;
 		data = new long[maxSize];
 		top = -1;
 	}
 
-	/**
-	 * Is the stack empty
-	 * @return
-	 */
 	public boolean isEmpty() {
 		return top == -1;
 	}
 
-	/**
-	 * Is the stack full
-	 * @return
-	 */
 	public boolean isFull() {
 		return getSize() == maxSize;
 	}
 
-	/**
-	 * Get the size of stack
-	 * @return
-	 */
 	public int getSize() {
 		return top + 1;
 	}
 
-	/**
-	 * Push data
-	 * @param value
-	 */
 	public void push(long value) {
 		data[++top] = value;
 	}
 
-	/**
-	 * Pop data
-	 * @return
-	 */
 	public long pop() {
 		return data[top--];
 	}
 
-	/**
-	 * Peek data at top
-	 * @return
-	 */
 	public long peek() {
 		return data[top];
 	}

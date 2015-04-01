@@ -1,14 +1,15 @@
-package com.pfyuit.algorithm.list;
+package com.pfyuit.algorithm.sandbox;
+
 
 public class SequenceListUnordered {
 
 	private long[] data;
-	private int maxSize = 0;
-	private int size = 0;
+	private int size;
+	private int maxSize;
 
 	public SequenceListUnordered(int maxSize) {
 		this.maxSize = maxSize;
-		data = new long[this.maxSize];
+		data = new long[maxSize];
 	}
 
 	public boolean isEmpty() {
@@ -19,25 +20,29 @@ public class SequenceListUnordered {
 		return size == maxSize;
 	}
 
-	public int getSize() {
-		return size;
+	public void display() {
+		for (int i = 0; i < size; i++) {
+			System.out.println(data[i]);
+		}
+		System.out.println();
 	}
 
-	public int insert(long key) {
+	public void insert(long key) {
 		data[size++] = key;
-		return size;
 	}
 
 	public int delete(long key) {
 		int index = linearSearch(key);
-		if (index == data.length) {
+		if (index == size) {
 			System.out.println("key not found");
-		} else {
-			for (int i = index; i <= size - 2; i++) {
-				data[i] = data[i + 1];
-			}
-			size--;
+			return index;
 		}
+
+		for (int i = index; i <= size - 2; i++) {
+			data[i] = data[i + 1];
+		}
+		size--;
+
 		return index;
 	}
 
@@ -48,13 +53,6 @@ public class SequenceListUnordered {
 			}
 		}
 		return data.length;
-	}
-
-	public void display() {
-		for (int i = 0; i < size; i++) {
-			System.out.println(data[i]);
-		}
-		System.out.println();
 	}
 
 	public static void main(String[] args) {

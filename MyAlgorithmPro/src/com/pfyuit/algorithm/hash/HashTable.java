@@ -19,10 +19,6 @@ public class HashTable {
 		return 5 - key % 5;
 	}
 
-	/**
-	 * O(1)
-	 * @param data
-	 */
 	public void insert(DataItem data) {
 		int key = data.key;
 		int hashValue = hashFunc(key);
@@ -33,11 +29,6 @@ public class HashTable {
 		dataArray[hashValue] = data;
 	}
 
-	/**
-	 * O(1)
-	 * @param key
-	 * @return
-	 */
 	public DataItem remove(int key) {
 		int hashValue = hashFunc(key);
 		while (dataArray[hashValue] != null) {
@@ -53,11 +44,6 @@ public class HashTable {
 		return null;
 	}
 
-	/**
-	 * O(1)
-	 * @param key
-	 * @return
-	 */
 	public DataItem find(int key) {
 		int hashValue = hashFunc(key);
 		while (dataArray[hashValue] != null) {
@@ -71,9 +57,6 @@ public class HashTable {
 		return null;
 	}
 
-	/**
-	 * O(N)
-	 */
 	public void display() {
 		for (int i = 0; i < dataArray.length; i++) {
 			if (dataArray[i] != null && dataArray[i].key != -1) {

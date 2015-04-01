@@ -4,20 +4,12 @@ import com.pfyuit.algorithm.tree.Heap;
 
 public class Sort {
 
-	/**
-	 * Display all the data
-	 * @param data
-	 */
 	public static void display(long[] data) {
 		for (long d : data) {
 			System.out.println(d);
 		}
 	}
 
-	/**
-	 * O(N^2): bubble sort
-	 * @param data
-	 */
 	public static void bubbleSort(long[] data) {
 		int size = data.length;
 		for (int out = size - 1; out >= 1; out--) {
@@ -32,10 +24,6 @@ public class Sort {
 		}
 	}
 
-	/**
-	 * O(N^2): selection sort
-	 * @param data
-	 */
 	public static void selectionSort(long[] data) {
 		int size = data.length;
 		for (int out = 0; out <= size - 2; out++) {
@@ -45,17 +33,12 @@ public class Sort {
 					min = in;
 				}
 			}
-			// swap
 			long temp = data[out];
 			data[out] = data[min];
 			data[min] = temp;
 		}
 	}
 
-	/**
-	 * O(N^2): insertion sort
-	 * @param data
-	 */
 	public static void insertionSort(long[] data) {
 		int size = data.length;
 		for (int out = 1; out <= size - 1; out++) {
@@ -63,7 +46,6 @@ public class Sort {
 
 			int in;
 			for (in = out - 1; in >= 0; in--) {
-				// shift right
 				if (data[in] > temp) {
 					data[in + 1] = data[in];
 				} else {
@@ -75,10 +57,6 @@ public class Sort {
 		}
 	}
 
-	/**
-	 * O(N^3/2): shell sort
-	 * @param data
-	 */
 	public static void shellSort(long[] data) {
 		int size = data.length;
 
@@ -113,10 +91,6 @@ public class Sort {
 		}
 	}
 
-	/**
-	 * O(NlogN): quick sort
-	 * @param data
-	 */
 	public static void quickSort(long[] data) {
 		int size = data.length;
 		quick_sort(data, 0, size - 1);
@@ -153,10 +127,6 @@ public class Sort {
 
 	}
 
-	/**
-	 * O(NlogN)
-	 * @param data
-	 */
 	public static void heapSort(long[] data) {
 		Heap heap = new Heap(100);
 		for (long value : data) {
@@ -167,10 +137,6 @@ public class Sort {
 		}
 	}
 
-	/**
-	 * O(NlogN): merge sort
-	 * @param data
-	 */
 	public static void mergeSort(long[] data) {
 		long[] workspace = new long[data.length];
 		int low = 0;

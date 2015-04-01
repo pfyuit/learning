@@ -12,54 +12,31 @@ public class LinkedList {
 
 		public void displayLink() {
 			System.out.println(data);
-			System.out.println("hello");
-			System.out.println("world");
 		}
 	}
 
-	/**
-	 * Reference of the first link
-	 */
 	private Link first;
 
-	/**
-	 * Is the linked list empty
-	 * @return
-	 */
 	public boolean isEmpty() {
 		return first == null;
 	}
 
-	/**
-	 * Insert link at first
-	 * @param value
-	 */
 	public void insertFirst(long value) {
 		Link newLink = new Link(value);
 		newLink.next = first;
 		first = newLink;
 	}
 
-	/**
-	 * Remove link at first
-	 * @return
-	 */
 	public Link removeFirst() {
 		Link temp = first;
 		first = first.next;
 		return temp;
 	}
 
-	/**
-	 * Remove a link with the given key
-	 * @param key
-	 * @return
-	 */
 	public Link remove(long key) {
 		Link current = first;
 		Link previous = first;
 		while (current != null) {
-			// find the link
 			if (current.data == key) {
 				if (current == first) {
 					first = current.next;
@@ -68,7 +45,6 @@ public class LinkedList {
 				}
 				return current;
 			} else {
-				// move next
 				previous = current;
 				current = current.next;
 			}
@@ -76,28 +52,18 @@ public class LinkedList {
 		return null;
 	}
 
-	/**
-	 * Find a link with the given key
-	 * @param key
-	 * @return
-	 */
 	public Link find(long key) {
 		Link current = first;
 		while (current != null) {
-			// find the link
 			if (current.data == key) {
 				return current;
 			} else {
-				// move next
 				current = current.next;
 			}
 		}
 		return null;
 	}
 
-	/**
-	 * Display the whole list
-	 */
 	public void displayList() {
 		Link current = first;
 		while (current != null) {

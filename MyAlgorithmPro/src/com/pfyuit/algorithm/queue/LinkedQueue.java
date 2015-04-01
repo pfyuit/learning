@@ -4,38 +4,20 @@ import com.pfyuit.algorithm.list.LinkedListFirstLast;
 
 public class LinkedQueue {
 
-	/**
-	 * Linked list (first last) as inner implementation
-	 */
 	private LinkedListFirstLast list = new LinkedListFirstLast();
 
-	/**
-	 * Is the queue empty
-	 * @return
-	 */
 	public boolean isEmpty() {
 		return list.isEmpty();
 	}
 
-	/**
-	 * Insert value at last
-	 * @param value
-	 */
 	public void insert(long value) {
 		list.insertLast(value);
 	}
 
-	/**
-	 * Remove value at first
-	 * @return
-	 */
 	public long remove() {
 		return list.removeFirst().data;
 	}
 
-	/**
-	 * Display all the values
-	 */
 	public void displayQueue() {
 		list.displayList();
 	}

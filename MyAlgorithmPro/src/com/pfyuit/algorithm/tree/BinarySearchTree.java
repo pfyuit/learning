@@ -12,15 +12,8 @@ public class BinarySearchTree {
 		}
 	}
 
-	/**
-	 * Reference of the root node
-	 */
 	public Node root;
 
-	/**
-	 * O(logN) Add node to the tree
-	 * @param value
-	 */
 	public void insert(long value) {
 		Node node = new Node(value);
 		if (root == null) {
@@ -51,11 +44,6 @@ public class BinarySearchTree {
 
 	}
 
-	/**
-	 * O(LogN) Delete node with given key
-	 * @param key
-	 * @return
-	 */
 	public boolean delete(long key) {
 		Node current, parent;
 		parent = current = root;
@@ -134,11 +122,6 @@ public class BinarySearchTree {
 
 	}
 
-	/***
-	 * Find out the successor of the deleteNode
-	 * @param delNode
-	 * @return
-	 */
 	private Node getSuccessor(Node delNode) {
 		Node successorParent, successor, current;
 		successorParent = successor = current = delNode;
@@ -161,11 +144,6 @@ public class BinarySearchTree {
 		return successor;
 	}
 
-	/**
-	 * O(logN) Find node with given key
-	 * @param key
-	 * @return
-	 */
 	public Node find(long key) {
 		Node current = root;
 
@@ -182,17 +160,10 @@ public class BinarySearchTree {
 		return null;
 	}
 
-	/**
-	 * O(N) Display all the nodes in the tree
-	 */
 	public void display() {
 		inOrder(root);
 	}
 
-	/**
-	 * Traverse
-	 * @param node
-	 */
 	private void inOrder(Node node) {
 		if (node != null) {
 			inOrder(node.leftChild);
@@ -201,9 +172,6 @@ public class BinarySearchTree {
 		}
 	}
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		BinarySearchTree tree = new BinarySearchTree();
 
