@@ -1,14 +1,12 @@
 package com.pfyuit.algorithm.sort;
 
+import java.util.Random;
+
 import com.pfyuit.algorithm.tree.Heap;
 
 public class Sort {
 
-	public static void display(long[] data) {
-		for (long d : data) {
-			System.out.println(d);
-		}
-	}
+	private static long[] data = new long[100000];
 
 	public static void bubbleSort(long[] data) {
 		int size = data.length;
@@ -128,7 +126,7 @@ public class Sort {
 	}
 
 	public static void heapSort(long[] data) {
-		Heap heap = new Heap(100);
+		Heap heap = new Heap(100000);
 		for (long value : data) {
 			heap.insert(value);
 		}
@@ -145,8 +143,7 @@ public class Sort {
 		recMergeSort(data, workspace, low, high);
 	}
 
-	private static void recMergeSort(long[] data, long[] workspace, int low,
-			int high) {
+	private static void recMergeSort(long[] data, long[] workspace, int low, int high) {
 		if (low == high) {
 			return;
 		}
@@ -157,8 +154,7 @@ public class Sort {
 		merge(data, workspace, low, mid, high);
 	}
 
-	private static void merge(long[] data, long[] workspace, int low, int mid,
-			int high) {
+	private static void merge(long[] data, long[] workspace, int low, int mid, int high) {
 		int lowIndex = low;
 		int highIndex = mid + 1;
 		int index = 0;
@@ -185,17 +181,56 @@ public class Sort {
 
 	}
 
+	public static void initData() {
+		for (int i = 0; i < data.length; i++) {
+			data[i] = new Random().nextInt(1000000);
+		}
+	}
+
+	public static void printData(long start) {
+		for (int i = 0; i < data.length; i++) {
+			System.out.println(data[i]);
+		}
+		System.out.println("cost time: " + (System.currentTimeMillis() - start) + " ms");
+	}
+
 	public static void main(String[] args) {
-		long[] data = { 12, 34, 5, 29, 230, 112, 1, 2, 47, 998, 123, 356, 90,
-				17, 4, 56 };
+		long start = 0L;
+
+		// initData();
+		// start = System.currentTimeMillis();
 		// bubbleSort(data);
+		// printData(start);
+
+		// initData();
+		// start = System.currentTimeMillis();
 		// selectionSort(data);
+		// printData(start);
+
+		// initData();
+		// start = System.currentTimeMillis();
 		// insertionSort(data);
-		shellSort(data);
+		// printData(start);
+
+		// initData();
+		// start = System.currentTimeMillis();
+		// shellSort(data);
+		// printData(start);
+
+		// initData();
+		// start = System.currentTimeMillis();
 		// quickSort(data);
-		// heapSort(data);
+		// printData(start);
+
+		// initData();
+		// start = System.currentTimeMillis();
 		// mergeSort(data);
-		display(data);
+		// printData(start);
+
+		// initData();
+		// start = System.currentTimeMillis();
+		// heapSort(data);
+		// printData(start);
 	}
 
 }
