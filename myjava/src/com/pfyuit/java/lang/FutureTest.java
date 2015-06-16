@@ -1,4 +1,4 @@
-package com.pfyuit.java.lang.thread;
+package com.pfyuit.java.lang;
 
 import java.util.ArrayList;
 import java.util.List;
