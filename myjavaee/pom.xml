@@ -231,7 +231,7 @@
 		<dependency>
 			<groupId>c3p0</groupId>
 			<artifactId>c3p0</artifactId>
-			<version>${datasource.c3p0.version}</version>
+			<version>${c3p0.version}</version>
 		</dependency>
 
 		<!-- Atomikos -->
