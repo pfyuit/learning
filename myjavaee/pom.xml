@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.pfyuit</groupId>
@@ -11,45 +10,32 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
 		<junit.version>4.11</junit.version>
-
 		<commons.beanutils.version>1.9.1</commons.beanutils.version>
 		<commons.dbcp.version>1.4</commons.dbcp.version>
 		<commons.digester.version>2.1</commons.digester.version>
 		<commons.fileupload.version>1.3.1</commons.fileupload.version>
 		<commons.lang.version>2.5</commons.lang.version>
 		<commons.pool.version>1.5.5</commons.pool.version>
-
 		<spring.framework.version>3.2.9.RELEASE</spring.framework.version>
 		<spring.data.version>1.1.0.RELEASE</spring.data.version>
-
 		<hibernate.core.version>4.3.4.Final</hibernate.core.version>
 		<hibernate.validation.version>4.2.0.Final</hibernate.validation.version>
-
 		<mybatis.version>3.1.1</mybatis.version>
 		<mybatis.spring.version>1.1.1</mybatis.spring.version>
-
 		<xml.dom4j.version>1.6.1</xml.dom4j.version>
-
 		<jackson.mapper.version>1.9.12</jackson.mapper.version>
 		<jackson.databind.versiion>2.4.4</jackson.databind.versiion>
-
 		<logging.slf4j.version>1.7.2</logging.slf4j.version>
 		<logging.log4j.versioin>1.2.16</logging.log4j.versioin>
-
 		<jedis.version>2.1.0</jedis.version>
-
 		<google.guava.version>16.0</google.guava.version>
-
 		<aop.aspectj.version>1.7.4</aop.aspectj.version>
-
 		<hessian.version>4.0.33</hessian.version>
-
 		<netty.version>4.0.19.Final</netty.version>
-
 		<c3p0.version>0.9.1.2</c3p0.version>
 		<atomikos.version>3.9.3</atomikos.version>
+		<mysql.driver.version>5.1.29</mysql.driver.version>
 	</properties>
 
 	<dependencies>
@@ -261,11 +247,20 @@
 			<version>${atomikos.version}</version>
 		</dependency>
 
+		<!-- MySQL -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.driver.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
 		<finalName>myjavaee</finalName>
 		<plugins>
+
+			<!-- Maven Resource Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -275,6 +270,7 @@
 				</configuration>
 			</plugin>
 
+			<!-- Maven Compiler Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -284,6 +280,46 @@
 					<target>1.7</target>
 					<encoding>UTF-8</encoding>
 				</configuration>
+			</plugin>
+
+			<!-- Maven Tomcat Plugin -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+			</plugin>
+
+			<!-- Maven Jetty Plugin -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.26</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<scanIntervalSeconds>10</scanIntervalSeconds>
+					<stopKey>foo</stopKey>
+					<stopPort>9999</stopPort>
+				</configuration>
+				<executions>
+					<execution>
+						<id>start-jetty</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<scanIntervalSeconds>0</scanIntervalSeconds>
+							<daemon>true</daemon>
+						</configuration>
+					</execution>
+					<execution>
+						<id>stop-jetty</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
