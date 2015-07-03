@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pfyuit.myjavaee.dto.BlogDto;
+import com.pfyuit.myjavaee.model.Apply;
+import com.pfyuit.myjavaee.model.ApplyModel;
+import com.pfyuit.myjavaee.service.ApplyService;
 import com.pfyuit.myjavaee.service.BlogService;
 
 @Controller
@@ -20,6 +23,9 @@ public class ApiController {
 	@Autowired
 	private BlogService blogService;
 
+	@Autowired
+	private ApplyService applyService;
+
 	@RequestMapping(value = "/get", method = RequestMethod.GET)
 	@ResponseBody
 	public String testGet() {
@@ -27,6 +33,9 @@ public class ApiController {
 
 		BlogDto blogDto = blogService.getBlogByHibernate(10);
 		BlogDto blogDto1 = blogService.getBlogByMyBatis(10);
+
+		ApplyModel applyModel = applyService.getApplyByHibernate(36);
+		Apply apply = applyService.getApplyByMyBatis(36);
 
 		return "success";
 	}
