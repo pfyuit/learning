@@ -25,7 +25,8 @@ public class ApiController {
 	public String testGet() {
 		LOGGER.info("get");
 
-		BlogDto blogDto = blogService.getBlogByMyBatis(10);
+		BlogDto blogDto = blogService.getBlogByHibernate(10);
+		BlogDto blogDto1 = blogService.getBlogByMyBatis(10);
 
 		return "success";
 	}

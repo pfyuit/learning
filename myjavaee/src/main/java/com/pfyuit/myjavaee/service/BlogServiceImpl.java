@@ -21,16 +21,16 @@ public class BlogServiceImpl implements BlogService {
 	private BlogDao blogDao;
 
 	@Override
-	@Transactional(value = "master", readOnly = true)
-	public BlogDto getBlogByMyBatis(Integer blogId) {
-		Blog blog = blogMapper.getBlog(blogId);
+	@Transactional(value = "hibernate_myblog", readOnly = true)
+	public BlogDto getBlogByHibernate(Integer blogId) {
+		BlogModel blog = blogDao.find(blogId);
 		return BlogDtoBuilder.buildBlogDto(blog);
 	}
 
 	@Override
-	@Transactional(value = "master", readOnly = true)
-	public BlogDto getBlogByHibernate(Integer blogId) {
-		BlogModel blog = blogDao.find(blogId);
+	@Transactional(value = "mybatis_myblog", readOnly = true)
+	public BlogDto getBlogByMyBatis(Integer blogId) {
+		Blog blog = blogMapper.getBlog(blogId);
 		return BlogDtoBuilder.buildBlogDto(blog);
 	}
 

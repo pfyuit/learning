@@ -24,11 +24,7 @@
 		<property name="dataSource" ref="dataSourcePinche" />
 		<property name="annotatedClasses">
 			<list>
-				<value>com.pfyuit.myjavaee.model.BlogModel</value>
-				<value>com.pfyuit.myjavaee.model.CategoryModel</value>
-				<value>com.pfyuit.myjavaee.model.CommentModel</value>
-				<value>com.pfyuit.myjavaee.model.LinkModel</value>
-				<value>com.pfyuit.myjavaee.model.UserModel</value>
+				<value>com.pfyuit.myjavaee.model.ApplyModel</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -47,7 +43,6 @@
 		p:sessionFactory-ref="sessionFactoryPinche">
 		<qualifier value="hibernate_pinche" />
 	</bean>
-
 	<tx:annotation-driven transaction-manager="transactionManagerHibernatePinche" />
 
 	<!-- Configuration for MyBatis Using Pinche Data Source -->
@@ -65,7 +60,6 @@
 		<property name="dataSource" ref="dataSourcePinche" />
 		<qualifier value="mybatis_pinche" />
 	</bean>
-
 	<tx:annotation-driven transaction-manager="transactionManagerMyBatisPinche" />
 
 </beans>

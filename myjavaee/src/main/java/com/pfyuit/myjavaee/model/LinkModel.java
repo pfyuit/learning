@@ -2,8 +2,10 @@ package com.pfyuit.myjavaee.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "link")
 public class LinkModel {
 
 	@Id

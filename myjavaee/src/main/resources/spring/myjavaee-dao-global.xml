@@ -68,7 +68,6 @@
 		<property name="userTransaction" ref="atomikosUserTransaction" />
 		<qualifier value="jta" />
 	</bean>
-
 	<tx:annotation-driven transaction-manager="transactionManagerJta" />
 
 </beans>
