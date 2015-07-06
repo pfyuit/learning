@@ -1,5 +1,7 @@
 package com.pfyuit.myjavaee.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
@@ -11,5 +13,7 @@ public interface BlogMapper {
 
 	@Select("SELECT * FROM blog WHERE blogid=#{blogId}")
 	public Blog getBlog(@Param("blogId") Integer blogId);
+	
+	public List<Blog> getAllBlog();
 
 }

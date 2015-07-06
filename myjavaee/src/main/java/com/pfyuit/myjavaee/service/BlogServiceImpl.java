@@ -1,5 +1,7 @@
 package com.pfyuit.myjavaee.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,6 +34,13 @@ public class BlogServiceImpl implements BlogService {
 	public BlogDto getBlogByMyBatis(Integer blogId) {
 		Blog blog = blogMapper.getBlog(blogId);
 		return BlogDtoBuilder.buildBlogDto(blog);
+	}
+
+	@Override
+	@Transactional(value = "mybatis_myblog", readOnly = true)
+	public List<Blog> getAllBlogByMyBatis() {
+		List<Blog> blogs = blogMapper.getAllBlog();
+		return blogs;
 	}
 
 }
