@@ -30,81 +30,81 @@ public class MyListener implements ServletContextListener, ServletContextAttribu
 
 	// //////////////////HttpServletRequest////////////////////////////////
 	public void requestInitialized(ServletRequestEvent arg0) {
-		logger.info("requestInitialized");
+		logger.info("HttpServletRequest requestInitialized");
 	}
 
 	public void requestDestroyed(ServletRequestEvent arg0) {
-		logger.info("requestDestroyed");
+		logger.info("HttpServletRequest requestDestroyed");
 	}
 
 	public void attributeAdded(ServletRequestAttributeEvent arg0) {
-		logger.info("attributeAdded");
+		logger.info("HttpServletRequest attributeAdded");
 	}
 
 	public void attributeRemoved(ServletRequestAttributeEvent arg0) {
-		logger.info("attributeRemoved");
+		logger.info("HttpServletRequest attributeRemoved");
 	}
 
 	public void attributeReplaced(ServletRequestAttributeEvent arg0) {
-		logger.info("attributeReplaced");
+		logger.info("HttpServletRequest attributeReplaced");
 	}
 
 	// //////////////////HttpSession////////////////////////////////
 	public void sessionCreated(HttpSessionEvent arg0) {
-		logger.info("sessionCreated");
+		logger.info("HttpSession sessionCreated");
 	}
 
 	public void sessionDestroyed(HttpSessionEvent arg0) {
-		logger.info("sessionDestroyed");
+		logger.info("HttpSession sessionDestroyed");
 	}
 
 	public void attributeAdded(HttpSessionBindingEvent arg0) {
-		logger.info("attributeAdded");
+		logger.info("HttpSession attributeAdded");
 	}
 
 	public void attributeRemoved(HttpSessionBindingEvent arg0) {
-		logger.info("attributeRemoved");
+		logger.info("HttpSession attributeRemoved");
 	}
 
 	public void attributeReplaced(HttpSessionBindingEvent arg0) {
-		logger.info("attributeReplaced");
+		logger.info("HttpSession attributeReplaced");
 	}
 
 	public void sessionWillPassivate(HttpSessionEvent arg0) {
-		logger.info("sessionWillPassivate");
+		logger.info("HttpSession sessionWillPassivate");
 	}
 
 	public void sessionDidActivate(HttpSessionEvent arg0) {
-		logger.info("sessionDidActivate");
+		logger.info("HttpSession sessionDidActivate");
 	}
 
 	public void valueBound(HttpSessionBindingEvent arg0) {
-		logger.info("valueBound");
+		logger.info("HttpSession valueBound");
 	}
 
 	public void valueUnbound(HttpSessionBindingEvent arg0) {
-		logger.info("valueUnbound");
+		logger.info("HttpSession valueUnbound");
 	}
 
 	// //////////////////ServletContext////////////////////////////////
 	public void contextInitialized(ServletContextEvent arg0) {
-		logger.info("contextInitialized");
+		logger.info("ServletContext contextInitialized");
 	}
 
 	public void contextDestroyed(ServletContextEvent arg0) {
-		logger.info("contextDestroyed");
+		logger.info("ServletContext contextDestroyed");
 	}
 
 	public void attributeAdded(ServletContextAttributeEvent arg0) {
-		logger.info("attributeAdded");
+		logger.info("ServletContext attributeAdded");
 	}
 
 	public void attributeRemoved(ServletContextAttributeEvent arg0) {
-		logger.info("attributeRemoved");
+		logger.info("ServletContext attributeRemoved");
 	}
 
 	public void attributeReplaced(ServletContextAttributeEvent arg0) {
-		logger.info("attributeReplaced");
+		logger.info("ServletContext attributeReplaced");
 	}
 
 }
