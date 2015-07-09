@@ -1,4 +1,4 @@
-package com.pfyui.myjavaee.servlet;
+package com.pfyuit.myjavaee.servlet;
 
 import java.io.IOException;
 

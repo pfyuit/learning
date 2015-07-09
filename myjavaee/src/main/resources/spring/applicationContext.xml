@@ -6,9 +6,7 @@
      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
 	<!-- Import Dao Configuration -->
-	<import resource="classpath:/spring/myjavaee-dao-myblog.xml" />
-	<import resource="classpath:/spring/myjavaee-dao-pinche.xml" />
-	<import resource="classpath:/spring/myjavaee-dao-global.xml" />
+	<import resource="classpath:/spring/myjavaee-dao.xml" />
 
 	<!-- Import Service Configuration -->
 	<import resource="classpath:/spring/myjavaee-service.xml" />

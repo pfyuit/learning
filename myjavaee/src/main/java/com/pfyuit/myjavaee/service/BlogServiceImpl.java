@@ -1,7 +1,5 @@
 package com.pfyuit.myjavaee.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,10 +15,10 @@ import com.pfyuit.myjavaee.model.BlogModel;
 public class BlogServiceImpl implements BlogService {
 
 	@Autowired
-	private BlogMapper blogMapper;
+	private BlogDao blogDao;
 
 	@Autowired
-	private BlogDao blogDao;
+	private BlogMapper blogMapper;
 
 	@Override
 	@Transactional(value = "hibernate_myblog", readOnly = true)
@@ -34,13 +32,6 @@ public class BlogServiceImpl implements BlogService {
 	public BlogDto getBlogByMyBatis(Integer blogId) {
 		Blog blog = blogMapper.getBlog(blogId);
 		return BlogDtoBuilder.buildBlogDto(blog);
-	}
-
-	@Override
-	@Transactional(value = "mybatis_myblog", readOnly = true)
-	public List<Blog> getAllBlogByMyBatis() {
-		List<Blog> blogs = blogMapper.getAllBlog();
-		return blogs;
 	}
 
 }

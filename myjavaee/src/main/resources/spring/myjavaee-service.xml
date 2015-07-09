@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-	xmlns:context="http://www.springframework.org/schema/context"
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="
      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
@@ -13,12 +13,67 @@
 				<value>classpath:/conf/memcached.properties</value>
 				<value>classpath:/conf/redis.properties</value>
 				<value>classpath:/conf/solr.properties</value>
+				<value>classpath:/conf/message.properties</value>
 			</list>
 		</property>
 	</bean>
 
 	<!-- Configuration for Scanning -->
 	<context:component-scan base-package="com.pfyuit.myjavaee.service"></context:component-scan>
+
+	<!-- Configuration for Destination -->
+	<bean id="testQueue" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="test.queue"></constructor-arg>
+	</bean>
+
+	<bean id="testTopic" class="org.apache.activemq.command.ActiveMQTopic">
+		<constructor-arg value="test.topic"></constructor-arg>
+	</bean>
+
+	<!-- Configuration for Connection Factory -->
+	<bean id="connectinFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="${activemq.url}" />
+	</bean>
+
+	<!-- Configuration for Jms Template -->
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="connectinFactory" />
+	</bean>
+
+	<!-- Configuration for Message Converter -->
+	<bean id="messageConverter" class="com.pfyuit.myjavaee.service.DefaultMessageConverter">
+	</bean>
+
+	<!-- Configuration for Message Consumer -->
+	<bean id="messageConsumer" class="com.pfyuit.myjavaee.service.MessageConsumerImpl">
+	</bean>
+
+	<!-- Configuration for Message Listener -->
+	<bean id="testQueueMessageListener" class="org.springframework.jms.listener.adapter.MessageListenerAdapter">
+		<constructor-arg ref="messageConsumer" />
+		<property name="defaultListenerMethod" value="receiveMessage" />
+		<property name="messageConverter" ref="messageConverter" />
+	</bean>
+
+	<bean id="testTopicMessageListener" class="org.springframework.jms.listener.adapter.MessageListenerAdapter">
+		<constructor-arg ref="testTopic" />
+		<property name="defaultListenerMethod" value="receiveMessage" />
+		<property name="messageConverter" ref="messageConverter" />
+	</bean>
+
+	<!-- Configuration for Message Container -->
+	<bean id="queueContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+		<property name="connectionFactory" ref="connectinFactory"></property>
+		<property name="destination" ref="testQueue"></property>
+		<property name="messageListener" ref="testQueueMessageListener"></property>
+	</bean>
+
+	<bean id="topicContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+		<property name="connectionFactory" ref="connectinFactory"></property>
+		<property name="destination" ref="testTopic"></property>
+		<property name="messageListener" ref="testTopicMessageListener"></property>
+		<property name="pubSubDomain" value="true" />
+	</bean>
 
 </beans>
   
