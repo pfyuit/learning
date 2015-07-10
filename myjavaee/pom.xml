@@ -38,6 +38,8 @@
 		<c3p0.version>0.9.1.2</c3p0.version>
 		<atomikos.version>3.9.3</atomikos.version>
 		<mysql.driver.version>5.1.29</mysql.driver.version>
+		<activemq.client.version>5.8.0</activemq.client.version>
+		<spy.memcached.client>2.10.5</spy.memcached.client>
 	</properties>
 
 	<dependencies>
@@ -285,7 +287,14 @@
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-spring</artifactId>
-			<version>5.8.0</version>
+			<version>${activemq.client.version}</version>
+		</dependency>
+
+		<!-- Memcached -->
+		<dependency>
+			<groupId>net.spy</groupId>
+			<artifactId>spymemcached</artifactId>
+			<version>${spy.memcached.client}</version>
 		</dependency>
 
 	</dependencies>
