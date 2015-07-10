@@ -40,6 +40,7 @@
 		<mysql.driver.version>5.1.29</mysql.driver.version>
 		<activemq.client.version>5.8.0</activemq.client.version>
 		<spy.memcached.client>2.10.5</spy.memcached.client>
+		<solrj.version>4.10.2</solrj.version>
 	</properties>
 
 	<dependencies>
@@ -295,6 +296,13 @@
 			<groupId>net.spy</groupId>
 			<artifactId>spymemcached</artifactId>
 			<version>${spy.memcached.client}</version>
+		</dependency>
+
+		<!-- Solrj -->
+		<dependency>
+			<groupId>org.apache.solr</groupId>
+			<artifactId>solr-solrj</artifactId>
+			<version>${solrj.version}</version>
 		</dependency>
 
 	</dependencies>
