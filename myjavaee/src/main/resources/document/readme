@@ -1,0 +1,20 @@
+===web===
+mvc: springmvc
+layout: sitemesh
+view: freemarker
+
+===service===
+soap: cxf
+restful: jersy, springmvc
+remoting: hessian
+
+===enterprise===
+inject: spring
+orm: hibernate, mybatis
+oxm: xstream
+search: solr
+transaction: atomikos
+server: apache, nginx, tomcat, jetty, glassfish
+message: activemq
+workflow: activiti
+scheduler: quartz
