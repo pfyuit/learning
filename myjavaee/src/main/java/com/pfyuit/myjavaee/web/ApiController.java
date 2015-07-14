@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.controller;
+package com.pfyuit.myjavaee.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
