@@ -9,11 +9,11 @@
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
-				<value>classpath:/conf/jdbc.properties</value>
-				<value>classpath:/conf/memcached.properties</value>
-				<value>classpath:/conf/redis.properties</value>
-				<value>classpath:/conf/solr.properties</value>
-				<value>classpath:/conf/message.properties</value>
+				<value>classpath:/config/jdbc.properties</value>
+				<value>classpath:/config/memcached.properties</value>
+				<value>classpath:/config/redis.properties</value>
+				<value>classpath:/config/solr.properties</value>
+				<value>classpath:/config/message.properties</value>
 			</list>
 		</property>
 	</bean>
