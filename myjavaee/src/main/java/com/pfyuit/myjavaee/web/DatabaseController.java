@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.pfyuit.myjavaee.dto.BlogDto;
 import com.pfyuit.myjavaee.model.Apply;
 import com.pfyuit.myjavaee.model.ApplyModel;
+import com.pfyuit.myjavaee.model.Blog;
+import com.pfyuit.myjavaee.model.BlogModel;
 import com.pfyuit.myjavaee.service.ApplyService;
 import com.pfyuit.myjavaee.service.BlogService;
 
@@ -38,8 +39,8 @@ public class DatabaseController {
 		// Update
 
 		// Select
-		BlogDto blogDto = blogService.getBlogByHibernate(10);
-		BlogDto blogDto1 = blogService.getBlogByMyBatis(10);
+		BlogModel model = blogService.findByIdByHibernate(10);
+		Blog model1 = blogService.findByIdByMyBatis(10);
 
 		return "success";
 	}
@@ -56,11 +57,11 @@ public class DatabaseController {
 		// Update
 
 		// Select
-		BlogDto blogDto = blogService.getBlogByHibernate(10);
-		BlogDto blogDto1 = blogService.getBlogByMyBatis(10);
+		BlogModel model = blogService.findByIdByHibernate(10);
+		Blog model1 = blogService.findByIdByMyBatis(10);
 
-		ApplyModel applyModel = applyService.getApplyByHibernate(36);
-		Apply apply = applyService.getApplyByMyBatis(36);
+		ApplyModel applyModel = applyService.findByIdByHibernate(36);
+		Apply apply = applyService.findByIdByMyBatis(36);
 
 		return "success";
 	}
