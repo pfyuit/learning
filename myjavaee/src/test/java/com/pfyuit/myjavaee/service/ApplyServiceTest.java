@@ -14,11 +14,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.pfyuit.myjavaee.model.ApplyModel;
+import com.pfyuit.myjavaee.model.Apply;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/spring/applicationContext.xml" })
-@TransactionConfiguration(transactionManager = "transactionManagerHibernatePinche", defaultRollback = true)
+@TransactionConfiguration(transactionManager = "transactionManagerPinche", defaultRollback = true)
 @Transactional
 public class ApplyServiceTest {
 
@@ -27,45 +27,45 @@ public class ApplyServiceTest {
 
 	@Test
 	public void testSave() {
-		ApplyModel model = new ApplyModel();
+		Apply model = new Apply();
 		model.setActivityId(1);
 		model.setApplyTime(new Timestamp(new Date().getTime()));
 		model.setLastModify(new Timestamp(new Date().getTime()));
 		model.setOwnerId(1);
 		model.setOwnerName("tom");
 		model.setStatus("start");
-		applyService.saveByHibernate(model);
+		applyService.save(model);
 	};
 
 	@Test
 	public void testDelete() {
-		ApplyModel model = applyService.findByIdByHibernate(36);
-		applyService.deleteByHibernate(model);
+		Apply model = applyService.findById(36);
+		applyService.delete(model);
 	};
 
 	@Test
 	public void testUpdate() {
-		ApplyModel model = applyService.findByIdByHibernate(36);
+		Apply model = applyService.findById(36);
 		model.setStatus("finished");
 		model.setLastModify(new Timestamp(new Date().getTime()));
-		applyService.updateByHibernate(model);
+		applyService.update(model);
 	};
 
 	@Test
 	public void testFindById() {
-		ApplyModel model = applyService.findByIdByHibernate(36);
+		Apply model = applyService.findById(36);
 		assertNotNull(model);
 	};
 
 	@Test
 	public void testFindByOwnerId() {
-		List<ApplyModel> models = applyService.findByOwnerIdByHibernate(10);
+		List<Apply> models = applyService.findByOwnerId(10);
 		assertNotNull(models);
 	};
 
 	@Test
 	public void testFindByActivityId() {
-		List<ApplyModel> models = applyService.findByActivityIdByHibernate(8);
+		List<Apply> models = applyService.findByActivityId(8);
 		assertNotNull(models);
 	};
 

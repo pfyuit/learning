@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.mapper1;
+package com.pfyuit.myjavaee.mapper;
 
 import java.util.List;
 

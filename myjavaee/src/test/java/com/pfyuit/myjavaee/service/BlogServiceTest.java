@@ -16,7 +16,7 @@ import com.pfyuit.myjavaee.model.BlogModel;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/spring/applicationContext.xml" })
-@TransactionConfiguration(transactionManager = "transactionManagerHibernateMyblog", defaultRollback = true)
+@TransactionConfiguration(transactionManager = "transactionManagerMyblog", defaultRollback = true)
 @Transactional
 public class BlogServiceTest {
 
@@ -27,31 +27,31 @@ public class BlogServiceTest {
 	public void testSave() {
 		BlogModel model = new BlogModel();
 		model.setAuthor("pfyuit");
-		blogService.saveByHibernate(model);
+		blogService.save(model);
 	};
 
 	@Test
 	public void testDelete() {
-		BlogModel model = blogService.findByIdByHibernate(3);
-		blogService.deleteByHibernate(model);
+		BlogModel model = blogService.findById(3);
+		blogService.delete(model);
 	};
 
 	@Test
 	public void testUpdate() {
-		BlogModel model = blogService.findByIdByHibernate(3);
+		BlogModel model = blogService.findById(3);
 		model.setContent("content");
-		blogService.updateByHibernate(model);
+		blogService.update(model);
 	};
 
 	@Test
 	public void testFindById() {
-		BlogModel model = blogService.findByIdByHibernate(3);
+		BlogModel model = blogService.findById(3);
 		assertNotNull(model);
 	};
 
 	@Test
 	public void testFindAll() {
-		List<BlogModel> models = blogService.findAllByHibernate();
+		List<BlogModel> models = blogService.findAll();
 		assertNotNull(models);
 	};
 

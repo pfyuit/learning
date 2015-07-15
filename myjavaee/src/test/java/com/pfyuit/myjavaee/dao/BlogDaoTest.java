@@ -16,7 +16,7 @@ import com.pfyuit.myjavaee.model.BlogModel;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/spring/applicationContext.xml" })
-@TransactionConfiguration(transactionManager = "transactionManagerHibernateMyblog", defaultRollback = true)
+@TransactionConfiguration(transactionManager = "transactionManagerMyblog", defaultRollback = true)
 @Transactional
 public class BlogDaoTest {
 
