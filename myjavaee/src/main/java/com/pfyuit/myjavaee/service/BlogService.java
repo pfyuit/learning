@@ -16,4 +16,12 @@ public interface BlogService {
 
 	public abstract List<BlogModel> findAll();
 
+	public abstract void multiSave();
+
+	public abstract void multiDelete();
+
+	public abstract void multiUpdate();
+
+	public abstract void multiFindById();
+
 }

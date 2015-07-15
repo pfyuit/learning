@@ -30,14 +30,10 @@ public class DatabaseController {
 	public String testSingleDataSource() {
 		LOGGER.info("testSingleDataSource");
 
-		// Insert
-
-		// Delete
-
-		// Update
-
-		// Select
-		BlogModel model = blogService.findById(3);
+		blogService.multiSave();
+		blogService.multiDelete();
+		blogService.multiUpdate();
+		blogService.multiFindById();
 
 		return "success";
 	}
