@@ -1,20 +1,27 @@
 ===web===
+spec: servlet, jsp, jstl, el, jsf, websocket, jsonp
 mvc: springmvc
 layout: sitemesh
 view: freemarker
 
 ===service===
+spec: jaxp, jaxm, jaxr, jaxb, saaj, web service metadata, jaxrpc, jaxws, jaxrs
 soap: cxf
 restful: jersy, springmvc
 remoting: hessian
 
 ===enterprise===
+spec: jpa, jca, jta, batch application, bean validation, common annotations, concurrency utilities, cdi, di, ejb, jms, javamail
 inject: spring
 orm: hibernate, mybatis
 oxm: xstream
-search: solr
+search: lucence, solr
 transaction: atomikos
 server: apache, nginx, tomcat, jetty, glassfish
 message: activemq
 workflow: activiti
 scheduler: quartz
+
+===security===
+spec: jacc, jaas
+security: shiro, springsecurity

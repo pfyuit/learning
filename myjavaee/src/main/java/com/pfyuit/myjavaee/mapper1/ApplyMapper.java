@@ -8,6 +8,6 @@ import com.pfyuit.myjavaee.model.Apply;
 public interface ApplyMapper {
 
 	@Select("SELECT * FROM apply WHERE apply_id=#{applyId}")
-	public Apply getApply(@Param("applyId") Integer applyId);
+	public Apply findById(@Param("applyId") Integer applyId);
 
 }

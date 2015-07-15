@@ -6,16 +6,16 @@ import com.pfyuit.myjavaee.model.ApplyModel;
 
 public interface ApplyDao {
 
-	public abstract void save(ApplyModel t);
+	public abstract void save(ApplyModel model);
 
-	public abstract void delete(ApplyModel t);
+	public abstract void delete(ApplyModel model);
 
-	public abstract void update(ApplyModel t);
+	public abstract void update(ApplyModel model);
 
-	public abstract ApplyModel find(int id);
+	public abstract ApplyModel findById(int applyId);
 
-	public abstract List<ApplyModel> findApplyByUser(int uid);
+	public abstract List<ApplyModel> findByOwnerId(int ownerId);
 
-	public abstract List<ApplyModel> findApplyByActivity(int activityId);
+	public abstract List<ApplyModel> findByActivityId(int activityId);
 
 }

@@ -18,32 +18,32 @@ public class BlogDaoImpl implements BlogDao {
 	@Qualifier("sessionFactoryMyblog")
 	private SessionFactory sessionFactory;
 
-	public void save(BlogModel t) {
+	public void save(BlogModel model) {
 		Session session = sessionFactory.getCurrentSession();
-		session.save(t);
+		session.save(model);
 	}
 
-	public void delete(BlogModel t) {
+	public void delete(BlogModel model) {
 		Session session = sessionFactory.getCurrentSession();
-		session.delete(t);
+		session.delete(model);
 	}
 
-	public void update(BlogModel t) {
+	public void update(BlogModel model) {
 		Session session = sessionFactory.getCurrentSession();
-		session.update(t);
+		session.update(model);
 	}
 
-	public BlogModel find(int id) {
+	public BlogModel findById(int blogId) {
 		Session session = sessionFactory.getCurrentSession();
-		BlogModel result = (BlogModel) session.get(BlogModel.class, id);
+		BlogModel result = (BlogModel) session.get(BlogModel.class, blogId);
 		return result;
 	}
 
 	@Override
+	@SuppressWarnings("unchecked")
 	public List<BlogModel> findAll() {
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("from Blog");
-		@SuppressWarnings("unchecked")
+		Query query = session.createQuery("from BlogModel");
 		List<BlogModel> result = query.list();
 		return result;
 	}

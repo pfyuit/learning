@@ -10,6 +10,6 @@ import com.pfyuit.myjavaee.model.Blog;
 public interface BlogMapper {
 
 	@Select("SELECT * FROM blog WHERE blogid=#{blogId}")
-	public Blog getBlog(@Param("blogId") Integer blogId);
+	public Blog findById(@Param("blogId") Integer blogId);
 
 }

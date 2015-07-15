@@ -19,46 +19,46 @@ public class ApplyDaoImpl implements ApplyDao {
 	private SessionFactory sessionFactory;
 
 	@Override
-	public void save(ApplyModel t) {
+	public void save(ApplyModel model) {
 		Session session = sessionFactory.getCurrentSession();
-		session.save(t);
+		session.save(model);
 	}
 
 	@Override
-	public void delete(ApplyModel t) {
+	public void delete(ApplyModel model) {
 		Session session = sessionFactory.getCurrentSession();
-		session.delete(t);
+		session.delete(model);
 	}
 
 	@Override
-	public void update(ApplyModel t) {
+	public void update(ApplyModel model) {
 		Session session = sessionFactory.getCurrentSession();
-		session.update(t);
+		session.update(model);
 	}
 
 	@Override
-	public ApplyModel find(int id) {
+	public ApplyModel findById(int applyId) {
 		Session session = sessionFactory.getCurrentSession();
-		ApplyModel result = (ApplyModel) session.get(ApplyModel.class, id);
+		ApplyModel result = (ApplyModel) session.get(ApplyModel.class, applyId);
 		return result;
 	}
 
 	@Override
-	public List<ApplyModel> findApplyByUser(int uid) {
+	@SuppressWarnings("unchecked")
+	public List<ApplyModel> findByOwnerId(int ownerId) {
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("from Apply where ownerId = :ownerId");
-		query.setParameter("ownerId", uid);
-		@SuppressWarnings("unchecked")
+		Query query = session.createQuery("from ApplyModel where ownerId = :ownerId");
+		query.setParameter("ownerId", ownerId);
 		List<ApplyModel> result = query.list();
 		return result;
 	}
 
 	@Override
-	public List<ApplyModel> findApplyByActivity(int activityId) {
+	@SuppressWarnings("unchecked")
+	public List<ApplyModel> findByActivityId(int activityId) {
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("from Apply where activityId = :activityId");
+		Query query = session.createQuery("from ApplyModel where activityId = :activityId");
 		query.setParameter("activityId", activityId);
-		@SuppressWarnings("unchecked")
 		List<ApplyModel> result = query.list();
 		return result;
 	}

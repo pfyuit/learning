@@ -6,14 +6,14 @@ import com.pfyuit.myjavaee.model.BlogModel;
 
 public interface BlogDao {
 
-	public abstract void save(BlogModel t);
+	public abstract void save(BlogModel model);
 
-	public abstract void delete(BlogModel t);
+	public abstract void delete(BlogModel model);
 
-	public abstract void update(BlogModel t);
+	public abstract void update(BlogModel model);
 
-	public abstract BlogModel find(int id);
+	public abstract BlogModel findById(int blogId);
 
-	public List<BlogModel> findAll();
+	public abstract List<BlogModel> findAll();
 
 }

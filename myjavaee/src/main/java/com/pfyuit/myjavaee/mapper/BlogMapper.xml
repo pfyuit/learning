@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.pfyuit.myjavaee.mapper.BlogMapper">
 
-	<select id="getAllBlog" resultType="Blog">
+	<select id="findAll" resultType="Blog">
 		SELECT * FROM blog
 	</select>
 

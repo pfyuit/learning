@@ -21,14 +21,14 @@ public class ApplyServiceImpl implements ApplyService {
 	@Override
 	@Transactional(value = "hibernate_pinche", readOnly = true)
 	public ApplyModel getApplyByHibernate(int applyId) {
-		ApplyModel result = applyDao.find(applyId);
+		ApplyModel result = applyDao.findById(applyId);
 		return result;
 	}
 
 	@Override
 	@Transactional(value = "mybatis_pinche", readOnly = true)
 	public Apply getApplyByMyBatis(int applyId) {
-		Apply result = applyMapper.getApply(applyId);
+		Apply result = applyMapper.findById(applyId);
 		return result;
 	}
 
