@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.dto;
+package com.pfyuit.myjavaee.dto.business;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.servlet;
+package com.pfyuit.myjavaee.spec.servlet;
 
 import javax.servlet.ServletContextAttributeEvent;
 import javax.servlet.ServletContextAttributeListener;

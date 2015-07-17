@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.form;
+package com.pfyuit.myjavaee.form.business;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
