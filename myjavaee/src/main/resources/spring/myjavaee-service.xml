@@ -108,5 +108,8 @@
 	<bean class="org.springframework.data.redis.core.RedisTemplate" p:connection-factory-ref="jedisConnectionFactory">
 	</bean>
 
+	<!-- Configuration for Bean Validator -->
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+
 </beans>
   

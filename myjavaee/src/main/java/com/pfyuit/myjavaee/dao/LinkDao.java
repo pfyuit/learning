@@ -1,6 +1,6 @@
 package com.pfyuit.myjavaee.dao;
 
-import com.pfyuit.myjavaee.model.LinkModel;
+import com.pfyuit.myjavaee.model.jpa.LinkModel;
 
 public interface LinkDao {
 

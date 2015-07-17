@@ -14,7 +14,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.pfyuit.myjavaee.model.Apply;
+import com.pfyuit.myjavaee.model.mybatis.Apply;
+import com.pfyuit.myjavaee.service.business.ApplyService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/spring/applicationContext.xml" })

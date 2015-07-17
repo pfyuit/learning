@@ -1,10 +1,10 @@
-package com.pfyuit.myjavaee.dao;
+package com.pfyuit.myjavaee.service.business;
 
 import java.util.List;
 
 import com.pfyuit.myjavaee.model.jpa.BlogModel;
 
-public interface BlogDao {
+public interface BlogService {
 
 	public abstract void save(BlogModel model);
 
@@ -15,5 +15,13 @@ public interface BlogDao {
 	public abstract BlogModel findById(int blogId);
 
 	public abstract List<BlogModel> findAll();
+
+	public abstract void multiSave();
+
+	public abstract void multiDelete();
+
+	public abstract void multiUpdate();
+
+	public abstract void multiFindById();
 
 }

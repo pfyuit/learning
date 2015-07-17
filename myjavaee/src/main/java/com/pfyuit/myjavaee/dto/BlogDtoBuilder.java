@@ -1,7 +1,7 @@
 package com.pfyuit.myjavaee.dto;
 
-import com.pfyuit.myjavaee.model.Blog;
-import com.pfyuit.myjavaee.model.BlogModel;
+import com.pfyuit.myjavaee.model.jpa.BlogModel;
+import com.pfyuit.myjavaee.model.mybatis.Blog;
 
 public class BlogDtoBuilder {
 
