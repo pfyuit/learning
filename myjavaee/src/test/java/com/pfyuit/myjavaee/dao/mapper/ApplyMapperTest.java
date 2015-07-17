@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service;
+package com.pfyuit.myjavaee.dao.mapper;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -14,17 +14,17 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.pfyuit.myjavaee.dao.mapper.ApplyMapper;
 import com.pfyuit.myjavaee.model.mybatis.Apply;
-import com.pfyuit.myjavaee.service.business.ApplyService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/spring/applicationContext.xml" })
 @TransactionConfiguration(transactionManager = "transactionManagerPinche", defaultRollback = true)
 @Transactional
-public class ApplyServiceTest {
+public class ApplyMapperTest {
 
 	@Autowired
-	private ApplyService applyService;
+	private ApplyMapper applyMapper;
 
 	@Test
 	public void testSave() {
@@ -35,38 +35,38 @@ public class ApplyServiceTest {
 		model.setOwnerId(1);
 		model.setOwnerName("tom");
 		model.setStatus("start");
-		applyService.save(model);
+		applyMapper.save(model);
 	};
 
 	@Test
 	public void testDelete() {
-		Apply model = applyService.findById(36);
-		applyService.delete(model);
+		Apply model = applyMapper.findById(36);
+		applyMapper.delete(model);
 	};
 
 	@Test
 	public void testUpdate() {
-		Apply model = applyService.findById(36);
+		Apply model = applyMapper.findById(36);
 		model.setStatus("finished");
 		model.setLastModify(new Timestamp(new Date().getTime()));
-		applyService.update(model);
+		applyMapper.update(model);
 	};
 
 	@Test
 	public void testFindById() {
-		Apply model = applyService.findById(36);
+		Apply model = applyMapper.findById(36);
 		assertNotNull(model);
 	};
 
 	@Test
 	public void testFindByOwnerId() {
-		List<Apply> models = applyService.findByOwnerId(10);
+		List<Apply> models = applyMapper.findByOwnerId(10);
 		assertNotNull(models);
 	};
 
 	@Test
 	public void testFindByActivityId() {
-		List<Apply> models = applyService.findByActivityId(8);
+		List<Apply> models = applyMapper.findByActivityId(8);
 		assertNotNull(models);
 	};
 

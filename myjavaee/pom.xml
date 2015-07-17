@@ -41,6 +41,7 @@
 		<activemq.client.version>5.8.0</activemq.client.version>
 		<spy.memcached.client>2.10.5</spy.memcached.client>
 		<solrj.version>4.10.2</solrj.version>
+		<servlet.api.version>2.5</servlet.api.version>
 	</properties>
 
 	<dependencies>
@@ -309,6 +310,13 @@
 			<artifactId>solr-solrj</artifactId>
 			<version>${solrj.version}</version>
 		</dependency>
+
+		<!-- Javaee Specification -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>javax.servlet</groupId> -->
+<!-- 			<artifactId>servlet-api</artifactId> -->
+<!-- 			<version>${servlet.api.version}</version> -->
+<!-- 		</dependency> -->
 
 	</dependencies>
 

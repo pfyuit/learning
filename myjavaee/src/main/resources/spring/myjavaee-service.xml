@@ -19,7 +19,7 @@
 	</bean>
 
 	<!-- Configuration for Scanning -->
-	<context:component-scan base-package="com.pfyuit.myjavaee.service"></context:component-scan>
+	<context:component-scan base-package="com.pfyuit.myjavaee.service*"></context:component-scan>
 
 	<!-- Configuration for Destination -->
 	<bean id="testQueue" class="org.apache.activemq.command.ActiveMQQueue">
@@ -41,11 +41,11 @@
 	</bean>
 
 	<!-- Configuration for Message Converter -->
-	<bean id="messageConverter" class="com.pfyuit.myjavaee.service.DefaultMessageConverter">
+	<bean id="messageConverter" class="com.pfyuit.myjavaee.service.messaging.DefaultMessageConverter">
 	</bean>
 
 	<!-- Configuration for Message Consumer -->
-	<bean id="messageConsumer" class="com.pfyuit.myjavaee.service.MessageConsumerImpl">
+	<bean id="messageConsumer" class="com.pfyuit.myjavaee.service.messaging.MessageConsumerImpl">
 	</bean>
 
 	<!-- Configuration for Message Listener -->

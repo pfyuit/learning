@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
 	<!-- Configuration for Scanning -->
-	<context:component-scan base-package="com.pfyuit.myjavaee.dao"></context:component-scan>
+	<context:component-scan base-package="com.pfyuit.myjavaee.dao.jpa"></context:component-scan>
 
 	<!-- Configuration for Myblog Data Source -->
 	<bean id="dataSourceMyblog" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -24,11 +24,11 @@
 		<property name="dataSource" ref="dataSourceMyblog" />
 		<property name="annotatedClasses">
 			<list>
-				<value>com.pfyuit.myjavaee.model.BlogModel</value>
-				<value>com.pfyuit.myjavaee.model.CategoryModel</value>
-				<value>com.pfyuit.myjavaee.model.CommentModel</value>
-				<value>com.pfyuit.myjavaee.model.LinkModel</value>
-				<value>com.pfyuit.myjavaee.model.UserModel</value>
+				<value>com.pfyuit.myjavaee.model.jpa.BlogModel</value>
+				<value>com.pfyuit.myjavaee.model.jpa.CategoryModel</value>
+				<value>com.pfyuit.myjavaee.model.jpa.CommentModel</value>
+				<value>com.pfyuit.myjavaee.model.jpa.LinkModel</value>
+				<value>com.pfyuit.myjavaee.model.jpa.UserModel</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -52,7 +52,7 @@
 
 
 	<!-- Configuration for Scanning -->
-	<context:component-scan base-package="com.pfyuit.myjavaee.mapper"></context:component-scan>
+	<context:component-scan base-package="com.pfyuit.myjavaee.dao.mapper"></context:component-scan>
 
 	<!-- Configuration for Data Source -->
 	<bean id="dataSourcePinche" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -70,7 +70,7 @@
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryPinche" />
-		<property name="basePackage" value="com.pfyuit.myjavaee.mapper" />
+		<property name="basePackage" value="com.pfyuit.myjavaee.dao.mapper" />
 	</bean>
 
 	<bean id="transactionManagerPinche" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

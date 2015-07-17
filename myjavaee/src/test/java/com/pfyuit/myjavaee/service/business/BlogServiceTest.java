@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service;
+package com.pfyuit.myjavaee.service.business;
 
 import static org.junit.Assert.assertNotNull;
 
