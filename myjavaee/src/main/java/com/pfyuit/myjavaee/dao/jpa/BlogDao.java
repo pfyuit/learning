@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.dao;
+package com.pfyuit.myjavaee.dao.jpa;
 
 import java.util.List;
 

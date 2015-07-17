@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.pfyuit.myjavaee.dao.BlogDao;
-import com.pfyuit.myjavaee.dao.LinkDao;
+import com.pfyuit.myjavaee.dao.jpa.BlogDao;
+import com.pfyuit.myjavaee.dao.jpa.LinkDao;
 import com.pfyuit.myjavaee.model.jpa.BlogModel;
 import com.pfyuit.myjavaee.model.jpa.LinkModel;
 

@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.mapper;
+package com.pfyuit.myjavaee.dao.mapper;
 
 import java.util.List;
 

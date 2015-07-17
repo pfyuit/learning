@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.pfyuit.myjavaee.dao.jpa.BlogDao;
 import com.pfyuit.myjavaee.model.jpa.BlogModel;
 
 @RunWith(SpringJUnit4ClassRunner.class)

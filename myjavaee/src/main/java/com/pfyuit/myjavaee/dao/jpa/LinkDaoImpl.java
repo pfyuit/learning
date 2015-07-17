@@ -1,50 +1,43 @@
-package com.pfyuit.myjavaee.dao;
+package com.pfyuit.myjavaee.dao.jpa;
 
-import java.util.List;
-
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
-import com.pfyuit.myjavaee.model.jpa.BlogModel;
+import com.pfyuit.myjavaee.model.jpa.LinkModel;
 
 @Repository
-public class BlogDaoImpl implements BlogDao {
+public class LinkDaoImpl implements LinkDao {
 
 	@Autowired
 	@Qualifier("sessionFactoryMyblog")
 	private SessionFactory sessionFactory;
 
-	public void save(BlogModel model) {
+	@Override
+	public void save(LinkModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.save(model);
 	}
 
-	public void delete(BlogModel model) {
+	@Override
+	public void delete(LinkModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.delete(model);
 	}
 
-	public void update(BlogModel model) {
+	@Override
+	public void update(LinkModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.update(model);
 	}
 
-	public BlogModel findById(int blogId) {
+	@Override
+	public LinkModel findById(int linkId) {
 		Session session = sessionFactory.getCurrentSession();
-		BlogModel result = (BlogModel) session.get(BlogModel.class, blogId);
+		LinkModel result = (LinkModel) session.get(LinkModel.class, linkId);
 		return result;
 	}
 
-	@Override
-	@SuppressWarnings("unchecked")
-	public List<BlogModel> findAll() {
-		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("from BlogModel");
-		List<BlogModel> result = query.list();
-		return result;
-	}
 }
