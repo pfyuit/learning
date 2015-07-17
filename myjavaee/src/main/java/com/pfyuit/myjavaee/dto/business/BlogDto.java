@@ -2,6 +2,11 @@ package com.pfyuit.myjavaee.dto.business;
 
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlRootElement
+@XmlType(name = "BlogDto", namespace = "com.pfyuit.myjavaee")
 public class BlogDto {
 
 	private int blogid;

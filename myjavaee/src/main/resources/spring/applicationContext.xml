@@ -14,6 +14,9 @@
 	<!-- Import Cache Configuration -->
 	<import resource="classpath:/cache/myjavaee-cache.xml" />
 
+	<!-- Import Web Service Configuration -->
+	<import resource="classpath:/webservice/myjavaee-soap-jaxws-server.xml" />
+
 	<!-- Import Service Configuration -->
 	<import resource="classpath:/spring/myjavaee-service.xml" />
 
