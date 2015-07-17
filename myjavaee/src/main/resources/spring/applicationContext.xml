@@ -16,6 +16,7 @@
 
 	<!-- Import Web Service Configuration -->
 	<import resource="classpath:/webservice/myjavaee-soap-jaxws-server.xml" />
+	<import resource="classpath:/webservice/myjavaee-rest-jaxrs-server.xml" />
 
 	<!-- Import Service Configuration -->
 	<import resource="classpath:/spring/myjavaee-service.xml" />

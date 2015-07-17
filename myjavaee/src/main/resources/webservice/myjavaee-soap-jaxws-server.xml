@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:jaxws="http://cxf.apache.org/jaxws"
-	xsi:schemaLocation="http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd"
-	default-lazy-init="true">
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	 http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd 
+     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
 	<description>Apache CXF的 SOAP Web Service配置</description>
 
 	<!-- Configuration for Jaxws Endpoint -->
 	<jaxws:endpoint address="/soap/blogservice">
-		<jaxws:implementor ref="blogService" />
+		<jaxws:implementor ref="blogServiceJaxws" />
 	</jaxws:endpoint>
 
 	<!-- Configuration for Jaxws Bean -->
-	<bean id="blogService" class="com.pfyuit.myjavaee.webservice.soap.jaxws.BlogJaxWsServiceImpl" />
+	<bean id="blogServiceJaxws" class="com.pfyuit.myjavaee.webservice.soap.jaxws.BlogJaxWsServiceImpl" />
 </beans>
