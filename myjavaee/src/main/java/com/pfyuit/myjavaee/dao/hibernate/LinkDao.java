@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.dao.jpa;
+package com.pfyuit.myjavaee.dao.hibernate;
 
 import com.pfyuit.myjavaee.model.jpa.LinkModel;
 
