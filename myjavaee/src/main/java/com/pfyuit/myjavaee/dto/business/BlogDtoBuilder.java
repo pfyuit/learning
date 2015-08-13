@@ -1,6 +1,6 @@
 package com.pfyuit.myjavaee.dto.business;
 
-import com.pfyuit.myjavaee.model.jpa.BlogModel;
+import com.pfyuit.myjavaee.model.hibernate.BlogModel;
 import com.pfyuit.myjavaee.model.mybatis.Blog;
 
 public class BlogDtoBuilder {

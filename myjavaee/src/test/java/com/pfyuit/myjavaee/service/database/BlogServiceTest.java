@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.dao.hibernate;
+package com.pfyuit.myjavaee.service.database;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -12,47 +12,47 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.pfyuit.myjavaee.dao.hibernate.BlogDao;
 import com.pfyuit.myjavaee.model.hibernate.BlogModel;
+import com.pfyuit.myjavaee.service.database.BlogService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/spring/applicationContext.xml" })
 @TransactionConfiguration(transactionManager = "transactionManagerMyblog", defaultRollback = true)
 @Transactional
-public class BlogDaoTest {
+public class BlogServiceTest {
 
 	@Autowired
-	private BlogDao blogDao;
+	private BlogService blogService;
 
 	@Test
 	public void testSave() {
 		BlogModel model = new BlogModel();
 		model.setAuthor("pfyuit");
-		blogDao.save(model);
+		blogService.save(model);
 	};
 
 	@Test
 	public void testDelete() {
-		BlogModel model = blogDao.findById(3);
-		blogDao.delete(model);
+		BlogModel model = blogService.findById(3);
+		blogService.delete(model);
 	};
 
 	@Test
 	public void testUpdate() {
-		BlogModel model = blogDao.findById(3);
+		BlogModel model = blogService.findById(3);
 		model.setContent("content");
-		blogDao.update(model);
+		blogService.update(model);
 	};
 
 	@Test
 	public void testFindById() {
-		BlogModel model = blogDao.findById(3);
+		BlogModel model = blogService.findById(3);
 		assertNotNull(model);
 	};
 
 	@Test
 	public void testFindAll() {
-		List<BlogModel> models = blogDao.findAll();
+		List<BlogModel> models = blogService.findAll();
 		assertNotNull(models);
 	};
 

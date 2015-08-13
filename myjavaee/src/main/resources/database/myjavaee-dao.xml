@@ -24,11 +24,11 @@
 		<property name="dataSource" ref="dataSourceMyblog" />
 		<property name="annotatedClasses">
 			<list>
-				<value>com.pfyuit.myjavaee.model.jpa.BlogModel</value>
-				<value>com.pfyuit.myjavaee.model.jpa.CategoryModel</value>
-				<value>com.pfyuit.myjavaee.model.jpa.CommentModel</value>
-				<value>com.pfyuit.myjavaee.model.jpa.LinkModel</value>
-				<value>com.pfyuit.myjavaee.model.jpa.UserModel</value>
+				<value>com.pfyuit.myjavaee.model.hibernate.BlogModel</value>
+				<value>com.pfyuit.myjavaee.model.hibernate.CategoryModel</value>
+				<value>com.pfyuit.myjavaee.model.hibernate.CommentModel</value>
+				<value>com.pfyuit.myjavaee.model.hibernate.LinkModel</value>
+				<value>com.pfyuit.myjavaee.model.hibernate.UserModel</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

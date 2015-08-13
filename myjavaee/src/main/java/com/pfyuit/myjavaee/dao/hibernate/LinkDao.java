@@ -1,6 +1,6 @@
 package com.pfyuit.myjavaee.dao.hibernate;
 
-import com.pfyuit.myjavaee.model.jpa.LinkModel;
+import com.pfyuit.myjavaee.model.hibernate.LinkModel;
 
 public interface LinkDao {
 
