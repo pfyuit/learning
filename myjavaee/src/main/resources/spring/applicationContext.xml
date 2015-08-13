@@ -21,5 +21,8 @@
 	<!-- Import Service Configuration -->
 	<import resource="classpath:/spring/myjavaee-service.xml" />
 
+	<!-- Import Mail Configuration -->
+	<import resource="classpath:/email/myjavaee-email.xml" />
+
 </beans>
   

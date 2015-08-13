@@ -1,13 +1,13 @@
 ===web===
 spec: servlet, jsp, jstl, el, jsf, websocket, jsonp
-mvc: springmvc
+mvc: springmvc, struts
 layout: sitemesh
 view: freemarker
 
 ===service===
 spec: jaxp, jaxm, jaxr, jaxb, saaj, web service metadata, jaxrpc, jaxws, jaxrs
-soap: cxf
-restful: jersy, springmvc
+soap: cxf(jaxws)
+restful: springmvc, cxf(jaxrs), jersy(jaxrs)
 remoting: hessian
 
 ===enterprise===
