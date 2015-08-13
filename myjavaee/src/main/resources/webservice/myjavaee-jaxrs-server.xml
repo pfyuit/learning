@@ -8,9 +8,9 @@
 	<description>Apache CXF的Restful Web Service配置</description>
 
 	<!-- Configuration for Jaxrs Endpoint -->
-	<jaxrs:server id="serviceContainer" address="/jaxrs">
+	<jaxrs:server id="serviceContainer" address="/rest">
 		<jaxrs:serviceBeans>
-			<ref bean="blogServiceJaxrs" />
+			<ref bean="jaxrsService" />
 		</jaxrs:serviceBeans>
 		<jaxrs:providers>
 			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider" />
@@ -18,5 +18,5 @@
 	</jaxrs:server>
 
 	<!-- Configuration for Jaxrs Bean -->
-	<bean id="blogServiceJaxrs" class="com.pfyuit.myjavaee.webservice.rest.jaxrs.BlogJaxRsService" />
+	<bean id="jaxrsService" class="com.pfyuit.myjavaee.spec.webservice.jaxrs.JaxrsService" />
 </beans>

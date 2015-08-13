@@ -7,8 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/**
+ * Access http://localhost:8080/myjavaee/springmvc/test/xxx to test.
+ * @author yupengfei
+ */
 @Controller
-@RequestMapping(value = { "/rest" })
+@RequestMapping(value = { "/test" })
 public class ApiController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ApiController.class);

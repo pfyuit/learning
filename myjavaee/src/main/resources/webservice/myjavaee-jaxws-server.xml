@@ -9,10 +9,10 @@
 	<description>Apache CXF的 SOAP Web Service配置</description>
 
 	<!-- Configuration for Jaxws Endpoint -->
-	<jaxws:endpoint address="/soap/blogservice">
-		<jaxws:implementor ref="blogServiceJaxws" />
+	<jaxws:endpoint address="/soap/jaxws">
+		<jaxws:implementor ref="jaxwsService" />
 	</jaxws:endpoint>
 
 	<!-- Configuration for Jaxws Bean -->
-	<bean id="blogServiceJaxws" class="com.pfyuit.myjavaee.webservice.soap.jaxws.BlogJaxWsServiceImpl" />
+	<bean id="jaxwsService" class="com.pfyuit.myjavaee.spec.webservice.jaxws.JaxwsServiceImpl" />
 </beans>

@@ -4,7 +4,7 @@ mvc: springmvc, struts
 layout: sitemesh
 view: freemarker
 
-===service===
+===webservice===
 spec: jaxp, jaxm, jaxr, jaxb, saaj, web service metadata, jaxrpc, jaxws, jaxrs
 soap: cxf(jaxws)
 restful: springmvc, cxf(jaxrs), jersy(jaxrs)
