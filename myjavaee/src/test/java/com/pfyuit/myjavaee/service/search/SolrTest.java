@@ -1,6 +1,7 @@
 package com.pfyuit.myjavaee.service.search;
 
 import org.apache.solr.client.solrj.SolrServerException;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ public class SolrTest {
 	private SolrService solrService;
 
 	@Test
+	@Ignore
 	public void searchBlog() throws SolrServerException {
 		solrService.searchBlog("mysql");
 	}
