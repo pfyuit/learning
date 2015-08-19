@@ -28,5 +28,8 @@
 	<!-- Import Mail Configuration -->
 	<import resource="classpath:/email/myjavaee-email.xml" />
 
+	<!-- Import Validation Configuration -->
+	<import resource="classpath:/validation/myjavaee-validation.xml" />
+
 </beans>
   

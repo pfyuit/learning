@@ -19,7 +19,7 @@ public class CassandraConfig {
 	@Value("${cassandra.cluster.contact}")
 	private String clusterEndpoint;
 
-	//@Bean(name = "cassandraSession")
+	@Bean(name = "cassandraSession")
 	public Session cassandraSession() {
 		Cluster cluster = Cluster.builder().addContactPoint(clusterEndpoint).build();
 		
