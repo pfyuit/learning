@@ -42,6 +42,7 @@
 		<spy.memcached.client>2.10.5</spy.memcached.client>
 		<solrj.version>4.10.2</solrj.version>
 		<servlet.api.version>2.5</servlet.api.version>
+		<cassandra.driver.version>2.1.7</cassandra.driver.version>
 	</properties>
 
 	<dependencies>
@@ -347,6 +348,13 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
+		</dependency>
+
+		<!-- Cassandra -->
+		<dependency>
+			<groupId>com.datastax.cassandra</groupId>
+			<artifactId>cassandra-driver-core</artifactId>
+			<version>${cassandra.driver.version}</version>
 		</dependency>
 
 	</dependencies>

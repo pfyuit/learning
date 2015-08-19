@@ -5,21 +5,25 @@
      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
+	<!-- Import Service Configuration -->
+	<import resource="classpath:/spring/myjavaee-service.xml" />
+
 	<!-- Import Dao Configuration -->
-	<import resource="classpath:/database/myjavaee-dao.xml" />
+	<import resource="classpath:/database/rdbms/hibernate/myjavaee-dao-hibernate.xml" />
+	<import resource="classpath:/database/rdbms/mybatis/myjavaee-dao-mybatis.xml" />
+	<import resource="classpath:/database/rdbms/jta/myjavaee-dao-jta.xml" />
+	<import resource="classpath:/database/nosql/cassandra/myjavaee-dao-cassandra.xml" />
 
 	<!-- Import Messaging Configuration -->
 	<import resource="classpath:/messaging/myjavaee-messaging.xml" />
 
 	<!-- Import Cache Configuration -->
-	<import resource="classpath:/cache/myjavaee-cache.xml" />
+	<import resource="classpath:/cache/memcached/myjavaee-cache-memcached.xml" />
+	<import resource="classpath:/cache/redis/myjavaee-cache-redis.xml" />
 
 	<!-- Import Web Service Configuration -->
 	<import resource="classpath:/webservice/myjavaee-jaxws-server.xml" />
 	<import resource="classpath:/webservice/myjavaee-jaxrs-server.xml" />
-
-	<!-- Import Service Configuration -->
-	<import resource="classpath:/spring/myjavaee-service.xml" />
 
 	<!-- Import Mail Configuration -->
 	<import resource="classpath:/email/myjavaee-email.xml" />

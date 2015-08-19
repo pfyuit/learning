@@ -9,9 +9,10 @@
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
-				<value>classpath:/database/jdbc.properties</value>
-				<value>classpath:/cache/memcached.properties</value>
-				<value>classpath:/cache/redis.properties</value>
+				<value>classpath:/database/rdbms/mysql/jdbc.properties</value>
+				<value>classpath:/database/nosql/cassandra/cassandra.properties</value>
+				<value>classpath:/cache/memcached/memcached.properties</value>
+				<value>classpath:/cache/redis/redis.properties</value>
 				<value>classpath:/search/solr.properties</value>
 				<value>classpath:/messaging/message.properties</value>
 			</list>
