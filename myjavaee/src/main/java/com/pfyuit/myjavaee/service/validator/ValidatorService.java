@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.beanvalidator;
+package com.pfyuit.myjavaee.service.validator;
 
 import java.util.Set;
 
@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BeanValidationService<T> {
+public class ValidatorService<T> {
 	
 	@Autowired
 	private Validator validator;

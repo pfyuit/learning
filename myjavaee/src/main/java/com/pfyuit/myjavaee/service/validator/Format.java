@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.beanvalidator;
+package com.pfyuit.myjavaee.service.validator;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

@@ -4,8 +4,8 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.pfyuit.myjavaee.service.beanvalidator.Format;
-import com.pfyuit.myjavaee.service.beanvalidator.Method;
+import com.pfyuit.myjavaee.service.validator.Format;
+import com.pfyuit.myjavaee.service.validator.Method;
 
 public class ApiForm {
 

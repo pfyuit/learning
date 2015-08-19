@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.beanvalidator;
+package com.pfyuit.myjavaee.service.validator;
 
 import java.util.Set;
 
@@ -12,13 +12,14 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.pfyuit.myjavaee.form.business.ApiForm;
+import com.pfyuit.myjavaee.service.validator.ValidatorService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/spring/applicationContext.xml" })
-public class BeanValidatorServiceTest {
+public class ValidatorServiceTest {
 
 	@Autowired
-	private BeanValidationService<ApiForm> beanValidationService;
+	private ValidatorService<ApiForm> beanValidationService;
 
 	@Test
 	public void testValidate() {

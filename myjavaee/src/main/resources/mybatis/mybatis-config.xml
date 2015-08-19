@@ -17,8 +17,4 @@
 		<setting name="mapUnderscoreToCamelCase" value="true" />
 	</settings>
 
-	<typeAliases>
-		<typeAlias alias="Blog" type="com.pfyuit.myjavaee.model.mybatis.Blog" />
-	</typeAliases>
-
 </configuration>

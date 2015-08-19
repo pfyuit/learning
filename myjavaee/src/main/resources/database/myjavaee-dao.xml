@@ -28,7 +28,6 @@
 				<value>com.pfyuit.myjavaee.model.hibernate.CategoryModel</value>
 				<value>com.pfyuit.myjavaee.model.hibernate.CommentModel</value>
 				<value>com.pfyuit.myjavaee.model.hibernate.LinkModel</value>
-				<value>com.pfyuit.myjavaee.model.hibernate.UserModel</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
