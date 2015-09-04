@@ -6,6 +6,31 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
+/**
+ * @author yupengfei
+ *                                                   (I)Iterable
+ *                                                       |
+ *                                                       |
+ *                     			   -------------(I)Collection----------------------------------------------------------------------------------------------------------
+ *                                |                      |                                         |                                                                   |
+ *                                |	     ---------------(A)AbstractCollection----------------------|-------------------------------------------------------            | 
+ *                                |		 |                                                |        |                                                       |           |
+ *                     |--------(I)List--|----------------                      	------|-------(I)Set------------------                                        |----(I)Queue --------------------   	
+ *					   |		  |      |               |                          |     |        |         |            |                                |      |      |                        |
+ * 				       |          |      |               |                          |     |        |         |            |                                |      |      |                        | 
+ *                     |    (A)AbstractList              |                          |    (A)AbstractSet (I)SortedSet      |                                |------|--  (A)AbstractQueue           |            
+ *                     |   |          |                  |                          |     |        |         |            |                                       |            |    |             |
+ *                     |   |          |                  |                          |     |        |         |            |                                       |            |    |          	(I)Deque-----
+ *                     |   |          |                  |                          |     |        |         |            |                                       |            |    |          	|    		|
+ *                ArrayList  (A)AbstractSequentialList   |                          |     |        |   (I)NavigableSet    |                                   (I)BlockingQueue |    |          	|      		LinkedList
+ *                                    |                  |                          |     |        |         |            |             		   |--------------|			   |	|			|			 		
+ *                                LinkedList--------------						    HashSet		   -------- TreeSet       |                        |              |            |    |        (I)BlockingDeque
+ *                                													  |								      |	    ArrayBlockingQueue LinkedBlockingQueue         |              |
+ *                                                                                LinkedHashSet---------------------------                                 	                   |------------- |
+ *                                                                                                                                                                            LinkedBlockingDeque
+ *                                                           
+ *                                
+ */
 public class ListTest {
 
 	public static void main(String[] args) {
