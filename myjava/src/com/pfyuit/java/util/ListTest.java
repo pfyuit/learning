@@ -35,7 +35,7 @@ public class ListTest {
 
 	public static void main(String[] args) {
 		testArrayList();
-
+		testLinkedList();
 	}
 
 	private static void testArrayList() {
@@ -126,7 +126,11 @@ public class ListTest {
 		Object[] objs = list.toArray();
 
 		String[] strs = list.toArray(new String[0]);
-
+	}
+	
+	private static void testLinkedList() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
