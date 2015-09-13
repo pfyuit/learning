@@ -1,4 +1,4 @@
-package com.pfyuit.java.lang;
+package com.pfyuit.java.util.concurrent;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
