@@ -5,17 +5,17 @@
      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-	<!-- Import Service Configuration -->
-	<import resource="classpath:/spring/myjavaee-service.xml" />
+	<!-- Import Base Configuration -->
+	<import resource="classpath:/spring/myjavaee-base.xml" />
 
-	<!-- Import Dao Configuration -->
+	<!-- Import Database Configuration -->
 	<import resource="classpath:/database/rdbms/hibernate/myjavaee-dao-hibernate.xml" />
 	<import resource="classpath:/database/rdbms/mybatis/myjavaee-dao-mybatis.xml" />
 	<import resource="classpath:/database/rdbms/jta/myjavaee-dao-jta.xml" />
 	<import resource="classpath:/database/nosql/cassandra/myjavaee-dao-cassandra.xml" />
 
 	<!-- Import Messaging Configuration -->
-	<import resource="classpath:/messaging/myjavaee-messaging.xml" />
+	<import resource="classpath:/messaging/activemq/myjavaee-messaging-activemq.xml" />
 
 	<!-- Import Cache Configuration -->
 	<import resource="classpath:/cache/memcached/myjavaee-cache-memcached.xml" />

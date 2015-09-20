@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.spec.enterprise.javamail;
+package com.pfyuit.myjavaee.enterprise.javamail;
 
 import javax.mail.Session;
 import javax.mail.internet.MimeBodyPart;

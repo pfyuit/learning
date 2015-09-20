@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.spec.webservice.jaxws;
+package com.pfyuit.myjavaee.webservice.spec.jaxws;
 
 import javax.jws.WebService;
 
