@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.pfyuit.myjavaee.enterprise.javamail.MailService;
-import com.pfyuit.myjavaee.enterprise.javamail.MailServiceImpl;
+import com.pfyuit.myjavaee.enterprise.spec.javamail.MailService;
+import com.pfyuit.myjavaee.enterprise.spec.javamail.MailServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/spring/applicationContext.xml" })

@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.enterprise.javamail;
+package com.pfyuit.myjavaee.enterprise.spec.javamail;
 
 import java.util.Properties;
 

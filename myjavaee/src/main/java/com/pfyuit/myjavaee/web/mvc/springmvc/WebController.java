@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.web.springmvc;
+package com.pfyuit.myjavaee.web.mvc.springmvc;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
