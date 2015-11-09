@@ -1,10 +1,8 @@
-/target
 /.settings
+/target
 /Work
 /.classpath
 /.project
-/192.168.64.3.tm0.epoch
-/192.168.64.3.tm1.epoch
-/tmlog.lck
-/tmlog0.log
-/tmlog1.log
+/*.epoch
+/*.lck
+/tmlog*.log
