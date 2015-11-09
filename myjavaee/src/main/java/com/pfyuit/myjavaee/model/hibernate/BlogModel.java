@@ -3,6 +3,7 @@ package com.pfyuit.myjavaee.model.hibernate;
 import java.sql.Timestamp;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -11,18 +12,37 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+/**
+ * Entity model for JPA/Hibernate.
+ * @author yupengfei
+ */
 @Entity
 @Table(name = "blog")
 public class BlogModel {
 
 	@Id
+	@Column(name = "blogid")
 	private int blogid;
+
+	@Column(name = "title")
 	private String title;
+
+	@Column(name = "author")
 	private String author;
+
+	@Column(name = "createDate")
 	private Timestamp createDate;
+
+	@Column(name = "lastModified")
 	private Timestamp lastModified;
+
+	@Column(name = "content")
 	private String content;
+
+	@Column(name = "isOriginal")
 	private String isOriginal;
+
+	@Column(name = "readCount")
 	private Long readCount;
 
 	@ManyToOne(targetEntity = CategoryModel.class)

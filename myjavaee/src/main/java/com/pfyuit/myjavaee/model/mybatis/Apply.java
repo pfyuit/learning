@@ -2,6 +2,12 @@ package com.pfyuit.myjavaee.model.mybatis;
 
 import java.sql.Timestamp;
 
+/**
+ * Domain class for MyBatis. The framework can automatically convert the snake
+ * case fields (from MySQL) into camel case once we configure
+ * mapUnderscoreToCamelCase in MyBatis configuration files.
+ * @author yupengfei
+ */
 public class Apply {
 
 	private int applyId;

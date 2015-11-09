@@ -2,6 +2,7 @@ package com.pfyuit.myjavaee.model.hibernate;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -9,17 +10,25 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+/**
+ * Entity model for JPA/Hibernate.
+ * @author yupengfei
+ */
 @Entity
 @Table(name = "comment")
 public class CommentModel {
 
 	@Id
+	@Column(name = "commentid")
 	private int commentid;
 
+	@Column(name = "createTime")
 	private Timestamp createTime;
 
+	@Column(name = "author")
 	private String author;
 
+	@Column(name = "content")
 	private String content;
 
 	@ManyToOne(targetEntity = BlogModel.class, fetch = FetchType.EAGER)

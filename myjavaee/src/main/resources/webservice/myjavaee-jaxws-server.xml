@@ -14,5 +14,5 @@
 	</jaxws:endpoint>
 
 	<!-- Configuration for Jaxws Bean -->
-	<bean id="jaxwsService" class="com.pfyuit.myjavaee.spec.webservice.jaxws.JaxwsServiceImpl" />
+	<bean id="jaxwsService" class="com.pfyuit.myjavaee.webservice.spec.jaxws.JaxwsServiceImpl" />
 </beans>

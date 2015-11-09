@@ -8,8 +8,12 @@ import org.springframework.stereotype.Service;
 
 import com.pfyuit.myjavaee.model.messaging.Notify;
 
+/**
+ * Message producer service implementation.
+ * @author yupengfei
+ */
 @Service
-public class MessageProducerImpl implements MessageProducer {
+public class MessageProducerServiceImpl implements MessageProducerService {
 
 	@Autowired
 	private JmsTemplate jmsTemplate;

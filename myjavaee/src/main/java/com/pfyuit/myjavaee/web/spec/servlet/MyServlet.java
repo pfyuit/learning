@@ -21,6 +21,12 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * A classic Servlet defined in Java EE specifications. In old version Java EE,
+ * you can also configure it in the web.xml, but we can use annotations since
+ * Servlet 3.0
+ * @author yupengfei
+ */
 @WebServlet("/MyServlet")
 @MultipartConfig
 public class MyServlet extends HttpServlet {
@@ -51,7 +57,8 @@ public class MyServlet extends HttpServlet {
 		return null;
 	}
 
-	// protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	// protected void service(HttpServletRequest request, HttpServletResponse
+	// response) throws ServletException, IOException {
 	// logger.info("service");
 	// }
 
@@ -145,7 +152,8 @@ public class MyServlet extends HttpServlet {
 			response.setLocale(Locale.US);
 			response.setStatus(HttpServletResponse.SC_OK);
 			// response.sendRedirect("http://www.google.com");
-			// response.sendError(HttpServletResponse.SC_BAD_REQUEST, "http://www.google.com");
+			// response.sendError(HttpServletResponse.SC_BAD_REQUEST,
+			// "http://www.google.com");
 
 			PrintWriter ps = response.getWriter();
 			ps.write("hello");
@@ -244,7 +252,8 @@ public class MyServlet extends HttpServlet {
 			response.setLocale(Locale.US);
 			response.setStatus(HttpServletResponse.SC_OK);
 			// response.sendRedirect("http://www.google.com");
-			// response.sendError(HttpServletResponse.SC_BAD_REQUEST, "http://www.google.com");
+			// response.sendError(HttpServletResponse.SC_BAD_REQUEST,
+			// "http://www.google.com");
 
 			PrintWriter ps = response.getWriter();
 			ps.write("hello");

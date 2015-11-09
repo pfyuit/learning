@@ -19,9 +19,15 @@ import javax.servlet.http.HttpSessionListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * A classic Listener defined in Java EE specifications. In old version Java EE,
+ * you can also configure it in the web.xml, but we can use annotations since
+ * Servlet 3.0.
+ * @author yupengfei
+ */
 @WebListener
-public class MyListener implements ServletContextListener, ServletContextAttributeListener, HttpSessionListener, HttpSessionAttributeListener, HttpSessionActivationListener,
-		HttpSessionBindingListener, ServletRequestListener, ServletRequestAttributeListener {
+public class MyListener implements ServletContextListener, ServletContextAttributeListener, HttpSessionListener, HttpSessionAttributeListener,
+		HttpSessionActivationListener, HttpSessionBindingListener, ServletRequestListener, ServletRequestAttributeListener {
 
 	private Logger logger = LoggerFactory.getLogger(MyListener.class);
 

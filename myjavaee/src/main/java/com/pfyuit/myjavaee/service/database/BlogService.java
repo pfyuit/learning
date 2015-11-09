@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.pfyuit.myjavaee.model.hibernate.BlogModel;
 
+/**
+ * Database service interface for Hibernate, including transactions.
+ * @author yupengfei
+ */
 public interface BlogService {
 
 	public abstract void save(BlogModel model);

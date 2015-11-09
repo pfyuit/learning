@@ -1,5 +1,9 @@
 package com.pfyuit.myjavaee.dao.cassandra;
 
+/**
+ * User Dao interface for Cassandra client.
+ * @author yupengfei
+ */
 public interface UsersDao {
 
 	public abstract void createKeySpace();

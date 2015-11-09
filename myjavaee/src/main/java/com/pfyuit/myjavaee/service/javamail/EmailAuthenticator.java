@@ -3,6 +3,10 @@ package com.pfyuit.myjavaee.service.javamail;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 
+/**
+ * Email authenticator wrapper class.
+ * @author yupengfei
+ */
 public class EmailAuthenticator extends Authenticator {
 
 	private String username;

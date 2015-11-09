@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.pfyuit.myjavaee.model.hibernate.BlogModel;
 
+/**
+ * Blog Dao interface for Hibernate.
+ * @author yupengfei
+ */
 public interface BlogDao {
 
 	public abstract void save(BlogModel model);

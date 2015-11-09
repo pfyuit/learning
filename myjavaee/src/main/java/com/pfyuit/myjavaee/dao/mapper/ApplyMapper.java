@@ -10,6 +10,10 @@ import org.apache.ibatis.annotations.Update;
 
 import com.pfyuit.myjavaee.model.mybatis.Apply;
 
+/**
+ * Apply Dao interface for MyBatis.
+ * @author yupengfei
+ */
 public interface ApplyMapper {
 
 	@Insert("INSERT INTO apply(activity_id,owner_id,status,apply_time,last_modify,owner_name) VALUES(#{activityId},#{ownerId},#{status},#{applyTime},#{lastModify},#{ownerName})")

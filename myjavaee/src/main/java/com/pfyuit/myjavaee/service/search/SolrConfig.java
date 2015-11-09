@@ -3,6 +3,11 @@ package com.pfyuit.myjavaee.service.search;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Configuration bean for solrJ. It will read parameters from the external
+ * properties file.
+ * @author yupengfei
+ */
 @Configuration
 public class SolrConfig {
 

@@ -1,16 +1,26 @@
 package com.pfyuit.myjavaee.model.hibernate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Entity model for JPA/Hibernate.
+ * @author yupengfei
+ */
 @Entity
 @Table(name = "link")
 public class LinkModel {
 
 	@Id
+	@Column(name = "linkid")
 	private int linkid;
+
+	@Column(name = "name")
 	private String name;
+
+	@Column(name = "url")
 	private String url;
 
 	public String getName() {

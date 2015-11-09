@@ -9,7 +9,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.pfyuit.myjavaee.dao.mapper.ApplyMapper;
 import com.pfyuit.myjavaee.model.mybatis.Apply;
 
+/**
+ * Database service implement for MyBatis, including transactions.
+ * @author yupengfei
+ */
 @Service
+@Transactional(value = "pinche")
 public class ApplyServiceImpl implements ApplyService {
 
 	@Autowired

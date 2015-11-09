@@ -18,6 +18,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+/**
+ * Java mail service implementation.
+ * @author yupengfei
+ */
 @Service
 public class MailServiceImpl implements MailService {
 
@@ -59,7 +63,8 @@ public class MailServiceImpl implements MailService {
 	}
 
 	@Override
-	public MimeMessage createMessage(Session session, String from, String to, String subject, String body, String image, String... attachments) throws Exception {
+	public MimeMessage createMessage(Session session, String from, String to, String subject, String body, String image, String... attachments)
+			throws Exception {
 		MimeMessage msg = new MimeMessage(session);
 		msg.setFrom(new InternetAddress(from));
 		msg.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
@@ -105,7 +110,7 @@ public class MailServiceImpl implements MailService {
 	public static void main(String[] args) throws Exception {
 		MailService mailService = new MailServiceImpl();
 
-		String host = "mx1.qq.com"; //用了mx1.qq.com貌似port/ssl/username/password/auth都被忽略了
+		String host = "mx1.qq.com"; // 用了mx1.qq.com貌似port/ssl/username/password/auth都被忽略了
 		int port = 465;
 		boolean ssl = true;
 		String username = "";

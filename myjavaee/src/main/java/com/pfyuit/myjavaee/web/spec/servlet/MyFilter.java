@@ -13,6 +13,12 @@ import javax.servlet.annotation.WebFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * A classic Filter defined in Java EE specifications. In old version Java EE,
+ * you can also configure it in the web.xml, but we can use annotations since
+ * Servlet 3.0.
+ * @author yupengfei
+ */
 @WebFilter("/*")
 public class MyFilter implements Filter {
 
@@ -37,7 +43,7 @@ public class MyFilter implements Filter {
 		chain.doFilter(request, response);
 
 		long end = System.currentTimeMillis();
-		logger.info("Http transcation costs {}ms", end - start);
+		logger.info("Http transcation costs {} ms", end - start);
 	}
 
 }

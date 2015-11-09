@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
- * Access http://localhost:8080/myjavaee/springmvc/web/index to check the index web page.
+ * Spring MVC controller. It typically used in the Java web design. Access
+ * http://localhost:8080/myjavaee/springmvc/web/index to check the index web
+ * page.
  * @author yupengfei
  */
 @Controller

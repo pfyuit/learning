@@ -12,6 +12,10 @@ import org.springframework.stereotype.Service;
 
 import com.pfyuit.myjavaee.model.search.SearchItem;
 
+/**
+ * Solr search service implementation.
+ * @author yupengfei
+ */
 @Service
 public class SolrServiceImpl implements SolrService {
 

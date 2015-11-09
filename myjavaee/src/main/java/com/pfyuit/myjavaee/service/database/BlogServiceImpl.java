@@ -11,7 +11,12 @@ import com.pfyuit.myjavaee.dao.hibernate.LinkDao;
 import com.pfyuit.myjavaee.model.hibernate.BlogModel;
 import com.pfyuit.myjavaee.model.hibernate.LinkModel;
 
+/**
+ * Database service implement for Hibernate, including transactions.
+ * @author yupengfei
+ */
 @Service
+@Transactional(value = "myblog")
 public class BlogServiceImpl implements BlogService {
 
 	@Autowired
@@ -72,6 +77,8 @@ public class BlogServiceImpl implements BlogService {
 		blogDao.delete(model);
 
 		LinkModel model1 = linkDao.findById(1);
+		model1.setName("link");
+		model1.setUrl("url");
 		throw new RuntimeException("");
 	}
 
@@ -83,6 +90,8 @@ public class BlogServiceImpl implements BlogService {
 		blogDao.update(model);
 
 		LinkModel model1 = linkDao.findById(1);
+		model1.setName("link");
+		model1.setUrl("url");
 		throw new RuntimeException("");
 	}
 
@@ -90,7 +99,12 @@ public class BlogServiceImpl implements BlogService {
 	@Transactional(value = "myblog", readOnly = true)
 	public void multiFindById() {
 		BlogModel model = blogDao.findById(3);
+		model.setAuthor("author");
+
 		LinkModel model1 = linkDao.findById(1);
+		model1.setName("link");
+		model1.setUrl("url");
+		throw new RuntimeException("");
 	}
 
 }

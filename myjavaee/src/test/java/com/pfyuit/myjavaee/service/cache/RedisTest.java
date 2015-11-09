@@ -15,12 +15,12 @@ public class RedisTest {
 
 	@Test
 	public void testSet() {
-		redisService.testSet("key1", "value1");
+		redisService.stringSet("key1", "value1");
 	}
 
 	@Test
 	public void testGet() {
-		redisService.testGet("key1");
+		redisService.stringGet("key1");
 	}
 
 	@Test
@@ -30,17 +30,17 @@ public class RedisTest {
 
 	@Test
 	public void testListInsert() {
-		redisService.testListInsert("key2", "value1");
-		redisService.testListInsert("key2", "value2");
+		redisService.listListInsert("key2", "value1");
+		redisService.listListInsert("key2", "value2");
 	}
 
 	@Test
 	public void testListDelete() {
-		redisService.testListDelete("key2", 0, "value1");
+		redisService.listDelete("key2", 0, "value1");
 	}
 
 	@Test
 	public void testListGetAll() {
-		redisService.testListGetAll("key2");
+		redisService.listGetAll("key2");
 	}
 }

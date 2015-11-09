@@ -11,9 +11,14 @@ import javax.validation.ValidatorFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * Validator service to valiate the form.
+ * @author yupengfei
+ * @param <T>
+ */
 @Service
 public class ValidatorService<T> {
-	
+
 	@Autowired
 	private Validator validator;
 

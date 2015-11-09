@@ -2,6 +2,10 @@ package com.pfyuit.myjavaee.form.business;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+/**
+ * Login form with bean validation (JSR-303).
+ * @author yupengfei
+ */
 public class LoginForm {
 
 	@NotEmpty

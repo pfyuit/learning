@@ -11,6 +11,10 @@ import org.springframework.stereotype.Repository;
 
 import com.pfyuit.myjavaee.model.hibernate.BlogModel;
 
+/**
+ * Blog Dao implement for Hibernate.
+ * @author yupengfei
+ */
 @Repository
 public class BlogDaoImpl implements BlogDao {
 

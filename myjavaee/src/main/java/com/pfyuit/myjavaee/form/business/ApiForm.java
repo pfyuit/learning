@@ -7,6 +7,10 @@ import org.hibernate.validator.constraints.NotEmpty;
 import com.pfyuit.myjavaee.service.validator.Format;
 import com.pfyuit.myjavaee.service.validator.Method;
 
+/**
+ * Api form with bean validation (JSR-303).
+ * @author yupengfei
+ */
 public class ApiForm {
 
 	@NotNull(message = "Category name can not be null")

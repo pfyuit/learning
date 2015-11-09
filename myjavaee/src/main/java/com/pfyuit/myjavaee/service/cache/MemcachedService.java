@@ -1,11 +1,15 @@
 package com.pfyuit.myjavaee.service.cache;
 
+/**
+ * Interface for Memcached client.
+ * @author yupengfei
+ */
 public interface MemcachedService {
 
-	public abstract void testSet(String key, String value);
+	public abstract void set(String key, String value);
 
-	public abstract String testGet(String key);
+	public abstract String get(String key);
 
-	public abstract void testDelete(String key);
+	public abstract void delete(String key);
 
 }

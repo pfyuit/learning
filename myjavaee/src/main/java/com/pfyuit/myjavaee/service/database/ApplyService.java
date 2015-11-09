@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.pfyuit.myjavaee.model.mybatis.Apply;
 
+/**
+ * Database service interface for MyBatis, including transactions.
+ * @author yupengfei
+ */
 public interface ApplyService {
 
 	public abstract void save(Apply model);

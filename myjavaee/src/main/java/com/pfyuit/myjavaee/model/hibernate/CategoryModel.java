@@ -7,15 +7,22 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Entity model for JPA/Hibernate.
+ * @author yupengfei
+ */
 @Entity
 @Table(name = "category")
 public class CategoryModel {
 
 	@Id
+	@Column(name = "categoryid")
 	private int categoryid;
 
+	@Column(name = "name")
 	private String name;
 
+	@Column(name = "createTime")
 	private Timestamp createTime;
 
 	@Column(name = "sort_id")

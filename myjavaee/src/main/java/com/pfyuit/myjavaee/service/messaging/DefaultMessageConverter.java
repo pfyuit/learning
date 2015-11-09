@@ -12,6 +12,10 @@ import org.springframework.stereotype.Component;
 
 import com.pfyuit.myjavaee.model.messaging.Notify;
 
+/**
+ * Default JMS message converter to serializable and deserializable MQ messages.
+ * @author yupengfei
+ */
 @Component
 public class DefaultMessageConverter implements MessageConverter {
 

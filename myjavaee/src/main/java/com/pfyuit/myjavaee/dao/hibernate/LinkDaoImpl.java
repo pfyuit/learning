@@ -8,6 +8,10 @@ import org.springframework.stereotype.Repository;
 
 import com.pfyuit.myjavaee.model.hibernate.LinkModel;
 
+/**
+ * Link Dao implement for Hibernate.
+ * @author yupengfei
+ */
 @Repository
 public class LinkDaoImpl implements LinkDao {
 

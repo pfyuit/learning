@@ -12,6 +12,10 @@ import com.datastax.driver.core.Row;
 import com.datastax.driver.core.Session;
 import com.datastax.driver.core.querybuilder.QueryBuilder;
 
+/**
+ * User Dao implement for Cassandra client.
+ * @author yupengfei
+ */
 @Service
 public class UsersDaoImpl implements UsersDao {
 

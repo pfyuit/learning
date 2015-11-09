@@ -15,16 +15,16 @@ public class MemcachedTest {
 
 	@Test
 	public void testSet() {
-		memcachedService.testSet("key1", "value1");
+		memcachedService.set("key1", "value1");
 	}
 
 	@Test
 	public void testGet() {
-		memcachedService.testGet("key1");
+		memcachedService.get("key1");
 	}
 
 	@Test
 	public void testDelete() {
-		memcachedService.testDelete("key1");
+		memcachedService.delete("key1");
 	}
 }

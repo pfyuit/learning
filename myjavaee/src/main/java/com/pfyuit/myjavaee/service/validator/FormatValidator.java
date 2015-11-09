@@ -1,13 +1,23 @@
 package com.pfyuit.myjavaee.service.validator;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+/**
+ * Validator of format field in the form.
+ * @author yupengfei
+ */
 public class FormatValidator implements ConstraintValidator<Format, String> {
 
-	String[] methods = new String[] { "XML", "JSON" };
+	private static final List<String> VALID_FORMATS;
+
+	static {
+		VALID_FORMATS = Collections.unmodifiableList(Arrays.asList(new String[] { "XML", "JSON" }));
+	}
 
 	@Override
 	public void initialize(Format constraintAnnotation) {
@@ -15,7 +25,7 @@ public class FormatValidator implements ConstraintValidator<Format, String> {
 
 	@Override
 	public boolean isValid(String value, ConstraintValidatorContext context) {
-		return Arrays.asList(methods).contains(value);
+		return VALID_FORMATS.contains(value);
 	}
 
 }

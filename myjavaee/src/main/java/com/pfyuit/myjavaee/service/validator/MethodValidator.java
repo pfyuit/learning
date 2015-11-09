@@ -1,13 +1,23 @@
 package com.pfyuit.myjavaee.service.validator;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+/**
+ * Validator of method field in the form.
+ * @author yupengfei
+ */
 public class MethodValidator implements ConstraintValidator<Method, String> {
 
-	String[] methods = new String[] { "GET", "POST", "DELETE", "PUT" };
+	private static final List<String> VALID_METHODS;
+
+	static {
+		VALID_METHODS = Collections.unmodifiableList(Arrays.asList(new String[] { "GET", "POST", "DELETE", "PUT" }));
+	}
 
 	@Override
 	public void initialize(Method constraintAnnotation) {
@@ -15,7 +25,7 @@ public class MethodValidator implements ConstraintValidator<Method, String> {
 
 	@Override
 	public boolean isValid(String value, ConstraintValidatorContext context) {
-		return Arrays.asList(methods).contains(value);
+		return VALID_METHODS.contains(value);
 	}
 
 }

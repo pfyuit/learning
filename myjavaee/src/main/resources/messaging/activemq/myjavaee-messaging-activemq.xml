@@ -29,7 +29,7 @@
 	</bean>
 
 	<!-- Configuration for Message Consumer -->
-	<bean id="messageConsumer" class="com.pfyuit.myjavaee.service.messaging.MessageConsumerImpl">
+	<bean id="messageConsumer" class="com.pfyuit.myjavaee.service.messaging.MessageConsumerServiceImpl">
 	</bean>
 
 	<!-- Configuration for Message Listener -->

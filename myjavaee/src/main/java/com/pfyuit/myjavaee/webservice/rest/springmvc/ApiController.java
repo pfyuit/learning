@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * Access http://localhost:8080/myjavaee/springmvc/test/xxx to test.
+ * Spring MVC controller, can be used in RESTful web service design. Access
+ * http://localhost:8080/myjavaee/springmvc/test/xxx to test.
  * @author yupengfei
  */
 @Controller
