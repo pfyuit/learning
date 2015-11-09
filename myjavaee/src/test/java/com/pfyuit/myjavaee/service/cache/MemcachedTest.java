@@ -14,17 +14,28 @@ public class MemcachedTest {
 	private MemcachedService memcachedService;
 
 	@Test
+	public void testCheck() {
+		memcachedService.check();
+	}
+
+	@Test
 	public void testSet() {
 		memcachedService.set("key1", "value1");
+		memcachedService.set("key2", "value2");
+		memcachedService.set("anexamplekey", "value2");
 	}
 
 	@Test
 	public void testGet() {
 		memcachedService.get("key1");
+		memcachedService.get("key2");
+		memcachedService.get("anexamplekey");
 	}
 
 	@Test
 	public void testDelete() {
 		memcachedService.delete("key1");
+		memcachedService.delete("key2");
+		memcachedService.delete("anexamplekey");
 	}
 }

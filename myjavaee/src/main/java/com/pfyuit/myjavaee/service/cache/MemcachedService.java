@@ -5,6 +5,8 @@ package com.pfyuit.myjavaee.service.cache;
  * @author yupengfei
  */
 public interface MemcachedService {
+	
+	public abstract void check();
 
 	public abstract void set(String key, String value);
 
