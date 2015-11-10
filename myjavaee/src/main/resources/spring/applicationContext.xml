@@ -13,6 +13,7 @@
 	<import resource="classpath:/database/rdbms/mybatis/myjavaee-dao-mybatis.xml" />
 	<import resource="classpath:/database/rdbms/jta/myjavaee-dao-jta.xml" />
 	<import resource="classpath:/database/nosql/cassandra/myjavaee-dao-cassandra.xml" />
+	<import resource="classpath:/database/nosql/mongodb/myjavaee-dao-mongodb.xml" />
 
 	<!-- Import Messaging Configuration -->
 	<import resource="classpath:/messaging/activemq/myjavaee-messaging-activemq.xml" />

@@ -12,6 +12,7 @@
 				<!-- Database Configuration -->
 				<value>classpath:/database/rdbms/mysql/mysql.properties</value>
 				<value>classpath:/database/nosql/cassandra/cassandra.properties</value>
+				<value>classpath:/database/nosql/mongodb/mongodb.properties</value>
 
 				<!-- Cache Configuration -->
 				<value>classpath:/cache/memcached/memcached.properties</value>
