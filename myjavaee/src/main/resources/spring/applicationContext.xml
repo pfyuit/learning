@@ -31,5 +31,8 @@
 	<!-- Import Validation Configuration -->
 	<import resource="classpath:/validation/myjavaee-validation.xml" />
 
+	<!-- Import Schedule Configuration -->
+	<import resource="classpath:/schedule/quartz/myjavaee-schedule-quartz.xml" />
+
 </beans>
   

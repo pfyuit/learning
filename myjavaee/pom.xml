@@ -45,6 +45,7 @@
 		<solrj.version>4.10.2</solrj.version>
 		<servlet.api.version>2.5</servlet.api.version>
 		<cassandra.driver.version>2.1.7</cassandra.driver.version>
+		<quartz.version>2.2.2</quartz.version>
 	</properties>
 
 	<dependencies>
@@ -368,6 +369,13 @@
 			<groupId>com.datastax.cassandra</groupId>
 			<artifactId>cassandra-driver-core</artifactId>
 			<version>${cassandra.driver.version}</version>
+		</dependency>
+
+		<!-- Quartz -->
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>${quartz.version}</version>
 		</dependency>
 
 	</dependencies>
