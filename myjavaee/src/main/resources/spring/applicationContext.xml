@@ -16,7 +16,7 @@
 	<import resource="classpath:/database/rdbms/hibernate/myjavaee-database-rdbms-hibernate.xml" />
 	<import resource="classpath:/database/rdbms/mybatis/myjavaee-database-rdbms-mybatis.xml" />
 	<import resource="classpath:/database/rdbms/jta/myjavaee-database-rdbms-jta.xml" />
-	<!-- <import resource="classpath:/database/nosql/cassandra/myjavaee-database-nosql-cassandra.xml" /> -->
+	<import resource="classpath:/database/nosql/cassandra/myjavaee-database-nosql-cassandra.xml" />
 	<import resource="classpath:/database/nosql/mongodb/myjavaee-database-nosql-mongodb.xml" />
 
 	<!-- Import EMail Configuration -->
