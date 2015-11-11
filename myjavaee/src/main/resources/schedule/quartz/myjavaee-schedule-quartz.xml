@@ -6,7 +6,7 @@
      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
 	<!-- Configuration for Scanning -->
-	<context:component-scan base-package="com.pfyuit.myjavaee.service.schedule"></context:component-scan>
+	<context:component-scan base-package="com.pfyuit.myjavaee.service.schedule.quartz"></context:component-scan>
 
 	<!-- Configuration for Job Detail -->
 	<bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"

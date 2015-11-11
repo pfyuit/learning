@@ -8,32 +8,35 @@
 	<!-- Import Base Configuration -->
 	<import resource="classpath:/spring/myjavaee-base.xml" />
 
-	<!-- Import Database Configuration -->
-	<import resource="classpath:/database/rdbms/hibernate/myjavaee-dao-hibernate.xml" />
-	<import resource="classpath:/database/rdbms/mybatis/myjavaee-dao-mybatis.xml" />
-	<import resource="classpath:/database/rdbms/jta/myjavaee-dao-jta.xml" />
-	<import resource="classpath:/database/nosql/cassandra/myjavaee-dao-cassandra.xml" />
-	<import resource="classpath:/database/nosql/mongodb/myjavaee-dao-mongodb.xml" />
-
-	<!-- Import Messaging Configuration -->
-	<import resource="classpath:/messaging/activemq/myjavaee-messaging-activemq.xml" />
-
 	<!-- Import Cache Configuration -->
 	<import resource="classpath:/cache/memcached/myjavaee-cache-memcached.xml" />
 	<import resource="classpath:/cache/redis/myjavaee-cache-redis.xml" />
 
-	<!-- Import Web Service Configuration -->
-	<import resource="classpath:/webservice/myjavaee-jaxws-server.xml" />
-	<import resource="classpath:/webservice/myjavaee-jaxrs-server.xml" />
+	<!-- Import Database Configuration -->
+	<import resource="classpath:/database/rdbms/hibernate/myjavaee-database-rdbms-hibernate.xml" />
+	<import resource="classpath:/database/rdbms/mybatis/myjavaee-database-rdbms-mybatis.xml" />
+	<import resource="classpath:/database/rdbms/jta/myjavaee-database-rdbms-jta.xml" />
+	<!-- <import resource="classpath:/database/nosql/cassandra/myjavaee-database-nosql-cassandra.xml" /> -->
+	<import resource="classpath:/database/nosql/mongodb/myjavaee-database-nosql-mongodb.xml" />
 
-	<!-- Import Mail Configuration -->
-	<import resource="classpath:/email/myjavaee-email.xml" />
+	<!-- Import EMail Configuration -->
+	<import resource="classpath:/email/javamail/myjavaee-email-javamail.xml" />
 
-	<!-- Import Validation Configuration -->
-	<import resource="classpath:/validation/myjavaee-validation.xml" />
+	<!-- Import Messaging Configuration -->
+	<!-- <import resource="classpath:/messaging/activemq/myjavaee-messaging-activemq.xml" /> -->
 
 	<!-- Import Schedule Configuration -->
 	<import resource="classpath:/schedule/quartz/myjavaee-schedule-quartz.xml" />
+
+	<!-- Import Search Configuration -->
+	<import resource="classpath:/search/solr/myjavaee-search-solr.xml" />
+
+	<!-- Import Validation Configuration -->
+	<import resource="classpath:/validation/beanvalidation/myjavaee-validation-beanvalidation.xml" />
+
+	<!-- Import Web Service Configuration -->
+	<import resource="classpath:/webservice/myjavaee-jaxws-server.xml" />
+	<import resource="classpath:/webservice/myjavaee-jaxrs-server.xml" />
 
 </beans>
   
