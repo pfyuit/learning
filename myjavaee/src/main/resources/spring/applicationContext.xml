@@ -12,6 +12,9 @@
 	<import resource="classpath:/cache/memcached/myjavaee-cache-memcached.xml" />
 	<import resource="classpath:/cache/redis/myjavaee-cache-redis.xml" />
 
+	<!-- Import Coordinate Configuration -->
+	<import resource="classpath:/coordinate/zookeeper/myjavaee-coordinate-zookeeper.xml" />
+
 	<!-- Import Database Configuration -->
 	<import resource="classpath:/database/rdbms/hibernate/myjavaee-database-rdbms-hibernate.xml" />
 	<import resource="classpath:/database/rdbms/mybatis/myjavaee-database-rdbms-mybatis.xml" />
