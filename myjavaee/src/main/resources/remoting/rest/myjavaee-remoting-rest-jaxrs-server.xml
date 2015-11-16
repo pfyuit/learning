@@ -18,5 +18,5 @@
 	</jaxrs:server>
 
 	<!-- Configuration for Jaxrs Bean -->
-	<bean id="jaxrsService" class="com.pfyuit.myjavaee.webservice.spec.jaxrs.JaxrsService" />
+	<bean id="jaxrsService" class="com.pfyuit.myjavaee.remoting.rest.jaxrs.JaxrsService" />
 </beans>

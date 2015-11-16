@@ -46,6 +46,7 @@
 		<servlet.api.version>2.5</servlet.api.version>
 		<cassandra.driver.version>2.1.7</cassandra.driver.version>
 		<quartz.version>2.2.2</quartz.version>
+		<dubbo.version>2.5.3</dubbo.version>
 	</properties>
 
 	<dependencies>
@@ -377,6 +378,13 @@
 			<artifactId>quartz</artifactId>
 			<version>${quartz.version}</version>
 		</dependency>
+
+		<!-- Dubbo -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.alibaba</groupId> -->
+<!-- 			<artifactId>dubbo</artifactId> -->
+<!-- 			<version>${dubbo.version}</version> -->
+<!-- 		</dependency> -->
 
 	</dependencies>
 

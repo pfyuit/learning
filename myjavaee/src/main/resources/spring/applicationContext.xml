@@ -13,13 +13,13 @@
 	<import resource="classpath:/cache/redis/myjavaee-cache-redis.xml" />
 
 	<!-- Import Coordinate Configuration -->
-	<import resource="classpath:/coordinate/zookeeper/myjavaee-coordinate-zookeeper.xml" />
+	<!-- <import resource="classpath:/coordinate/zookeeper/myjavaee-coordinate-zookeeper.xml" /> -->
 
 	<!-- Import Database Configuration -->
 	<import resource="classpath:/database/rdbms/hibernate/myjavaee-database-rdbms-hibernate.xml" />
 	<import resource="classpath:/database/rdbms/mybatis/myjavaee-database-rdbms-mybatis.xml" />
 	<import resource="classpath:/database/rdbms/jta/myjavaee-database-rdbms-jta.xml" />
-	<import resource="classpath:/database/nosql/cassandra/myjavaee-database-nosql-cassandra.xml" />
+	<!-- <import resource="classpath:/database/nosql/cassandra/myjavaee-database-nosql-cassandra.xml" /> -->
 	<import resource="classpath:/database/nosql/mongodb/myjavaee-database-nosql-mongodb.xml" />
 
 	<!-- Import EMail Configuration -->
@@ -27,6 +27,11 @@
 
 	<!-- Import Messaging Configuration -->
 	<!-- <import resource="classpath:/messaging/activemq/myjavaee-messaging-activemq.xml" /> -->
+
+	<!-- Import Remoting Configuration -->
+	<import resource="classpath:/remoting/soap/myjavaee-remoting-soap-jaxws-server.xml" />
+	<import resource="classpath:/remoting/rest/myjavaee-remoting-rest-jaxrs-server.xml" />
+	<!-- <import resource="classpath:/remoting/rpc/dubbo/myjavaee-remoting-rpc-dubbo.xml" /> -->
 
 	<!-- Import Schedule Configuration -->
 	<import resource="classpath:/schedule/quartz/myjavaee-schedule-quartz.xml" />
@@ -37,9 +42,6 @@
 	<!-- Import Validation Configuration -->
 	<import resource="classpath:/validation/beanvalidation/myjavaee-validation-beanvalidation.xml" />
 
-	<!-- Import Web Service Configuration -->
-	<import resource="classpath:/webservice/myjavaee-jaxws-server.xml" />
-	<import resource="classpath:/webservice/myjavaee-jaxrs-server.xml" />
 
 </beans>
   

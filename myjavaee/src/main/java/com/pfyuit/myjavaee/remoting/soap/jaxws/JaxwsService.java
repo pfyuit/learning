@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.webservice.spec.jaxws;
+package com.pfyuit.myjavaee.remoting.soap.jaxws;
 
 import javax.jws.WebService;
 

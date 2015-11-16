@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.webservice.spec.jaxrs;
+package com.pfyuit.myjavaee.remoting.rest.jaxrs;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

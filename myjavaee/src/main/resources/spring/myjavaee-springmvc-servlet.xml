@@ -10,7 +10,7 @@
 
 	<!-- Configuration for Scanning -->
 	<context:component-scan base-package="com.pfyuit.myjavaee.web.springmvc" />
-	<context:component-scan base-package="com.pfyuit.myjavaee.webservice.rest.springmvc" />
+	<context:component-scan base-package="com.pfyuit.myjavaee.remoting.rest.springmvc" />
 	<mvc:annotation-driven />
 
 	<!-- Configuration for Message Converter -->
