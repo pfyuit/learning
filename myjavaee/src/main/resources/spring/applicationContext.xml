@@ -32,6 +32,7 @@
 	<import resource="classpath:/remoting/soap/jaxws/myjavaee-remoting-soap-jaxws.xml" />
 	<import resource="classpath:/remoting/rest/jaxrs/myjavaee-remoting-rest-jaxrs.xml" />
 	<!-- <import resource="classpath:/remoting/rpc/dubbo/myjavaee-remoting-rpc-dubbo.xml" /> -->
+	<import resource="classpath:/remoting/rpc/rmi/myjavaee-remoting-rpc-rmi.xml" />
 
 	<!-- Import Schedule Configuration -->
 	<import resource="classpath:/schedule/quartz/myjavaee-schedule-quartz.xml" />
