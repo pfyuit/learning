@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Standard implementation (using Apache CXF) of JAX-RS specification. Access
- * http://localhost:8080/myjavaee/cxf/rest/jaxrs/xxx to test.
+ * http://localhost:8080/myjavaee/cxf/rest/jaxrs/get to test.
  * @author yupengfei
  */
 @Path("/jaxrs")

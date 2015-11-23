@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
 /**
  * A classic Servlet defined in Java EE specifications. In old version Java EE,
  * you can also configure it in the web.xml, but we can use annotations since
- * Servlet 3.0
+ * Servlet 3.0. Access http://localhost:8080/myjavaee/MyServlet to have a test.
  * @author yupengfei
  */
 @WebServlet("/MyServlet")

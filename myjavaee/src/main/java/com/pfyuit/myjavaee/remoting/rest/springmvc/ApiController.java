@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Spring MVC controller, can be used in RESTful web service design. Access
- * http://localhost:8080/myjavaee/springmvc/test/xxx to test.
+ * http://localhost:8080/myjavaee/springmvc/api/get to test.
  * @author yupengfei
  */
 @Controller
-@RequestMapping(value = { "/test" })
+@RequestMapping(value = { "/api" })
 public class ApiController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ApiController.class);

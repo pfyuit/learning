@@ -29,8 +29,8 @@
 	<!-- <import resource="classpath:/messaging/activemq/myjavaee-messaging-activemq.xml" /> -->
 
 	<!-- Import Remoting Configuration -->
-	<import resource="classpath:/remoting/soap/myjavaee-remoting-soap-jaxws.xml" />
-	<import resource="classpath:/remoting/rest/myjavaee-remoting-rest-jaxrs.xml" />
+	<import resource="classpath:/remoting/soap/jaxws/myjavaee-remoting-soap-jaxws.xml" />
+	<import resource="classpath:/remoting/rest/jaxrs/myjavaee-remoting-rest-jaxrs.xml" />
 	<!-- <import resource="classpath:/remoting/rpc/dubbo/myjavaee-remoting-rpc-dubbo.xml" /> -->
 
 	<!-- Import Schedule Configuration -->
