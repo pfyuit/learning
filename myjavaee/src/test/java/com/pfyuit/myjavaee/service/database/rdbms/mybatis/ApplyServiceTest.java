@@ -18,7 +18,7 @@ import com.pfyuit.myjavaee.model.database.rdbms.mybatis.Apply;
 import com.pfyuit.myjavaee.service.database.rdbms.mybatis.ApplyService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath*:/spring/applicationContext.xml" })
+@ContextConfiguration(locations = { "classpath*:/database/rdbms/mybatis/myjavaee-database-rdbms-mybatis-test.xml" })
 @TransactionConfiguration(transactionManager = "transactionManagerPinche", defaultRollback = true)
 @Transactional
 public class ApplyServiceTest {

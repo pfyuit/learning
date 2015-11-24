@@ -14,11 +14,17 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.pfyuit.myjavaee.dao.database.rdbms.hibernate.BlogDaoTest;
 import com.pfyuit.myjavaee.dao.database.rdbms.mybatis.ApplyMapper;
 import com.pfyuit.myjavaee.model.database.rdbms.mybatis.Apply;
 
+/**
+ * The transaction is rolled back by default when setting
+ * "defaultRollback = true".
+ * @author yupengfei
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath*:/spring/applicationContext.xml" })
+@ContextConfiguration(locations = { "classpath*:/database/rdbms/mybatis/myjavaee-database-rdbms-mybatis-test.xml" })
 @TransactionConfiguration(transactionManager = "transactionManagerPinche", defaultRollback = true)
 @Transactional
 public class ApplyMapperTest {
@@ -56,6 +62,7 @@ public class ApplyMapperTest {
 	public void testFindById() {
 		Apply model = applyMapper.findById(36);
 		assertNotNull(model);
+		BlogDaoTest.printModel(model);
 	};
 
 	@Test
