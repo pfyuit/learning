@@ -1,10 +1,15 @@
 package com.pfyuit.myjavaee.model.database.rdbms.hibernate;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -16,32 +21,37 @@ import javax.persistence.Table;
 public class CategoryModel {
 
 	@Id
-	@Column(name = "categoryid")
-	private int categoryid;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "category_id")
+	private int categoryId;
 
-	@Column(name = "name")
-	private String name;
+	@Column(name = "category_name")
+	private String categoryName;
 
-	@Column(name = "createTime")
+	@Column(name = "create_time")
 	private Timestamp createTime;
 
 	@Column(name = "sort_id")
 	private int sortId;
 
-	public int getCategoryid() {
-		return categoryid;
+	/** Not a real column in the table, query on demand **/
+	@OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
+	private List<BlogModel> blogs;
+
+	public int getCategoryId() {
+		return categoryId;
 	}
 
-	public void setCategoryid(int categoryid) {
-		this.categoryid = categoryid;
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
 	}
 
-	public String getName() {
-		return name;
+	public String getCategoryName() {
+		return categoryName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
 	public Timestamp getCreateTime() {
@@ -58,6 +68,14 @@ public class CategoryModel {
 
 	public void setSortId(int sortId) {
 		this.sortId = sortId;
+	}
+
+	public List<BlogModel> getBlogs() {
+		return blogs;
+	}
+
+	public void setBlogs(List<BlogModel> blogs) {
+		this.blogs = blogs;
 	}
 
 }

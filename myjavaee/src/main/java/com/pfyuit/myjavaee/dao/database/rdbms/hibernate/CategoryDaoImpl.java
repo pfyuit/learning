@@ -9,46 +9,46 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
-import com.pfyuit.myjavaee.model.database.rdbms.hibernate.BlogModel;
+import com.pfyuit.myjavaee.model.database.rdbms.hibernate.CategoryModel;
 
 /**
- * Blog Dao implement for Hibernate.
+ * Category Dao implement for Hibernate.
  * @author yupengfei
  */
 @Repository
-public class BlogDaoImpl implements BlogDao {
+public class CategoryDaoImpl implements CategoryDao {
 
 	@Autowired
 	@Qualifier("sessionFactoryMyblog")
 	private SessionFactory sessionFactory;
 
-	public void save(BlogModel model) {
+	public void save(CategoryModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.save(model);
 	}
 
-	public void delete(BlogModel model) {
+	public void delete(CategoryModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.delete(model);
 	}
 
-	public void update(BlogModel model) {
+	public void update(CategoryModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.update(model);
 	}
 
-	public BlogModel findById(int blogId) {
+	public CategoryModel findById(int categoryId) {
 		Session session = sessionFactory.getCurrentSession();
-		BlogModel result = (BlogModel) session.get(BlogModel.class, blogId);
+		CategoryModel result = (CategoryModel) session.get(CategoryModel.class, categoryId);
 		return result;
 	}
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<BlogModel> findAll() {
+	public List<CategoryModel> findAll() {
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("FROM BlogModel");
-		List<BlogModel> result = query.list();
+		Query query = session.createQuery("FROM CategoryModel");
+		List<CategoryModel> result = query.list();
 		return result;
 	}
 }

@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.database.rdbms.hibernate;
+package com.pfyuit.myjavaee.dao.database.rdbms.hibernate;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -15,7 +15,7 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pfyuit.myjavaee.model.database.rdbms.hibernate.BlogModel;
-import com.pfyuit.myjavaee.service.database.rdbms.hibernate.BlogService;
+import com.pfyuit.myjavaee.model.database.rdbms.hibernate.CommentModel;
 
 /**
  * The transaction is rolled back by default when setting
@@ -26,52 +26,53 @@ import com.pfyuit.myjavaee.service.database.rdbms.hibernate.BlogService;
 @ContextConfiguration(locations = { "classpath*:/database/rdbms/hibernate/myjavaee-database-rdbms-hibernate-test.xml" })
 @TransactionConfiguration(transactionManager = "transactionManagerMyblog", defaultRollback = true)
 @Transactional
-public class BlogServiceTest {
+public class CommentDaoTest {
 
 	@Autowired
-	private BlogService blogService;
+	private CommentDao commentDao;
+
+	@Autowired
+	private BlogDao blogDao;
 
 	@Test
 	public void testSave() {
-		BlogModel model = new BlogModel();
-		model.setBlogAuthor("Example Blog Author");
-		model.setBlogContent("Example Blog Content");
-		model.setBlogOriginal("Example Blog Original");
-		model.setBlogTitle("Example Blog Title");
-		model.setCreateDate(new Timestamp(new Date().getTime()));
-		model.setLastModified(new Timestamp(new Date().getTime()));
-		model.setReadCount(new Long(0));
-		blogService.save(model);
+		BlogModel blog = blogDao.findById(3);
+
+		CommentModel model = new CommentModel();
+		model.setCommentAuthor("Example Comment Author");
+		model.setCommentContent("Example Comment Content");
+		model.setCreateTime(new Timestamp(new Date().getTime()));
+		model.setBlog(blog);
+		commentDao.save(model);
 	};
 
 	@Test
 	public void testDelete() {
-		BlogModel model = blogService.findById(3);
-		blogService.delete(model);
+		CommentModel model = commentDao.findById(3994);
+		commentDao.delete(model);
 	};
 
 	@Test
 	public void testUpdate() {
-		BlogModel model = blogService.findById(3);
-		model.setBlogAuthor("Updated Blog Author");
-		model.setBlogContent("Updated Blog Content");
-		model.setBlogOriginal("Updated Blog Original");
-		model.setBlogTitle("Updated Blog Title");
-		model.setCreateDate(new Timestamp(new Date().getTime()));
-		model.setLastModified(new Timestamp(new Date().getTime()));
-		model.setReadCount(new Long(1));
-		blogService.update(model);
+		CommentModel model = commentDao.findById(3994);
+		model.setCommentAuthor("Updated Comment Author");
+		model.setCommentContent("Updated Comment Content");
+		model.setCreateTime(new Timestamp(new Date().getTime()));
+		commentDao.update(model);
 	};
 
 	@Test
 	public void testFindById() {
-		BlogModel model = blogService.findById(3);
+		CommentModel model = commentDao.findById(3994);
 		assertNotNull(model);
+		assertNotNull(model.getBlog());
+		BlogDaoTest.printModel(model);
+		BlogDaoTest.printModel(model.getBlog());
 	};
 
 	@Test
 	public void testFindAll() {
-		List<BlogModel> models = blogService.findAll();
+		List<CommentModel> models = commentDao.findAll();
 		assertNotNull(models);
 	};
 

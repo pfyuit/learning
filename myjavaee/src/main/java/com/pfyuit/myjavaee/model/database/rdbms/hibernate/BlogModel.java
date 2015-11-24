@@ -6,6 +6,8 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,51 +23,61 @@ import javax.persistence.Table;
 public class BlogModel {
 
 	@Id
-	@Column(name = "blogid")
-	private int blogid;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "blog_id")
+	private int blogId;
 
-	@Column(name = "title")
-	private String title;
+	@Column(name = "blog_title")
+	private String blogTitle;
 
-	@Column(name = "author")
-	private String author;
+	@Column(name = "blog_author")
+	private String blogAuthor;
 
-	@Column(name = "createDate")
+	@Column(name = "create_date")
 	private Timestamp createDate;
 
-	@Column(name = "lastModified")
+	@Column(name = "last_modified")
 	private Timestamp lastModified;
 
-	@Column(name = "content")
-	private String content;
+	@Column(name = "blog_content")
+	private String blogContent;
 
-	@Column(name = "isOriginal")
-	private String isOriginal;
+	@Column(name = "blog_original")
+	private String blogOriginal;
 
-	@Column(name = "readCount")
+	@Column(name = "read_count")
 	private Long readCount;
 
 	@ManyToOne(targetEntity = CategoryModel.class)
-	@JoinColumn(name = "categoryid")
+	@JoinColumn(name = "category_id")
 	private CategoryModel category;
 
-	@OneToMany(mappedBy = "blog", fetch = FetchType.EAGER)
+	/** Not a real column in the table, query on demand **/
+	@OneToMany(mappedBy = "blog", fetch = FetchType.LAZY)
 	private List<CommentModel> comments;
 
-	public String getTitle() {
-		return title;
+	public int getBlogId() {
+		return blogId;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setBlogId(int blogId) {
+		this.blogId = blogId;
 	}
 
-	public String getAuthor() {
-		return author;
+	public String getBlogTitle() {
+		return blogTitle;
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setBlogTitle(String blogTitle) {
+		this.blogTitle = blogTitle;
+	}
+
+	public String getBlogAuthor() {
+		return blogAuthor;
+	}
+
+	public void setBlogAuthor(String blogAuthor) {
+		this.blogAuthor = blogAuthor;
 	}
 
 	public Timestamp getCreateDate() {
@@ -84,28 +96,20 @@ public class BlogModel {
 		this.lastModified = lastModified;
 	}
 
-	public String getContent() {
-		return content;
+	public String getBlogContent() {
+		return blogContent;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
+	public void setBlogContent(String blogContent) {
+		this.blogContent = blogContent;
 	}
 
-	public String isOriginal() {
-		return isOriginal;
+	public String getBlogOriginal() {
+		return blogOriginal;
 	}
 
-	public void setOriginal(String isOriginal) {
-		this.isOriginal = isOriginal;
-	}
-
-	public CategoryModel getCategory() {
-		return category;
-	}
-
-	public void setCategory(CategoryModel category) {
-		this.category = category;
+	public void setBlogOriginal(String blogOriginal) {
+		this.blogOriginal = blogOriginal;
 	}
 
 	public Long getReadCount() {
@@ -116,28 +120,20 @@ public class BlogModel {
 		this.readCount = readCount;
 	}
 
+	public CategoryModel getCategory() {
+		return category;
+	}
+
+	public void setCategory(CategoryModel category) {
+		this.category = category;
+	}
+
 	public List<CommentModel> getComments() {
 		return comments;
 	}
 
 	public void setComments(List<CommentModel> comments) {
 		this.comments = comments;
-	}
-
-	public int getBlogid() {
-		return blogid;
-	}
-
-	public void setBlogid(int blogid) {
-		this.blogid = blogid;
-	}
-
-	public String getIsOriginal() {
-		return isOriginal;
-	}
-
-	public void setIsOriginal(String isOriginal) {
-		this.isOriginal = isOriginal;
 	}
 
 }

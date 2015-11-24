@@ -1,5 +1,8 @@
 package com.pfyuit.myjavaee.dao.database.rdbms.hibernate;
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +44,15 @@ public class LinkDaoImpl implements LinkDao {
 	public LinkModel findById(int linkId) {
 		Session session = sessionFactory.getCurrentSession();
 		LinkModel result = (LinkModel) session.get(LinkModel.class, linkId);
+		return result;
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<LinkModel> findAll() {
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("FROM LinkModel");
+		List<LinkModel> result = query.list();
 		return result;
 	}
 

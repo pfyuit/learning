@@ -9,46 +9,51 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
-import com.pfyuit.myjavaee.model.database.rdbms.hibernate.BlogModel;
+import com.pfyuit.myjavaee.model.database.rdbms.hibernate.UserModel;
 
 /**
- * Blog Dao implement for Hibernate.
+ * User Dao implement for Hibernate.
  * @author yupengfei
  */
 @Repository
-public class BlogDaoImpl implements BlogDao {
+public class UserDaoImpl implements UserDao {
 
 	@Autowired
 	@Qualifier("sessionFactoryMyblog")
 	private SessionFactory sessionFactory;
 
-	public void save(BlogModel model) {
+	@Override
+	public void save(UserModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.save(model);
 	}
 
-	public void delete(BlogModel model) {
+	@Override
+	public void delete(UserModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.delete(model);
 	}
 
-	public void update(BlogModel model) {
+	@Override
+	public void update(UserModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.update(model);
 	}
 
-	public BlogModel findById(int blogId) {
+	@Override
+	public UserModel findById(int userId) {
 		Session session = sessionFactory.getCurrentSession();
-		BlogModel result = (BlogModel) session.get(BlogModel.class, blogId);
+		UserModel result = (UserModel) session.get(UserModel.class, userId);
 		return result;
 	}
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<BlogModel> findAll() {
+	public List<UserModel> findAll() {
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("FROM BlogModel");
-		List<BlogModel> result = query.list();
+		Query query = session.createQuery("FROM UserModel");
+		List<UserModel> result = query.list();
 		return result;
 	}
+
 }
