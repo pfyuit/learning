@@ -19,7 +19,7 @@ import com.pfyuit.myjavaee.model.database.nosql.mongodb.Task;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath*:/spring/applicationContext.xml" })
+@ContextConfiguration(locations = { "classpath*:/database/nosql/mongodb/myjavaee-database-nosql-mongodb-test.xml" })
 public class MongoDBDaoTest {
 
 	@Autowired

@@ -9,7 +9,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.pfyuit.myjavaee.service.cache.redis.RedisService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath*:/spring/applicationContext.xml" })
+@ContextConfiguration(locations = { "classpath*:/cache/redis/myjavaee-cache-redis-test.xml" })
 public class RedisTest {
 
 	@Autowired

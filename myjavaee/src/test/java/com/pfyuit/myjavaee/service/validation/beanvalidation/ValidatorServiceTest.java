@@ -15,7 +15,7 @@ import com.pfyuit.myjavaee.form.validation.beanvalidation.ApiForm;
 import com.pfyuit.myjavaee.service.validation.beanvalidation.ValidatorService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath*:/spring/applicationContext.xml" })
+@ContextConfiguration(locations = { "classpath*:/validation/beanvalidation/myjavaee-validation-beanvalidation-test.xml" })
 public class ValidatorServiceTest {
 
 	@Autowired

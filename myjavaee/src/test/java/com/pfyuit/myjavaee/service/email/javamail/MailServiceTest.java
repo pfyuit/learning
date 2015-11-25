@@ -14,7 +14,7 @@ import com.pfyuit.myjavaee.service.email.javamail.MailService;
 import com.pfyuit.myjavaee.service.email.javamail.MailServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath*:/spring/applicationContext.xml" })
+@ContextConfiguration(locations = { "classpath*:/email/javamail/myjavaee-email-javamail-test.xml" })
 public class MailServiceTest {
 
 	@Autowired
