@@ -11,258 +11,255 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<junit.version>4.11</junit.version>
-		<commons.beanutils.version>1.9.1</commons.beanutils.version>
+
+		<!-- ==========================Spring========================== -->
+		<spring.beans.version>4.2.3.RELEASE</spring.beans.version>
+		<spring.core.version>4.2.3.RELEASE</spring.core.version>
+		<spring.context.version>4.2.3.RELEASE</spring.context.version>
+		<spring.context.support.version>4.2.3.RELEASE</spring.context.support.version>
+		<spring.expression.version>4.2.3.RELEASE</spring.expression.version>
+
+		<spring.aop.version>4.2.3.RELEASE</spring.aop.version>
+		<spring.tx.version>4.2.3.RELEASE</spring.tx.version>
+		<spring.aspects.version>4.2.3.RELEASE</spring.aspects.version>
+		<spring.instrument.version>4.2.3.RELEASE</spring.instrument.version>
+
+		<spring.jdbc.version>4.2.3.RELEASE</spring.jdbc.version>
+		<spring.orm.version>4.2.3.RELEASE</spring.orm.version>
+		<spring.oxm.version>4.2.3.RELEASE</spring.oxm.version>
+
+		<spring.web.version>4.2.3.RELEASE</spring.web.version>
+		<spring.webmvc.version>4.2.3.RELEASE</spring.webmvc.version>
+
+		<spring.jms.version>4.2.3.RELEASE</spring.jms.version>
+
+		<spring.test.version>4.2.3.RELEASE</spring.test.version>
+
+		<spring.data.redis.version>1.1.0.RELEASE</spring.data.redis.version>
+		<spring.data.mongodb.version>1.8.1.RELEASE</spring.data.mongodb.version>
+
+	    <!-- ==========================Database ========================== -->
+		<!-- MySQL -->
+		<mysql.driver.version>5.1.37</mysql.driver.version>
+
+		<!-- Cassandra -->
+		<cassandra.driver.version>2.1.9</cassandra.driver.version>
+
+		<!-- Atomikos -->
+		<atomikos.version>3.9.3</atomikos.version>
+
+		<!-- C3P0 -->
+		<c3p0.version>0.9.1.2</c3p0.version>
+
+		<!-- Hibernate -->
+		<hibernate.core.version>5.0.4.Final</hibernate.core.version>
+		<hibernate.ehcache.version>5.0.4.Final</hibernate.ehcache.version>
+		<hibernate.entitymanager.version>5.0.4.Final</hibernate.entitymanager.version>
+		<hibernate.validation.version>5.2.2.Final</hibernate.validation.version>
+		<hibernate.commons.annotations.version>5.0.0.Final</hibernate.commons.annotations.version>
+
+		<!-- MyBatis -->
+		<mybatis.version>3.3.0</mybatis.version>
+		<mybatis.ehcache.version>1.0.0</mybatis.ehcache.version>
+		<mybatis.spring.version>1.2.3</mybatis.spring.version>
+
+		<!-- ==========================Logging ========================== -->
+		<!-- SLF4j -->
+		<slf4j.version>1.7.2</slf4j.version>
+
+		<!-- Log4j -->
+		<log4j.versioin>1.2.16</log4j.versioin>
+
+		<!-- Logback -->
+		<logback.classic.versioin>1.1.3</logback.classic.versioin>
+		<logback.ext.versioin>0.1.2</logback.ext.versioin>
+
+		<!-- ==========================Cache ========================== -->
+		<!-- Memcached -->
+		<spymemcached.version>2.12.0</spymemcached.version>
+
+		<!-- Jedis -->
+		<jedis.version>2.8.0</jedis.version>
+
+		<!-- ==========================Search ========================== -->
+		<!-- SolrJ -->
+		<solrj.version>5.3.1</solrj.version>
+
+		<!-- ==========================Schedule ========================== -->
+		<!-- Quartz -->
+		<quartz.version>2.2.2</quartz.version>
+
+		<!-- ==========================Messaging ========================== -->
+		<!-- ActiveMQ -->
+		<activemq.client.version>5.12.1</activemq.client.version>
+
+		<!-- ==========================Remoting ========================== -->
+		<!-- Netty -->
+		<netty.version>4.0.33.Final</netty.version>
+
+		<!-- Hessian -->
+		<hessian.version>4.0.38</hessian.version>
+
+		<!-- Dubbo -->
+		<dubbo.version>2.5.3</dubbo.version>
+		
+		<!-- Webservice -->
+		<cxf.jaxws.version>3.1.1</cxf.jaxws.version>
+		<cxf.jaxrs.version>3.1.1</cxf.jaxrs.version>
+		<jackson.jaxrs.json.version>2.5.4</jackson.jaxrs.json.version>
+
+		<!-- ==========================Specification ========================== -->
+		<!-- Servlet -->
+		<servlet.version>3.1.0</servlet.version>
+
+		<!-- JTA -->
+		<jta.version>1.2</jta.version>
+
+		<!-- JavaMail -->
+		<javamail.version>1.4.7</javamail.version>
+
+		<!-- ==========================Utilities Tookit ========================== -->
+		<!-- Apache Common -->
+		<commons.lang.version>2.6</commons.lang.version>
+		<commons.pool.version>1.6</commons.pool.version>
 		<commons.dbcp.version>1.4</commons.dbcp.version>
 		<commons.digester.version>2.1</commons.digester.version>
+		<commons.beanutils.version>1.9.2</commons.beanutils.version>
 		<commons.fileupload.version>1.3.1</commons.fileupload.version>
-		<commons.lang.version>2.5</commons.lang.version>
-		<commons.pool.version>1.5.5</commons.pool.version>
-		<spring.framework.version>3.2.9.RELEASE</spring.framework.version>
-		<spring.data.version>1.1.0.RELEASE</spring.data.version>
-		<hibernate.core.version>4.2.6.Final</hibernate.core.version>
-		<hibernate.validation.version>4.3.0.Final</hibernate.validation.version>
-		<hibernate.ehcache.version>4.2.6.Final</hibernate.ehcache.version>
-		<mybatis.version>3.1.1</mybatis.version>
-		<mybatis.spring.version>1.1.1</mybatis.spring.version>
-		<xml.dom4j.version>1.6.1</xml.dom4j.version>
-		<jackson.mapper.version>1.9.12</jackson.mapper.version>
-		<jackson.databind.versiion>2.4.4</jackson.databind.versiion>
-		<logging.slf4j.version>1.7.2</logging.slf4j.version>
-		<logging.log4j.versioin>1.2.16</logging.log4j.versioin>
-		<logging.logbackclassic.versioin>1.1.3</logging.logbackclassic.versioin>
-		<logging.logbackext.versioin>0.1.2</logging.logbackext.versioin>
-		<jedis.version>2.1.0</jedis.version>
-		<google.guava.version>16.0</google.guava.version>
-		<aop.aspectj.version>1.7.4</aop.aspectj.version>
-		<hessian.version>4.0.33</hessian.version>
-		<netty.version>4.0.19.Final</netty.version>
-		<c3p0.version>0.9.1.2</c3p0.version>
-		<atomikos.version>3.9.3</atomikos.version>
-		<mysql.driver.version>5.1.29</mysql.driver.version>
-		<activemq.client.version>5.8.0</activemq.client.version>
-		<spy.memcached.client>2.10.5</spy.memcached.client>
-		<solrj.version>4.10.2</solrj.version>
-		<servlet.api.version>2.5</servlet.api.version>
-		<cassandra.driver.version>2.1.7</cassandra.driver.version>
-		<quartz.version>2.2.2</quartz.version>
-		<dubbo.version>2.5.3</dubbo.version>
+
+		<!-- Guava -->
+		<guava.version>18.0</guava.version>
+
+		<!-- Dom4j -->
+		<dom4j.version>1.6.1</dom4j.version>
+
+		<!-- Jackson -->
+		<jackson.mapper.version>1.9.13</jackson.mapper.version>
+		<jackson.databind.versiion>2.6.3</jackson.databind.versiion>
+
+		<!-- Aspectj -->
+		<aspectj.version>1.8.7</aspectj.version>
+
+		<!-- ==========================Testing Tookit ========================== -->
+		<!-- Junit -->
+		<junit.version>4.12</junit.version>
+
 	</properties>
 
 	<dependencies>
-		<!-- Test -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- Common Utilities -->
-		<dependency>
-			<groupId>commons-beanutils</groupId>
-			<artifactId>commons-beanutils</artifactId>
-			<version>${commons.beanutils.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>${commons.dbcp.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-digester</groupId>
-			<artifactId>commons-digester</artifactId>
-			<version>${commons.digester.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>${commons.fileupload.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>${commons.lang.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-pool</groupId>
-			<artifactId>commons-pool</artifactId>
-			<version>${commons.pool.version}</version>
-		</dependency>
-
-		<!-- Spring -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
-			<version>${spring.framework.version}</version>
-		</dependency>
+		<!-- ==========================Spring ========================== -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
-			<version>${spring.framework.version}</version>
+			<version>${spring.beans.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.core.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
-			<version>${spring.framework.version}</version>
+			<version>${spring.context.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
-			<version>${spring.framework.version}</version>
+			<version>${spring.context.support.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
-			<version>${spring.framework.version}</version>
+			<version>${spring.aop.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
-			<version>${spring.framework.version}</version>
+			<version>${spring.tx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-instrument</artifactId>
+			<version>${spring.instrument.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>${spring.framework.version}</version>
+			<version>${spring.web.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.framework.version}</version>
+			<version>${spring.webmvc.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.jdbc.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>${spring.framework.version}</version>
+			<version>${spring.orm.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${spring.oxm.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jms</artifactId>
-			<version>${spring.framework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-mongodb</artifactId>
-			<version>${spring.data.version}</version>
+			<version>${spring.jms.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-redis</artifactId>
-			<version>${spring.data.version}</version>
+			<version>${spring.data.redis.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>${spring.data.mongodb.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
-			<version>${spring.framework.version}</version>
+			<version>${spring.test.version}</version>
 		</dependency>
 
-		<!-- Hibernate -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.core.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>${hibernate.validation.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-ehcache</artifactId>
-			<version>${hibernate.ehcache.version}</version>
-		</dependency>
-
-		<!-- MyBatis -->
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis</artifactId>
-			<version>${mybatis.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis-spring</artifactId>
-			<version>${mybatis.spring.version}</version>
-		</dependency>
-
-		<!-- XML -->
-		<dependency>
-			<groupId>dom4j</groupId>
-			<artifactId>dom4j</artifactId>
-			<version>${xml.dom4j.version}</version>
-		</dependency>
-
-		<!-- JSON -->
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>${jackson.mapper.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.databind.versiion}</version>
-		</dependency>
-
-		<!-- Logging -->
+		<!-- ==========================Logging ========================== -->
+		<!-- Log4j -->
 		<!-- <dependency> -->
 		<!-- <groupId>org.slf4j</groupId> -->
 		<!-- <artifactId>slf4j-log4j12</artifactId> -->
-		<!-- <version>${logging.slf4j.version}</version> -->
+		<!-- <version>${slf4j.version}</version> -->
 		<!-- </dependency> -->
 		<!-- <dependency> -->
 		<!-- <groupId>log4j</groupId> -->
 		<!-- <artifactId>log4j</artifactId> -->
-		<!-- <version>${logging.log4j.versioin}</version> -->
+		<!-- <version>${log4j.versioin}</version> -->
 		<!-- </dependency> -->
 
+		<!-- Logback -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>${logging.logbackclassic.versioin}</version>
+			<version>${logback.classic.versioin}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.logback-extensions</groupId>
 			<artifactId>logback-ext-spring</artifactId>
-			<version>${logging.logbackext.versioin}</version>
+			<version>${logback.ext.versioin}</version>
 		</dependency>
 
-		<!-- Jedis -->
+		<!-- ==========================Database ========================== -->
+		<!-- MySQL -->
 		<dependency>
-			<groupId>redis.clients</groupId>
-			<artifactId>jedis</artifactId>
-			<version>${jedis.version}</version>
-			<type>jar</type>
-			<scope>compile</scope>
-		</dependency>
-
-		<!-- Guava -->
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>${google.guava.version}</version>
-		</dependency>
-
-		<!-- AspectJ -->
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>${aop.aspectj.version}</version>
-		</dependency>
-
-		<!-- Hessian -->
-		<dependency>
-			<groupId>com.caucho</groupId>
-			<artifactId>hessian</artifactId>
-			<version>${hessian.version}</version>
-		</dependency>
-
-		<!-- Netty -->
-		<dependency>
-			<groupId>io.netty</groupId>
-			<artifactId>netty-all</artifactId>
-			<version>${netty.version}</version>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.driver.version}</version>
 		</dependency>
 
 		<!-- C3P0 -->
@@ -299,70 +296,43 @@
 			<version>${atomikos.version}</version>
 		</dependency>
 
-		<!-- MySQL -->
+		<!-- Hibernate -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>${mysql.driver.version}</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate.validation.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<version>${hibernate.ehcache.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.entitymanager.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.common</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+			<version>${hibernate.commons.annotations.version}</version>
 		</dependency>
 
-		<!-- ActiveMQ -->
+		<!-- MyBatis -->
 		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-spring</artifactId>
-			<version>${activemq.client.version}</version>
-		</dependency>
-
-		<!-- Memcached -->
-		<dependency>
-			<groupId>net.spy</groupId>
-			<artifactId>spymemcached</artifactId>
-			<version>${spy.memcached.client}</version>
-		</dependency>
-
-		<!-- Solrj -->
-		<dependency>
-			<groupId>org.apache.solr</groupId>
-			<artifactId>solr-solrj</artifactId>
-			<version>${solrj.version}</version>
-		</dependency>
-
-		<!-- CXF Jaxws -->
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-frontend-jaxws</artifactId>
-			<version>3.1.1</version>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-transports-http</artifactId>
-			<version>3.1.1</version>
-		</dependency>
-
-		<!-- CXF Jaxrs -->
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
-			<version>3.1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.jaxrs</groupId>
-			<artifactId>jackson-jaxrs-json-provider</artifactId>
-			<version>2.5.4</version>
-		</dependency>
-
-		<!-- JavaMail -->
-		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-			<version>1.4</version>
-		</dependency>
-
-		<!-- Servlet -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>${mybatis.spring.version}</version>
 		</dependency>
 
 		<!-- Cassandra -->
@@ -372,6 +342,86 @@
 			<version>${cassandra.driver.version}</version>
 		</dependency>
 
+		<!-- ==========================Messaging ========================== -->
+		<!-- ActiveMQ -->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-spring</artifactId>
+			<version>${activemq.client.version}</version>
+		</dependency>
+
+		<!-- ==========================Cache ========================== -->
+		<!-- Memcached -->
+		<dependency>
+			<groupId>net.spy</groupId>
+			<artifactId>spymemcached</artifactId>
+			<version>${spymemcached.version}</version>
+		</dependency>
+
+		<!-- Jedis -->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>${jedis.version}</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- ==========================Search ========================== -->
+		<!-- Solrj -->
+		<dependency>
+			<groupId>org.apache.solr</groupId>
+			<artifactId>solr-solrj</artifactId>
+			<version>${solrj.version}</version>
+		</dependency>
+
+		<!-- ==========================Remoting ========================== -->
+		<!-- Netty -->
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>${netty.version}</version>
+		</dependency>
+
+		<!-- Hessian -->
+		<dependency>
+			<groupId>com.caucho</groupId>
+			<artifactId>hessian</artifactId>
+			<version>${hessian.version}</version>
+		</dependency>
+
+		<!-- Dubbo -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>${dubbo.version}</version>
+		</dependency>
+
+		<!-- CXF Jaxws -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.jaxws.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.jaxws.version}</version>
+		</dependency>
+
+		<!-- CXF Jaxrs -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
+			<version>${cxf.jaxrs.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+			<version>${jackson.jaxrs.json.version}</version>
+		</dependency>
+
+		<!-- ==========================Schedule ========================== -->
 		<!-- Quartz -->
 		<dependency>
 			<groupId>org.quartz-scheduler</groupId>
@@ -379,12 +429,102 @@
 			<version>${quartz.version}</version>
 		</dependency>
 
-		<!-- Dubbo -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.alibaba</groupId> -->
-<!-- 			<artifactId>dubbo</artifactId> -->
-<!-- 			<version>${dubbo.version}</version> -->
-<!-- 		</dependency> -->
+		<!-- ==========================Specification ========================== -->
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet.version}</version>
+		</dependency>
+
+		<!-- JTA -->
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>javax.transaction-api</artifactId>
+			<version>${jta.version}</version>
+		</dependency>
+
+		<!-- JavaMail -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>${javamail.version}</version>
+		</dependency>
+
+		<!-- ==========================Utilities Tookit ========================== -->
+		<!-- Apache Common -->
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>${commons.beanutils.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>${commons.dbcp.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+			<version>${commons.digester.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${commons.fileupload.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>${commons.lang.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>${commons.pool.version}</version>
+		</dependency>
+
+		<!-- Guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+
+		<!-- Dom4j -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>${dom4j.version}</version>
+		</dependency>
+
+		<!-- Jackson -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson.mapper.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.databind.versiion}</version>
+		</dependency>
+
+		<!-- AspectJ -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectj.version}</version>
+		</dependency>
+
+		<!-- ==========================Testing Tookit ========================== -->
+		<!-- Junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
 
 	</dependencies>
 

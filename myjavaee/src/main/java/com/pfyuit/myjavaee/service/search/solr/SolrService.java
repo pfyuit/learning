@@ -1,5 +1,6 @@
 package com.pfyuit.myjavaee.service.search.solr;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.apache.solr.client.solrj.SolrServerException;
@@ -10,6 +11,6 @@ import org.apache.solr.client.solrj.SolrServerException;
  */
 public interface SolrService {
 
-	public List<Integer> searchBlog(String key) throws SolrServerException;
+	public List<Integer> searchBlog(String key) throws SolrServerException, IOException;
 
 }

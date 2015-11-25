@@ -1,5 +1,6 @@
 package com.pfyuit.myjavaee.service.search.solr;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class SolrServiceImpl implements SolrService {
 	private static final String DEFAULT_RETURN_FIELD = "id";
 
 	@Override
-	public List<Integer> searchBlog(String key) throws SolrServerException {
+	public List<Integer> searchBlog(String key) throws SolrServerException,IOException {
 		HttpSolrServer server = new HttpSolrServer(solrConfig.getUrl());
 		server.setSoTimeout(Integer.parseInt(solrConfig.getSoTimeout()));
 		server.setConnectionTimeout(Integer.parseInt(solrConfig.getConnectionTimeout()));
