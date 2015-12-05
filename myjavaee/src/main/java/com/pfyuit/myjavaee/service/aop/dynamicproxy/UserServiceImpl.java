@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.dynamicproxy;
+package com.pfyuit.myjavaee.service.aop.dynamicproxy;
 
 /**
  * @author yupengfei

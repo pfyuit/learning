@@ -1,10 +1,15 @@
-package com.pfyuit.myjavaee.service.dynamicproxy;
+package com.pfyuit.myjavaee.service.aop.dynamicproxy;
 
 import javassist.CannotCompileException;
 import javassist.NotFoundException;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import com.pfyuit.myjavaee.service.aop.dynamicproxy.DynamicProxyService;
+import com.pfyuit.myjavaee.service.aop.dynamicproxy.DynamicProxyServiceImpl;
+import com.pfyuit.myjavaee.service.aop.dynamicproxy.UserService;
+import com.pfyuit.myjavaee.service.aop.dynamicproxy.UserServiceImpl;
 
 /**
  * @author yupengfei
