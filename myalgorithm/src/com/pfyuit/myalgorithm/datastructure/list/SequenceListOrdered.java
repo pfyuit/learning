@@ -1,10 +1,21 @@
 package com.pfyuit.myalgorithm.datastructure.list;
 
+/**
+ * 有序线性表。提供以下操作：
+ * 线性表是否为空
+ * 线性表是否已满
+ * 线性表获取尺寸
+ * 插入元素，经过排序，往线性表插入元素
+ * 删除元素，该元素以后的元素需要往前挪位
+ * 查找元素，二分查找
+ * 遍历元素
+ * @author yupengfei
+ */
 public class SequenceListOrdered {
 
 	private long[] data;
-	private int maxSize = 0;
 	private int size = 0;
+	private int maxSize = 0;
 
 	public SequenceListOrdered(int maxSize) {
 		this.maxSize = maxSize;
@@ -24,6 +35,7 @@ public class SequenceListOrdered {
 	}
 
 	public int insert(long key) {
+		//找到插入位置下标
 		int i;
 		for (i = 0; i < size; i++) {
 			if (data[i] > key) {
@@ -31,10 +43,12 @@ public class SequenceListOrdered {
 			}
 		}
 
+		//往后挪位
 		for (int j = size; j >= i + 1; j--) {
 			data[j] = data[j - 1];
 		}
 
+		//插入元素
 		data[i] = key;
 		size++;
 		return i;
@@ -45,6 +59,7 @@ public class SequenceListOrdered {
 		if (index == data.length) {
 			System.out.println("key not found");
 		} else {
+			//后面元素往前挪位
 			for (int i = index; i <= size - 2; i++) {
 				data[i] = data[i + 1];
 			}
@@ -82,6 +97,7 @@ public class SequenceListOrdered {
 		SequenceListOrdered array = new SequenceListOrdered(100);
 
 		// insert
+		System.out.println("==>insert data...");
 		array.insert(13);
 		array.insert(2);
 		array.insert(45);
@@ -90,14 +106,20 @@ public class SequenceListOrdered {
 		array.insert(47);
 		array.insert(28);
 		array.insert(99);
+		
+		System.out.println("==>display data...");
 		array.display();
 
 		// search
+		System.out.println("==>search data...");
 		int result = array.binarySearch(47);
 		System.out.println("search result:" + result);
 
 		// delete
+		System.out.println("==>delete data...");
 		array.delete(45);
+		
+		System.out.println("==>display data...");
 		array.display();
 
 	}
