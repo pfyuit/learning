@@ -1,7 +1,9 @@
 package com.pfyuit.myalgorithm.algorithm.free;
 
+/**
+ * @author yupengfei
+ */
 public class FetchNumberTest {
-
 	private static int N = 5;
 
 	public static void main(String[] args) {

@@ -1,9 +1,15 @@
 package com.pfyuit.myalgorithm.datastructure.stack;
 
-import com.pfyuit.myalgorithm.datastructure.list.LinkedList;
+import com.pfyuit.myalgorithm.datastructure.linkedlist.LinkedList;
 
+/**
+ * @author yupengfei
+ */
 public class LinkedStack {
 
+	/**
+	 * Inner data to hold linked stack
+	 */
 	private LinkedList list = new LinkedList();
 
 	public boolean isEmpty() {

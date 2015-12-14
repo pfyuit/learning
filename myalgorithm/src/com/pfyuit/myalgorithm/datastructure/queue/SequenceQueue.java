@@ -1,10 +1,13 @@
 package com.pfyuit.myalgorithm.datastructure.queue;
 
+/**
+ * @author yupengfei
+ */
 public class SequenceQueue {
 
 	private long[] data;
-	private int maxSize;
 	private int size;
+	private int maxSize;
 	private int front;
 	private int rear;
 
@@ -16,18 +19,34 @@ public class SequenceQueue {
 		rear = -1;
 	}
 
+	/**
+	 * Is sequence queue empty
+	 * @return
+	 */
 	public boolean isEmpty() {
 		return size == 0;
 	}
 
+	/**
+	 * Is sequence queue full
+	 * @return
+	 */
 	public boolean isFull() {
 		return size == maxSize;
 	}
 
+	/**
+	 * Get sequence queue size
+	 * @return
+	 */
 	public int getSize() {
 		return size;
 	}
 
+	/**
+	 * Insert data to tail
+	 * @param value
+	 */
 	public void insert(long value) {
 		if (rear == maxSize - 1) {
 			rear = -1;
@@ -36,6 +55,10 @@ public class SequenceQueue {
 		size++;
 	}
 
+	/**
+	 * Remove data from head
+	 * @return
+	 */
 	public long remove() {
 		long value = data[front++];
 		if (front == maxSize) {
@@ -45,6 +68,10 @@ public class SequenceQueue {
 		return value;
 	}
 
+	/**
+	 * Peek data
+	 * @return
+	 */
 	public long peek() {
 		return data[front];
 	}

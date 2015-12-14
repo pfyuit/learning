@@ -1,5 +1,8 @@
 package com.pfyuit.myalgorithm.datastructure.stack;
 
+/**
+ * @author yupengfei
+ */
 public class SequenceStack {
 
 	private long[] data;

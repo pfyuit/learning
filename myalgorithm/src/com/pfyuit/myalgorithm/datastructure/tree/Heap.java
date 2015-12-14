@@ -1,7 +1,14 @@
 package com.pfyuit.myalgorithm.datastructure.tree;
 
+/**
+ * @author yupengfei
+ */
 public class Heap {
 
+	/**
+	 * Inner data to hold head(tree) node
+	 * @author yupengfei
+	 */
 	public class Node {
 		public long data;
 		public Node leftChild;
@@ -12,9 +19,12 @@ public class Heap {
 		}
 	}
 
+	/**
+	 * Array to store tree nodes.
+	 */
 	public Node[] nodes;
-	public int maxSize;
 	public int size;
+	public int maxSize;
 
 	public Heap(int maxSize) {
 		this.maxSize = maxSize;

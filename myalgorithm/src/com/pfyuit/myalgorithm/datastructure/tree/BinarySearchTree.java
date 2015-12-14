@@ -1,7 +1,14 @@
 package com.pfyuit.myalgorithm.datastructure.tree;
 
+/**
+ * @author yupengfei
+ */
 public class BinarySearchTree {
 
+	/**
+	 * Inner data for tree node
+	 * @author yupengfei
+	 */
 	public class Node {
 		public long data;
 		public Node leftChild;
@@ -12,8 +19,15 @@ public class BinarySearchTree {
 		}
 	}
 
+	/**
+	 * Root node of the tree
+	 */
 	public Node root;
 
+	/**
+	 * Insert node to tree
+	 * @param value
+	 */
 	public void insert(long value) {
 		Node node = new Node(value);
 		if (root == null) {
@@ -44,6 +58,11 @@ public class BinarySearchTree {
 
 	}
 
+	/**
+	 * Remove tree node
+	 * @param key
+	 * @return
+	 */
 	public boolean delete(long key) {
 		Node current, parent;
 		parent = current = root;
@@ -144,6 +163,11 @@ public class BinarySearchTree {
 		return successor;
 	}
 
+	/**
+	 * Find tree node
+	 * @param key
+	 * @return
+	 */
 	public Node find(long key) {
 		Node current = root;
 
@@ -160,6 +184,9 @@ public class BinarySearchTree {
 		return null;
 	}
 
+	/**
+	 * Traverse all tree nodes
+	 */
 	public void display() {
 		inOrder(root);
 	}

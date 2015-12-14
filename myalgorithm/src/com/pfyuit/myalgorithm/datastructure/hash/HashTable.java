@@ -1,68 +1,101 @@
 package com.pfyuit.myalgorithm.datastructure.hash;
 
+/**
+ * @author yupengfei
+ */
 public class HashTable {
 
-	public DataItem[] dataArray;
+	public DataItem[] dataItems;
 	public int maxSize;
 	public DataItem noItem = new DataItem(-1, null);
 
 	public HashTable(int maxSize) {
 		this.maxSize = maxSize;
-		dataArray = new DataItem[this.maxSize];
+		dataItems = new DataItem[this.maxSize];
 	}
 
+	/**
+	 * Hash function
+	 * @param key
+	 * @return
+	 */
 	public int hashFunc(int key) {
 		return key % maxSize;
 	}
 
+	/**
+	 * Hash again function
+	 * @param key
+	 * @return
+	 */
 	public int hashFunc1(int key) {
 		return 5 - key % 5;
 	}
 
+	/**
+	 * Insert data
+	 * @param data
+	 */
 	public void insert(DataItem data) {
 		int key = data.key;
-		int hashValue = hashFunc(key);
-		while (dataArray[hashValue] != null && dataArray[hashValue].key != -1) {
-			hashValue += hashFunc1(key);
-			hashValue %= maxSize;
+		int hash = hashFunc(key);
+
+		// Find out the correct index to insert data.
+		while (dataItems[hash] != null && dataItems[hash].key != -1) {
+			hash += hashFunc1(key);
+			hash %= maxSize;
 		}
-		dataArray[hashValue] = data;
+		dataItems[hash] = data;
 	}
 
+	/**
+	 * Remove data
+	 * @param key
+	 * @return
+	 */
 	public DataItem remove(int key) {
-		int hashValue = hashFunc(key);
-		while (dataArray[hashValue] != null) {
-			if (dataArray[hashValue].key == key) {
-				DataItem temp = dataArray[hashValue];
-				dataArray[hashValue] = noItem;
+		int hash = hashFunc(key);
+		while (dataItems[hash] != null) {
+			// Find out the index of this data, replace it with a no-item.
+			if (dataItems[hash].key == key) {
+				DataItem temp = dataItems[hash];
+				dataItems[hash] = noItem;
 				return temp;
 			}
 
-			hashValue += hashFunc1(key);
-			hashValue %= maxSize;
+			hash += hashFunc1(key);
+			hash %= maxSize;
 		}
 		return null;
 	}
 
+	/**
+	 * Find data
+	 * @param key
+	 * @return
+	 */
 	public DataItem find(int key) {
-		int hashValue = hashFunc(key);
-		while (dataArray[hashValue] != null) {
-			if (dataArray[hashValue].key == key) {
-				return dataArray[hashValue];
+		int hash = hashFunc(key);
+		while (dataItems[hash] != null) {
+			if (dataItems[hash].key == key) {
+				return dataItems[hash];
 			}
 
-			hashValue += hashFunc1(key);
-			hashValue %= maxSize;
+			hash += hashFunc1(key);
+			hash %= maxSize;
 		}
 		return null;
 	}
 
+	/**
+	 * Traverse all the data
+	 */
 	public void display() {
-		for (int i = 0; i < dataArray.length; i++) {
-			if (dataArray[i] != null && dataArray[i].key != -1) {
-				System.out.println(dataArray[i].key + ":" + dataArray[i].data);
+		for (int i = 0; i < dataItems.length; i++) {
+			if (dataItems[i] != null && dataItems[i].key != -1) {
+				System.out.print(dataItems[i].key + ":" + dataItems[i].data + ",");
 			} else {
-				System.out.println("*");
+				System.out.print("*,");
 			}
 		}
 	}
@@ -92,7 +125,12 @@ public class HashTable {
 
 }
 
+/**
+ * Wrapper class of hash table data.
+ * @author yupengfei
+ */
 class DataItem {
+
 	public int key;
 	public String data;
 

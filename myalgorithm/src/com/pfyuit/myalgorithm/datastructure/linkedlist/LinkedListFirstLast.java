@@ -1,7 +1,14 @@
-package com.pfyuit.myalgorithm.datastructure.list;
+package com.pfyuit.myalgorithm.datastructure.linkedlist;
 
+/**
+ * @author yupengfei
+ */
 public class LinkedListFirstLast {
 
+	/**
+	 * Inner class to hold link node.
+	 * @author yupengfei
+	 */
 	public class Link {
 		public long data;
 		public Link next;
@@ -15,14 +22,28 @@ public class LinkedListFirstLast {
 		}
 	}
 
+	/**
+	 * First one of this linked list
+	 */
 	private Link first;
 
+	/**
+	 * Last one of this linked list
+	 */
 	private Link last;
 
+	/**
+	 * Is linked list empty
+	 * @return
+	 */
 	public boolean isEmpty() {
 		return first == null;
 	}
 
+	/**
+	 * Insert a link node to the head
+	 * @param value
+	 */
 	public void insertFirst(long value) {
 		Link newLink = new Link(value);
 		if (isEmpty()) {
@@ -32,6 +53,10 @@ public class LinkedListFirstLast {
 		first = newLink;
 	}
 
+	/**
+	 * Insert a link node to the tail
+	 * @param value
+	 */
 	public void insertLast(long value) {
 		Link newLink = new Link(value);
 		if (isEmpty()) {
@@ -42,15 +67,23 @@ public class LinkedListFirstLast {
 		last = newLink;
 	}
 
+	/**
+	 * Remove link node from head
+	 * @return
+	 */
 	public Link removeFirst() {
 		Link temp = first;
-		if (first.next == null) {// only one link
+		// only one link
+		if (first.next == null) {
 			last = null;
 		}
 		first = first.next;
 		return temp;
 	}
 
+	/**
+	 * Traverse all the link node
+	 */
 	public void displayList() {
 		Link current = first;
 		while (current != null) {

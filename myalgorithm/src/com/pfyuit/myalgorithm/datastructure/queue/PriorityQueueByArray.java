@@ -1,5 +1,8 @@
 package com.pfyuit.myalgorithm.datastructure.queue;
 
+/**
+ * @author yupengfei
+ */
 public class PriorityQueueByArray {
 
 	private long[] data;
@@ -12,14 +15,26 @@ public class PriorityQueueByArray {
 		data = new long[maxSize];
 	}
 
+	/**
+	 * Is priority queue empty
+	 * @return
+	 */
 	public boolean isEmpty() {
 		return size == 0;
 	}
 
+	/**
+	 * Is priority queue full
+	 * @return
+	 */
 	public boolean isFull() {
 		return size == maxSize;
 	}
 
+	/**
+	 * Insert data
+	 * @param value
+	 */
 	public void insert(long value) {
 		// something like insert sort
 		int i;
@@ -34,6 +49,10 @@ public class PriorityQueueByArray {
 		size++;
 	}
 
+	/**
+	 * Remove data from tail (big )
+	 * @return
+	 */
 	public long remove() {
 		long temp = data[size - 1];
 		size--;

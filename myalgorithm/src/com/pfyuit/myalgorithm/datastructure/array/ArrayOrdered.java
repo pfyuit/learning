@@ -1,65 +1,82 @@
-package com.pfyuit.myalgorithm.datastructure.list;
+package com.pfyuit.myalgorithm.datastructure.array;
 
 /**
- * 有序线性表。提供以下操作：
- * 线性表是否为空
- * 线性表是否已满
- * 线性表获取尺寸
- * 插入元素，经过排序，往线性表插入元素
- * 删除元素，该元素以后的元素需要往前挪位
- * 查找元素，二分查找
- * 遍历元素
  * @author yupengfei
  */
-public class SequenceListOrdered {
+public class ArrayOrdered {
 
 	private long[] data;
 	private int size = 0;
 	private int maxSize = 0;
 
-	public SequenceListOrdered(int maxSize) {
+	public ArrayOrdered(int maxSize) {
 		this.maxSize = maxSize;
 		data = new long[this.maxSize];
 	}
 
+	/**
+	 * Is array empty
+	 * @return
+	 */
 	public boolean isEmpty() {
 		return size == 0;
 	}
 
+	/**
+	 * Is array full
+	 * @return
+	 */
 	public boolean isFull() {
 		return size == maxSize;
 	}
 
+	/**
+	 * Get array size
+	 * @return
+	 */
 	public int getSize() {
 		return size;
 	}
 
+	/**
+	 * Insert data
+	 * @param key
+	 * @return
+	 */
 	public int insert(long key) {
-		//找到插入位置下标
-		int i;
-		for (i = 0; i < size; i++) {
-			if (data[i] > key) {
+		int index;
+
+		// Find out index to insert.
+		for (index = 0; index < size; index++) {
+			if (data[index] > key) {
 				break;
 			}
 		}
 
-		//往后挪位
-		for (int j = size; j >= i + 1; j--) {
+		// Shift the sub array after index to right.
+		for (int j = size; j >= index + 1; j--) {
 			data[j] = data[j - 1];
 		}
 
-		//插入元素
-		data[i] = key;
+		// Insert key to the index.
+		data[index] = key;
 		size++;
-		return i;
+		return index;
 	}
 
+	/**
+	 * Remove data
+	 * @param key
+	 * @return
+	 */
 	public int delete(long key) {
+		// Find out index to delete.
 		int index = binarySearch(key);
+
 		if (index == data.length) {
 			System.out.println("key not found");
 		} else {
-			//后面元素往前挪位
+			// Shift sub array after index to left.
 			for (int i = index; i <= size - 2; i++) {
 				data[i] = data[i + 1];
 			}
@@ -68,6 +85,11 @@ public class SequenceListOrdered {
 		return index;
 	}
 
+	/**
+	 * Binary search
+	 * @param key
+	 * @return
+	 */
 	public int binarySearch(long key) {
 		int low = 0;
 		int high = size - 1;
@@ -86,6 +108,9 @@ public class SequenceListOrdered {
 		}
 	}
 
+	/**
+	 * Traverse all the data
+	 */
 	public void display() {
 		for (int i = 0; i < size; i++) {
 			System.out.println(data[i]);
@@ -94,7 +119,7 @@ public class SequenceListOrdered {
 	}
 
 	public static void main(String[] args) {
-		SequenceListOrdered array = new SequenceListOrdered(100);
+		ArrayOrdered array = new ArrayOrdered(100);
 
 		// insert
 		System.out.println("==>insert data...");
@@ -106,7 +131,7 @@ public class SequenceListOrdered {
 		array.insert(47);
 		array.insert(28);
 		array.insert(99);
-		
+
 		System.out.println("==>display data...");
 		array.display();
 
@@ -118,7 +143,7 @@ public class SequenceListOrdered {
 		// delete
 		System.out.println("==>delete data...");
 		array.delete(45);
-		
+
 		System.out.println("==>display data...");
 		array.display();
 

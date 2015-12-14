@@ -19,6 +19,8 @@ public class SplictWordsTest {
 	public static void main(String[] args) {
 		String description = "pieapplecat";
 		List<String> output = splitWord(description);
+
+		System.out.println("=>Matched words in dictionary:");
 		for (String str : output) {
 			System.out.println(str);
 		}

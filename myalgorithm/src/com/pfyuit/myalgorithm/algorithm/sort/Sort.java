@@ -4,10 +4,17 @@ import java.util.Random;
 
 import com.pfyuit.myalgorithm.datastructure.tree.Heap;
 
+/**
+ * @author yupengfei
+ */
 public class Sort {
 
 	private static long[] data = new long[100000];
 
+	/**
+	 * Bubble sort.
+	 * @param data
+	 */
 	public static void bubbleSort(long[] data) {
 		int size = data.length;
 		for (int out = size - 1; out >= 1; out--) {
@@ -22,6 +29,10 @@ public class Sort {
 		}
 	}
 
+	/**
+	 * Selection sort.
+	 * @param data
+	 */
 	public static void selectionSort(long[] data) {
 		int size = data.length;
 		for (int out = 0; out <= size - 2; out++) {
@@ -37,6 +48,10 @@ public class Sort {
 		}
 	}
 
+	/**
+	 * Insertion sort.
+	 * @param data
+	 */
 	public static void insertionSort(long[] data) {
 		int size = data.length;
 		for (int out = 1; out <= size - 1; out++) {
@@ -55,6 +70,10 @@ public class Sort {
 		}
 	}
 
+	/**
+	 * Shell sort.
+	 * @param data
+	 */
 	public static void shellSort(long[] data) {
 		int size = data.length;
 
@@ -89,6 +108,10 @@ public class Sort {
 		}
 	}
 
+	/**
+	 * Quick sort.
+	 * @param data
+	 */
 	public static void quickSort(long[] data) {
 		int size = data.length;
 		quick_sort(data, 0, size - 1);
@@ -100,7 +123,7 @@ public class Sort {
 			int i = left;
 			int j = right;
 			while (i < j) {
-				// ´ÓÓÒÍù×óÕÒµ½Ð¡µÄÊý£¬Ìî¿Ó
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				while (i < j && data[j] >= temp) {
 					j--;
 				}
@@ -108,7 +131,7 @@ public class Sort {
 					data[i] = data[j];
 					i++;
 				}
-				// ´Ó×óÍùÓÒÕÒµ½´óµÄÊý£¬Ìî¿Ó
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				while (i < j && data[i] < temp) {
 					i++;
 				}
@@ -118,23 +141,17 @@ public class Sort {
 				}
 			}
 			data[i] = temp;
-			// µÝ¹é
+			// ï¿½Ý¹ï¿½
 			quick_sort(data, left, i - 1);
 			quick_sort(data, i + 1, right);
 		}
 
 	}
 
-	public static void heapSort(long[] data) {
-		Heap heap = new Heap(100000);
-		for (long value : data) {
-			heap.insert(value);
-		}
-		for (int i = 0; i < data.length; i++) {
-			data[i] = heap.remove().data;
-		}
-	}
-
+	/**
+	 * Merge sort.
+	 * @param data
+	 */
 	public static void mergeSort(long[] data) {
 		long[] workspace = new long[data.length];
 		int low = 0;
@@ -181,56 +198,96 @@ public class Sort {
 
 	}
 
+	/**
+	 * Heap sort.
+	 * @param data
+	 */
+	public static void heapSort(long[] data) {
+		Heap heap = new Heap(100000);
+		for (long value : data) {
+			heap.insert(value);
+		}
+		for (int i = 0; i < data.length; i++) {
+			data[i] = heap.remove().data;
+		}
+	}
+
 	public static void initData() {
 		for (int i = 0; i < data.length; i++) {
 			data[i] = new Random().nextInt(1000000);
 		}
 	}
 
-	public static void printData(long start) {
+	private static void printData() {
 		for (int i = 0; i < data.length; i++) {
 			System.out.println(data[i]);
 		}
-		System.out.println("cost time: " + (System.currentTimeMillis() - start) + " ms");
 	}
 
 	public static void main(String[] args) {
-		long start = 0L;
+		testBubbleSort();
+		testSelectionSort();
+		testInsertionSort();
+		testShellSort();
+		testQuickSort();
+		testMergeSort();
+		testHeapSort();
+	}
 
-		// initData();
-		// start = System.currentTimeMillis();
-		// bubbleSort(data);
-		// printData(start);
+	private static void testHeapSort() {
+		initData();
+		long start = System.currentTimeMillis();
+		heapSort(data);
+		printData();
+		System.out.println("cost time: " + (System.currentTimeMillis() - start) + " ms");
+	}
 
-		// initData();
-		// start = System.currentTimeMillis();
-		// selectionSort(data);
-		// printData(start);
+	private static void testMergeSort() {
+		initData();
+		long start = System.currentTimeMillis();
+		mergeSort(data);
+		printData();
+		System.out.println("cost time: " + (System.currentTimeMillis() - start) + " ms");
+	}
 
-		// initData();
-		// start = System.currentTimeMillis();
-		// insertionSort(data);
-		// printData(start);
+	private static void testQuickSort() {
+		initData();
+		long start = System.currentTimeMillis();
+		quickSort(data);
+		printData();
+		System.out.println("cost time: " + (System.currentTimeMillis() - start) + " ms");
+	}
 
-		// initData();
-		// start = System.currentTimeMillis();
-		// shellSort(data);
-		// printData(start);
+	private static void testShellSort() {
+		initData();
+		long start = System.currentTimeMillis();
+		shellSort(data);
+		printData();
+		System.out.println("cost time: " + (System.currentTimeMillis() - start) + " ms");
+	}
 
-		// initData();
-		// start = System.currentTimeMillis();
-		// quickSort(data);
-		// printData(start);
+	private static void testInsertionSort() {
+		initData();
+		long start = System.currentTimeMillis();
+		insertionSort(data);
+		printData();
+		System.out.println("cost time: " + (System.currentTimeMillis() - start) + " ms");
+	}
 
-		// initData();
-		// start = System.currentTimeMillis();
-		// mergeSort(data);
-		// printData(start);
+	private static void testSelectionSort() {
+		initData();
+		long start = System.currentTimeMillis();
+		selectionSort(data);
+		printData();
+		System.out.println("cost time: " + (System.currentTimeMillis() - start) + " ms");
+	}
 
-		// initData();
-		// start = System.currentTimeMillis();
-		// heapSort(data);
-		// printData(start);
+	private static void testBubbleSort() {
+		initData();
+		long start = System.currentTimeMillis();
+		bubbleSort(data);
+		printData();
+		System.out.println("cost time: " + (System.currentTimeMillis() - start) + " ms");
 	}
 
 }

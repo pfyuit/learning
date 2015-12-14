@@ -1,7 +1,14 @@
-package com.pfyuit.myalgorithm.datastructure.list;
+package com.pfyuit.myalgorithm.datastructure.linkedlist;
 
+/**
+ * @author yupengfei
+ */
 public class LinkedList {
 
+	/**
+	 * Inner class to hold link node.
+	 * @author yupengfei
+	 */
 	public class Link {
 		public long data;
 		public Link next;
@@ -15,28 +22,49 @@ public class LinkedList {
 		}
 	}
 
+	/**
+	 * First one of this linked list
+	 */
 	private Link first;
 
+	/**
+	 * Is linked list empty
+	 * @return
+	 */
 	public boolean isEmpty() {
 		return first == null;
 	}
 
+	/**
+	 * Insert a link node to the head
+	 * @param value
+	 */
 	public void insertFirst(long value) {
 		Link newLink = new Link(value);
-		newLink.next = first;
+		newLink.next = first; // null
 		first = newLink;
 	}
 
+	/**
+	 * Remove a link node from head
+	 * @return
+	 */
 	public Link removeFirst() {
 		Link temp = first;
 		first = first.next;
 		return temp;
 	}
 
+	/**
+	 * Remove a link node from middle
+	 * @param key
+	 * @return
+	 */
 	public Link remove(long key) {
 		Link current = first;
 		Link previous = first;
 		while (current != null) {
+			// Find out the link node to delete.
 			if (current.data == key) {
 				if (current == first) {
 					first = current.next;
@@ -45,6 +73,7 @@ public class LinkedList {
 				}
 				return current;
 			} else {
+				// Move on to find out the linke node.
 				previous = current;
 				current = current.next;
 			}
@@ -52,6 +81,11 @@ public class LinkedList {
 		return null;
 	}
 
+	/**
+	 * Find a link node
+	 * @param key
+	 * @return
+	 */
 	public Link find(long key) {
 		Link current = first;
 		while (current != null) {
@@ -64,6 +98,9 @@ public class LinkedList {
 		return null;
 	}
 
+	/**
+	 * Traverse all the link node
+	 */
 	public void displayList() {
 		Link current = first;
 		while (current != null) {

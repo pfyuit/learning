@@ -1,23 +1,44 @@
 package com.pfyuit.myalgorithm.datastructure.queue;
 
-import com.pfyuit.myalgorithm.datastructure.list.LinkedListFirstLast;
+import com.pfyuit.myalgorithm.datastructure.linkedlist.LinkedListFirstLast;
 
+/**
+ * @author yupengfei
+ */
 public class LinkedQueue {
 
+	/**
+	 * Use linked list (first-last) to implement linked queue.
+	 */
 	private LinkedListFirstLast list = new LinkedListFirstLast();
 
+	/**
+	 * Is linked queue empty
+	 * @return
+	 */
 	public boolean isEmpty() {
 		return list.isEmpty();
 	}
 
+	/**
+	 * Insert data to tail
+	 * @param value
+	 */
 	public void insert(long value) {
 		list.insertLast(value);
 	}
 
+	/**
+	 * Remove data from head
+	 * @return
+	 */
 	public long remove() {
 		return list.removeFirst().data;
 	}
 
+	/**
+	 * Traverse all the data in linked queue.
+	 */
 	public void displayQueue() {
 		list.displayList();
 	}
