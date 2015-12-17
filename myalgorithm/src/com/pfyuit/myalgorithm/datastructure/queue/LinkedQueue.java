@@ -40,7 +40,7 @@ public class LinkedQueue {
 	 * Traverse all the data in linked queue.
 	 */
 	public void displayQueue() {
-		list.displayList();
+		list.traverse();
 	}
 
 	public static void main(String[] args) {

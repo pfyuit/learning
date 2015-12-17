@@ -25,7 +25,7 @@ public class LinkedStack {
 	}
 
 	public void displayStack() {
-		list.displayList();
+		list.traverse();
 	}
 
 	public static void main(String[] args) {

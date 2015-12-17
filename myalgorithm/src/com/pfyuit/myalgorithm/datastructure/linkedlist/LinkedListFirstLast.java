@@ -17,8 +17,8 @@ public class LinkedListFirstLast {
 			this.data = data;
 		}
 
-		public void displayLink() {
-			System.out.println(data);
+		public void display() {
+			System.out.print(data + " ");
 		}
 	}
 
@@ -84,10 +84,10 @@ public class LinkedListFirstLast {
 	/**
 	 * Traverse all the link node
 	 */
-	public void displayList() {
+	public void traverse() {
 		Link current = first;
 		while (current != null) {
-			current.displayLink();
+			current.display();
 			current = current.next;
 		}
 	}
@@ -96,6 +96,7 @@ public class LinkedListFirstLast {
 		LinkedListFirstLast list = new LinkedListFirstLast();
 
 		// insert
+		System.out.println("==>insert data...");
 		list.insertFirst(123);
 		list.insertFirst(3);
 		list.insertFirst(45);
@@ -109,14 +110,16 @@ public class LinkedListFirstLast {
 		list.insertLast(322);
 		list.insertLast(1222);
 
-		// display
-		list.displayList();
+		// traverse
+		System.out.println("==>traverse data...");
+		list.traverse();
 		System.out.println();
 
 		// remove first
+		System.out.println("==>delete data from head...");
 		while (!list.isEmpty()) {
 			Link temp = list.removeFirst();
-			temp.displayLink();
+			temp.display();
 		}
 
 	}

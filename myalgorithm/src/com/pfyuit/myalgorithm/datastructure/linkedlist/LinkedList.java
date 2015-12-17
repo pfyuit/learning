@@ -17,8 +17,8 @@ public class LinkedList {
 			this.data = data;
 		}
 
-		public void displayLink() {
-			System.out.println(data);
+		public void display() {
+			System.out.print(data + " ");
 		}
 	}
 
@@ -57,15 +57,15 @@ public class LinkedList {
 
 	/**
 	 * Remove a link node from middle
-	 * @param key
+	 * @param value
 	 * @return
 	 */
-	public Link remove(long key) {
+	public Link remove(long value) {
 		Link current = first;
 		Link previous = first;
 		while (current != null) {
 			// Find out the link node to delete.
-			if (current.data == key) {
+			if (current.data == value) {
 				if (current == first) {
 					first = current.next;
 				} else {
@@ -73,7 +73,7 @@ public class LinkedList {
 				}
 				return current;
 			} else {
-				// Move on to find out the linke node.
+				// Move on to find out the link node.
 				previous = current;
 				current = current.next;
 			}
@@ -83,13 +83,13 @@ public class LinkedList {
 
 	/**
 	 * Find a link node
-	 * @param key
+	 * @param value
 	 * @return
 	 */
-	public Link find(long key) {
+	public Link find(long value) {
 		Link current = first;
 		while (current != null) {
-			if (current.data == key) {
+			if (current.data == value) {
 				return current;
 			} else {
 				current = current.next;
@@ -101,10 +101,10 @@ public class LinkedList {
 	/**
 	 * Traverse all the link node
 	 */
-	public void displayList() {
+	public void traverse() {
 		Link current = first;
 		while (current != null) {
-			current.displayLink();
+			current.display();
 			current = current.next;
 		}
 	}
@@ -113,6 +113,7 @@ public class LinkedList {
 		LinkedList list = new LinkedList();
 
 		// insert
+		System.out.println("==>insert data...");
 		list.insertFirst(123);
 		list.insertFirst(3);
 		list.insertFirst(45);
@@ -122,22 +123,26 @@ public class LinkedList {
 		list.insertFirst(20);
 		list.insertFirst(48);
 
-		// display
-		list.displayList();
+		// traverse
+		System.out.println("==>traverse data...");
+		list.traverse();
 		System.out.println();
 
 		// find
+		System.out.println("==>find data...");
 		Link e = list.find(45);
-		System.out.println(e.data + "\r\n");
+		System.out.println(e.data);
 
 		// remove given link
+		System.out.println("==>delete data from middle...");
 		Link e1 = list.remove(48);
-		System.out.println(e1.data + "\r\n");
+		System.out.println(e1.data);
 
 		// remove first
+		System.out.println("==>delete data from head...");
 		while (!list.isEmpty()) {
 			Link temp = list.removeFirst();
-			temp.displayLink();
+			temp.display();
 		}
 
 	}
