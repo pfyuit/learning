@@ -1,6 +1,7 @@
 package com.pfyuit.myalgorithm.datastructure.array;
 
 /**
+ * Ordered array. It has limited max size.
  * @author yupengfei
  */
 public class ArrayOrdered {
@@ -11,7 +12,8 @@ public class ArrayOrdered {
 
 	public ArrayOrdered(int maxSize) {
 		this.maxSize = maxSize;
-		data = new long[this.maxSize];
+		this.data = new long[this.maxSize];
+		this.size = 0;
 	}
 
 	/**
@@ -40,15 +42,19 @@ public class ArrayOrdered {
 
 	/**
 	 * Insert data
-	 * @param key
+	 * @param value
 	 * @return
 	 */
-	public int insert(long key) {
-		int index;
+	public int insert(long value) {
+		if (isFull()) {
+			System.out.println("array is full");
+			return -1;
+		}
 
 		// Find out index to insert.
+		int index;
 		for (index = 0; index < size; index++) {
-			if (data[index] > key) {
+			if (data[index] > value) {
 				break;
 			}
 		}
@@ -58,52 +64,53 @@ public class ArrayOrdered {
 			data[j] = data[j - 1];
 		}
 
-		// Insert key to the index.
-		data[index] = key;
+		// Insert value to the index.
+		data[index] = value;
 		size++;
 		return index;
 	}
 
 	/**
 	 * Remove data
-	 * @param key
+	 * @param value
 	 * @return
 	 */
-	public int delete(long key) {
+	public int delete(long value) {
 		// Find out index to delete.
-		int index = binarySearch(key);
-
-		if (index == data.length) {
-			System.out.println("key not found");
-		} else {
-			// Shift sub array after index to left.
-			for (int i = index; i <= size - 2; i++) {
-				data[i] = data[i + 1];
-			}
-			size--;
+		int index = find(value);
+		if (index == -1) {
+			System.out.println("data not found");
+			return -1;
 		}
+
+		// Shift sub array after index to left.
+		for (int i = index; i <= size - 2; i++) {
+			data[i] = data[i + 1];
+		}
+		size--;
 		return index;
 	}
 
 	/**
-	 * Binary search
-	 * @param key
+	 * Find data using binary search
+	 * @param value
 	 * @return
 	 */
-	public int binarySearch(long key) {
+	public int find(long value) {
 		int low = 0;
 		int high = size - 1;
 		int mid;
 		while (true) {
 			mid = (low + high) / 2;
-			if (data[mid] == key) {
+			if (data[mid] == value) {
 				return mid;
-			} else if (data[mid] < key) {
+			} else if (data[mid] < value) {
 				low = mid + 1;
-			} else if (data[mid] > key) {
+			} else if (data[mid] > value) {
 				high = mid - 1;
-			} else if (low > high) {
-				return data.length;
+			}
+			if (low > high) {
+				return -1;
 			}
 		}
 	}
@@ -111,9 +118,9 @@ public class ArrayOrdered {
 	/**
 	 * Traverse all the data
 	 */
-	public void display() {
+	public void traverse() {
 		for (int i = 0; i < size; i++) {
-			System.out.println(data[i]);
+			System.out.print(data[i] + " ");
 		}
 		System.out.println();
 	}
@@ -132,21 +139,22 @@ public class ArrayOrdered {
 		array.insert(28);
 		array.insert(99);
 
-		System.out.println("==>display data...");
-		array.display();
+		// traverse
+		System.out.println("==>traverse data...");
+		array.traverse();
 
-		// search
-		System.out.println("==>search data...");
-		int result = array.binarySearch(47);
-		System.out.println("search result:" + result);
+		// find
+		System.out.println("==>find data...");
+		System.out.println("search result:" + array.find(47));
+		System.out.println("search result:" + array.find(100));
 
 		// delete
 		System.out.println("==>delete data...");
 		array.delete(45);
 
-		System.out.println("==>display data...");
-		array.display();
-
+		// traverse
+		System.out.println("==>traverse data...");
+		array.traverse();
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.pfyuit.myalgorithm.datastructure.array;
 
 /**
+ * UnOrdered array. It has limited max size.
  * @author yupengfei
  */
 public class ArrayUnOrdered {
@@ -11,7 +12,8 @@ public class ArrayUnOrdered {
 
 	public ArrayUnOrdered(int maxSize) {
 		this.maxSize = maxSize;
-		data = new long[this.maxSize];
+		this.data = new long[this.maxSize];
+		this.size = 0;
 	}
 
 	/**
@@ -40,87 +42,100 @@ public class ArrayUnOrdered {
 
 	/**
 	 * Insert data
-	 * @param key
+	 * @param value
 	 * @return
 	 */
-	public int insert(long key) {
-		data[size++] = key;
+	public int insert(long value) {
+		if (isFull()) {
+			System.out.println("array is full");
+			return -1;
+		}
+
+		data[size++] = value;
 		return size;
 	}
 
 	/**
 	 * Delete data
-	 * @param key
+	 * @param value
 	 * @return
 	 */
-	public int delete(long key) {
+	public int delete(long value) {
 		// Find out index to delete.
-		int index = linearSearch(key);
+		int index = find(value);
 
-		if (index == data.length) {
-			System.out.println("key not found");
-		} else {
-			// Shift sub array after index to left.
-			for (int i = index; i <= size - 2; i++) {
-				data[i] = data[i + 1];
-			}
-			size--;
+		if (index == -1) {
+			System.out.println("data not found");
+			return -1;
 		}
+
+		// Shift sub array after index to left.
+		for (int i = index; i <= size - 2; i++) {
+			data[i] = data[i + 1];
+		}
+
+		size--;
 		return index;
 	}
 
 	/**
-	 * Linear search
-	 * @param key
+	 * Find data using linear search
+	 * @param value
 	 * @return
 	 */
-	public int linearSearch(long key) {
+	public int find(long value) {
+		if (isEmpty()) {
+			return -1;
+		}
+
 		for (int i = 0; i < size; i++) {
-			if (data[i] == key) {
+			if (data[i] == value) {
 				return i;
 			}
 		}
-		return data.length;
+		return -1;
 	}
 
 	/**
 	 * Traverse all the data
 	 */
-	public void display() {
+	public void traverse() {
 		for (int i = 0; i < size; i++) {
-			System.out.println(data[i]);
+			System.out.print(data[i] + " ");
 		}
 		System.out.println();
 	}
 
 	public static void main(String[] args) {
-		ArrayUnOrdered list = new ArrayUnOrdered(100);
+		ArrayUnOrdered array = new ArrayUnOrdered(100);
 
 		// insert
 		System.out.println("==>insert data...");
-		list.insert(13);
-		list.insert(2);
-		list.insert(45);
-		list.insert(7);
-		list.insert(15);
-		list.insert(47);
-		list.insert(28);
-		list.insert(99);
+		array.insert(13);
+		array.insert(2);
+		array.insert(45);
+		array.insert(7);
+		array.insert(15);
+		array.insert(47);
+		array.insert(28);
+		array.insert(99);
 
-		System.out.println("==>display data...");
-		list.display();
+		// traverse
+		System.out.println("==>traverse data...");
+		array.traverse();
 
-		// search
-		System.out.println("==>search data...");
-		int result = list.linearSearch(47);
-		System.out.println("search result:" + result);
+		// find
+		System.out.println("==>find data...");
+		System.out.println("search result:" + array.find(47));
+		System.out.println("search result:" + array.find(100));
 
 		// delete
 		System.out.println("==>delete data...");
-		list.delete(45);
+		array.delete(45);
 
-		System.out.println("==>display data...");
-		list.display();
+		// traverse
+		System.out.println("==>traverse data...");
+		array.traverse();
 	}
 
 }
