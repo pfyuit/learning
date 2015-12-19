@@ -93,9 +93,9 @@ public class HashTable {
 	public void display() {
 		for (int i = 0; i < dataItems.length; i++) {
 			if (dataItems[i] != null && dataItems[i].key != -1) {
-				System.out.print(dataItems[i].key + ":" + dataItems[i].data + ",");
+				System.out.print(dataItems[i].key + ":" + dataItems[i].value + " ");
 			} else {
-				System.out.print("*,");
+				System.out.print("* ");
 			}
 		}
 	}
@@ -113,11 +113,11 @@ public class HashTable {
 		table.insert(new DataItem(70, "hello"));
 
 		// find
-		System.out.println(table.find(34).key + ":" + table.find(34).data);
+		System.out.println(table.find(34).key + ":" + table.find(34).value);
 
 		// delete
 		DataItem item = table.remove(34);
-		System.out.println(item.key + ":" + item.data);
+		System.out.println(item.key + ":" + item.value);
 
 		// display
 		table.display();
@@ -132,10 +132,10 @@ public class HashTable {
 class DataItem {
 
 	public int key;
-	public String data;
+	public String value;
 
-	public DataItem(int key, String data) {
+	public DataItem(int key, String value) {
 		this.key = key;
-		this.data = data;
+		this.value = value;
 	}
 }

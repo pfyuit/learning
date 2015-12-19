@@ -21,7 +21,7 @@ public class Search {
 				return i;
 			}
 		}
-		return data.length;
+		return -1;
 	}
 
 	/**
@@ -39,12 +39,14 @@ public class Search {
 			mid = (low + high) / 2;
 			if (data[mid] == key) {
 				return mid;
-			} else if (low > high) {
-				return data.length;
 			} else if (data[mid] > key) {
 				high = mid - 1;
 			} else if (data[mid] < key) {
 				low = mid + 1;
+			}
+
+			if (low > high) {
+				return -1;
 			}
 		}
 	}

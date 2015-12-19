@@ -77,22 +77,21 @@ public class SequenceQueue {
 	}
 
 	public static void main(String[] args) {
-		SequenceQueue q = new SequenceQueue(100);
-		q.insert(123);
-		q.insert(34);
-		q.insert(444);
-		q.insert(567);
-		q.insert(213);
-		q.insert(2);
-		q.insert(345);
-		q.insert(3);
-		q.insert(128);
-		q.insert(20);
+		SequenceQueue queue = new SequenceQueue(100);
+		queue.insert(123);
+		queue.insert(34);
+		queue.insert(444);
+		queue.insert(567);
+		queue.insert(213);
+		queue.insert(2);
+		queue.insert(345);
+		queue.insert(3);
+		queue.insert(128);
+		queue.insert(20);
 
-		while (!q.isEmpty()) {
-			System.out.println(q.remove());
+		while (!queue.isEmpty()) {
+			System.out.print(queue.remove() + " ");
 		}
-
 	}
 
 }

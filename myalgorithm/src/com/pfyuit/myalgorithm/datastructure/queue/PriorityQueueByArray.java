@@ -50,7 +50,7 @@ public class PriorityQueueByArray {
 	}
 
 	/**
-	 * Remove data from tail (big )
+	 * Remove data from tail (small one)
 	 * @return
 	 */
 	public long remove() {
@@ -70,7 +70,7 @@ public class PriorityQueueByArray {
 		queue.insert(800);
 
 		while (!queue.isEmpty()) {
-			System.out.println(queue.remove());
+			System.out.print(queue.remove() + " ");
 		}
 	}
 
