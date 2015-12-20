@@ -10,12 +10,16 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
+/**
+ * Operations for Java annotation.
+ * @author yupengfei
+ */
 public class AnnotationTest {
 
 	public static void main(String[] args) {
 		User user = new User();
-		Class<?> clazz = user.getClass();
 
+		Class<?> clazz = user.getClass();
 		printAnnotations(clazz.getAnnotations());
 
 		Field[] fields = clazz.getDeclaredFields();
@@ -23,14 +27,19 @@ public class AnnotationTest {
 			printAnnotations(fied.getAnnotations());
 		}
 
-		Constructor[] constructors = clazz.getDeclaredConstructors();
-		for (Constructor constructor : constructors) {
+		Constructor<?>[] constructors = clazz.getDeclaredConstructors();
+		for (Constructor<?> constructor : constructors) {
 			printAnnotations(constructor.getAnnotations());
 		}
 
 		Method[] methods = clazz.getDeclaredMethods();
 		for (Method method : methods) {
 			printAnnotations(method.getAnnotations());
+
+			Annotation[][] methodAnnotations = method.getParameterAnnotations();
+			for (Annotation[] methodAnnotation : methodAnnotations) {
+				printAnnotations(methodAnnotation);
+			}
 		}
 	}
 
@@ -42,6 +51,10 @@ public class AnnotationTest {
 
 }
 
+/**
+ * An example class to apply different annotations.
+ * @author yupengfei
+ */
 @ClassAnnotation
 class User {
 
@@ -63,18 +76,15 @@ class User {
 		int i = 0;
 		this.name = name;
 	}
-
 }
 
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.TYPE })
 @interface ClassAnnotation {
-
 	String name() default "";
 
 	String value() default "";
-
 }
 
 @Documented
@@ -85,7 +95,6 @@ class User {
 	String name() default "";
 
 	String value() default "";
-
 }
 
 @Documented
@@ -96,7 +105,6 @@ class User {
 	String name() default "";
 
 	String value() default "";
-
 }
 
 @Documented
@@ -107,7 +115,6 @@ class User {
 	String name() default "";
 
 	String value() default "";
-
 }
 
 @Documented
@@ -118,7 +125,6 @@ class User {
 	String name() default "";
 
 	String value() default "";
-
 }
 
 @Documented
@@ -130,7 +136,6 @@ class User {
 	String name() default "";
 
 	String value() default "";
-
 }
 
 @Documented
@@ -141,5 +146,4 @@ class User {
 	String name() default "";
 
 	String value() default "";
-
 }

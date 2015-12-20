@@ -4,8 +4,13 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 
+/**
+ * Operations for URLEncoder
+ * @author yupengfei
+ */
 public class URLEncoderTest {
 
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws UnsupportedEncodingException {
 		String encodedUrl = URLEncoder.encode("http://www.pfyuit.com?state=ÔÚÏß");
 		System.out.println(encodedUrl);

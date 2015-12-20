@@ -3,6 +3,7 @@ package com.pfyuit.myjavase.java.lang.instrument;
 import java.lang.instrument.Instrumentation;
 
 /**
+ * Copied from spring-instrument.
  * @author yupengfei
  */
 public class CustomInstrument {

@@ -1,6 +1,11 @@
 package com.pfyuit.myjavase.java.lang;
 
+/**
+ * Operations for java.lang.System.
+ * @author yupengfei
+ */
 public class SystemTest {
+
 	public static void main(String[] args) {
 		timestamp();
 		property();

@@ -7,7 +7,7 @@ import java.rmi.registry.LocateRegistry;
  * Native RMI server implementation.
  * @author yupengfei
  */
-public class NativeRmiServer {
+public class RmiServer {
 
 	public static void main(String[] args) {
 		try {
@@ -20,12 +20,12 @@ public class NativeRmiServer {
 			/**
 			 * Bind the remote object.
 			 */
-			NativeRmiService nativeRmiService = new NativeRmiServiceImpl();
-			Naming.rebind("nativeRmiService", nativeRmiService);
+			HelloService helloService = new HelloServiceImpl();
+			Naming.rebind("helloService", helloService);
 
-			System.out.println("Native RMI server started at port 1099");
+			System.out.println("RMI server started at port 1099");
 		} catch (Exception e) {
-			System.err.println("Start Native RMI server failed: " + e);
+			System.err.println("Start RMI server failed: " + e);
 		}
 	}
 }

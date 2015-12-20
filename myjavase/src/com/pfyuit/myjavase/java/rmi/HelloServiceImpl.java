@@ -8,11 +8,11 @@ import java.rmi.server.UnicastRemoteObject;
  * throws java.rmi.RemoteException.
  * @author yupengfei
  */
-public class NativeRmiServiceImpl extends UnicastRemoteObject implements NativeRmiService {
+public class HelloServiceImpl extends UnicastRemoteObject implements HelloService {
 
 	private static final long serialVersionUID = -4310437749447183982L;
 
-	protected NativeRmiServiceImpl() throws RemoteException {
+	protected HelloServiceImpl() throws RemoteException {
 		super();
 	}
 

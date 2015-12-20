@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Custom class to implement Iterable.
+ * @author yupengfei
+ */
 public class IterableTest {
 
 	public static void main(String[] args) {
@@ -15,6 +19,11 @@ public class IterableTest {
 		}
 	}
 
+	/**
+	 * Custom class to implement {@link Iterable#iterator()}.
+	 * @author yupengfei
+	 * @param <E>
+	 */
 	public static class MyCollection<E> implements Iterable<E> {
 
 		private List<E> list;
@@ -27,7 +36,6 @@ public class IterableTest {
 		public Iterator<E> iterator() {
 			return list.iterator();
 		}
-
 	}
 
 }

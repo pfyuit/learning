@@ -9,24 +9,32 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Operations for URLConnection
+ * @author yupengfei
+ */
 public class URLConnectionTest {
 
 	public static void main(String[] args) {
-		HttpURLConnection con;
+		HttpURLConnection connection;
 		try {
-			con = (HttpURLConnection) new URL("http://pfyuit.com/about.html").openConnection();
-			con.setDoOutput(false);
-			con.setDoInput(true);
-			con.setUseCaches(false);
-			con.setAllowUserInteraction(true);
-			con.setRequestMethod("GET");
-			con.setRequestProperty("Content-Type", "text/html;charset=utf8");
-			con.connect();
+			connection = (HttpURLConnection) new URL("http://www.baidu.com").openConnection();
+			connection.setDoOutput(false);
+			connection.setDoInput(true);
+			connection.setUseCaches(false);
+			connection.setAllowUserInteraction(true);
+
+			// Set HTTP request method.
+			connection.setRequestMethod("GET");
+
+			// Set HTTP headers.
+			connection.setRequestProperty("Content-Type", "text/html;charset=utf8");
+			connection.connect();
 
 			Thread.sleep(10000);
 
 			List<String> output = new ArrayList<String>();
-			InputStream is = con.getInputStream();
+			InputStream is = connection.getInputStream();
 			BufferedReader bufreader = new BufferedReader(new InputStreamReader(is));
 			while (true) {
 				String line = bufreader.readLine();
@@ -41,7 +49,6 @@ public class URLConnectionTest {
 		} catch (IOException | InterruptedException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }

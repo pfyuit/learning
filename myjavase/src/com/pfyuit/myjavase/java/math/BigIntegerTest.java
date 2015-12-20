@@ -2,6 +2,10 @@ package com.pfyuit.myjavase.java.math;
 
 import java.math.BigInteger;
 
+/**
+ * Operations for BigInteger
+ * @author yupengfei
+ */
 public class BigIntegerTest {
 
 	public static void main(String[] args) {

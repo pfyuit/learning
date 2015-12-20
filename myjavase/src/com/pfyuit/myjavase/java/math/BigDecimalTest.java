@@ -4,6 +4,10 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 
+/**
+ * Operations for BigDecimal
+ * @author yupengfei
+ */
 public class BigDecimalTest {
 
 	public static void main(String[] args) {

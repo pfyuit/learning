@@ -4,6 +4,10 @@ import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.Locale;
 
+/**
+ * Operations for java.lang.String.
+ * @author yupengfei
+ */
 public class StringTest {
 
 	public static void main(String[] args) {

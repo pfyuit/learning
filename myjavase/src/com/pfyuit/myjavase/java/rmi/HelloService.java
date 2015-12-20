@@ -8,7 +8,7 @@ import java.rmi.RemoteException;
  * business method must throws java.rmi.RemoteException.
  * @author yupengfei
  */
-public interface NativeRmiService extends Remote {
+public interface HelloService extends Remote {
 
 	public abstract String sayHello(String name) throws RemoteException;
 

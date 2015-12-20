@@ -4,14 +4,19 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+/**
+ * Java dynamic proxy, like CGlib, Javassist, ASM.
+ * @author yupengfei
+ */
 public class DynamicProxyTest {
 
 	public static void main(String[] args) {
 		UserService userService = new UserServiceImpl();
+
 		PerformanceHandler performanceHandler = new PerformanceHandler(userService);
 		LoggingHandler loggingHandler = new LoggingHandler(userService);
-
-		UserService proxy = (UserService) Proxy.newProxyInstance(userService.getClass().getClassLoader(), userService.getClass().getInterfaces(), performanceHandler);
+		UserService proxy = (UserService) Proxy.newProxyInstance(userService.getClass().getClassLoader(), userService.getClass().getInterfaces(),
+				performanceHandler);
 		proxy.test("pfyuit");
 
 		proxy = (UserService) Proxy.newProxyInstance(userService.getClass().getClassLoader(), userService.getClass().getInterfaces(), loggingHandler);
@@ -19,12 +24,20 @@ public class DynamicProxyTest {
 	}
 }
 
+/**
+ * Business interface
+ * @author yupengfei
+ */
 interface UserService {
 
 	public void test(String str);
 
 }
 
+/**
+ * Business implementation
+ * @author yupengfei
+ */
 class UserServiceImpl implements UserService {
 
 	public void test(String str) {
@@ -49,7 +62,6 @@ class PerformanceHandler implements InvocationHandler {
 		System.out.println();
 		return result;
 	}
-
 }
 
 class LoggingHandler implements InvocationHandler {
@@ -68,5 +80,4 @@ class LoggingHandler implements InvocationHandler {
 		System.out.println();
 		return result;
 	}
-
 }
