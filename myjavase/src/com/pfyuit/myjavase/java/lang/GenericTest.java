@@ -174,13 +174,39 @@ class Generic3 {
  * @author yupengfei
  * @param <T>
  */
-class Sington<T> {
+class Sington<T extends Throwable> {
 
+	// Can't reference generic type in a static field.
 	// private static T singtonInstance; //wrong
 
+	// Can't reference generic type in a static method.
 	// public static T getInstance(){ //wrong
 	// }
+
+	// Can't catch a generic type
+	// public void doWork(Class<T> t){
+	// try{
+	// //
+	// }catch(T e){
+	// //
+	// }
+	// }
+
+	// Can throw a generic type
+	public void doWork(T t) throws T {
+		try {
+			//
+		} catch (Throwable cause) {
+			t.initCause(cause);
+			throw t;
+		}
+	}
 }
+
+// wrong: Generic type can't extend Throwable
+// class CustomException<T> extends Exception{
+//
+// }
 
 /**
  * Example class to apply generic type
