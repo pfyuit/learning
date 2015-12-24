@@ -1,5 +1,9 @@
 package com.pfyuit.myjavaee.model.report.pdf;
 
+/**
+ * Example PDF model.
+ * @author yupengfei
+ */
 public class ExamplePdfModel {
 
 	private String document;

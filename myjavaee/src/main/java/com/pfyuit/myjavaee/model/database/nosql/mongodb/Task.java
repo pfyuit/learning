@@ -1,7 +1,7 @@
 package com.pfyuit.myjavaee.model.database.nosql.mongodb;
 
 /**
- * Task model for the MongoDB.
+ * Task model for the MongoDb.
  * @author yupengfei
  */
 public class Task {

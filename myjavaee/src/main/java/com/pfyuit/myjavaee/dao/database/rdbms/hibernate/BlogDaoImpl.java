@@ -22,21 +22,25 @@ public class BlogDaoImpl implements BlogDao {
 	@Qualifier("sessionFactoryMyblog")
 	private SessionFactory sessionFactory;
 
+	@Override
 	public void save(BlogModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.save(model);
 	}
 
+	@Override
 	public void delete(BlogModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.delete(model);
 	}
 
+	@Override
 	public void update(BlogModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.update(model);
 	}
 
+	@Override
 	public BlogModel findById(int blogId) {
 		Session session = sessionFactory.getCurrentSession();
 		BlogModel result = (BlogModel) session.get(BlogModel.class, blogId);
@@ -51,4 +55,5 @@ public class BlogDaoImpl implements BlogDao {
 		List<BlogModel> result = query.list();
 		return result;
 	}
+	
 }

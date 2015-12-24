@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MemcachedServiceImpl implements MemcachedService {
 
-	private static Logger LOGGER = LoggerFactory.getLogger(MemcachedServiceImpl.class);
+	private static Logger logger = LoggerFactory.getLogger(MemcachedServiceImpl.class);
 
 	@Autowired
 	private MemcachedClient memcachedClient;
@@ -30,7 +30,7 @@ public class MemcachedServiceImpl implements MemcachedService {
 	public void check() {
 		Collection<SocketAddress> servers = memcachedClient.getAvailableServers();
 		for (SocketAddress server : servers) {
-			LOGGER.info("[MemcachedLogging][GetServers] " + server.toString());
+			logger.info("[MemcachedLogging][GetServers] " + server.toString());
 		}
 	}
 
@@ -56,7 +56,7 @@ public class MemcachedServiceImpl implements MemcachedService {
 	private void locateMemcachedNode(String key) {
 		NodeLocator locator = memcachedClient.getNodeLocator();
 		MemcachedNode node = locator.getPrimary(key);
-		LOGGER.info("[MemcachedLogging][LocateServer] " + node.toString());
+		logger.info("[MemcachedLogging][LocateServer] " + node.toString());
 	}
 
 }

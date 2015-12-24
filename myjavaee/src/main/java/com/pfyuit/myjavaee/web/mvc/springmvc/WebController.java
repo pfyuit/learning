@@ -17,11 +17,11 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = { "/web" })
 public class WebController {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(WebController.class);
+	private static final Logger logger = LoggerFactory.getLogger(WebController.class);
 
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public ModelAndView testGet() {
-		LOGGER.info("index");
+		logger.info("index");
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("index");
 		return mav;

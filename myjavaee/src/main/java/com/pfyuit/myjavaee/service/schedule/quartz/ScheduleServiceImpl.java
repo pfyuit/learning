@@ -12,11 +12,11 @@ import org.springframework.stereotype.Service;
 @Service("scheduleService")
 public class ScheduleServiceImpl implements ScheduleService {
 
-	private static Logger LOGGER = LoggerFactory.getLogger(ScheduleServiceImpl.class);
+	private static Logger logger = LoggerFactory.getLogger(ScheduleServiceImpl.class);
 
 	@Override
 	public void execute() {
-		LOGGER.info("[Schedule] Start to execute schedule task");
+		logger.info("[Schedule] Start to execute schedule task");
 	}
 
 }

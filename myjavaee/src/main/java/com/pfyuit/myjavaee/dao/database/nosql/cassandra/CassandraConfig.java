@@ -18,7 +18,7 @@ import com.datastax.driver.core.Session;
 @Configuration
 public class CassandraConfig {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(CassandraConfig.class);
+	private static final Logger logger = LoggerFactory.getLogger(CassandraConfig.class);
 
 	/** Cassandra cluster endpoint */
 	@Value("${cassandra.cluster.contact}")
@@ -29,9 +29,9 @@ public class CassandraConfig {
 		Cluster cluster = Cluster.builder().addContactPoint(clusterEndpoint).build();
 
 		Metadata metadata = cluster.getMetadata();
-		LOGGER.info("Connected to cluster: {}", metadata.getClusterName());
+		logger.info("Connected to cluster: {}", metadata.getClusterName());
 		for (Host host : metadata.getAllHosts()) {
-			LOGGER.info("Datacenter:{}, host:{}", host.getDatacenter(), host.getAddress());
+			logger.info("Datacenter:{}, host:{}", host.getDatacenter(), host.getAddress());
 		}
 
 		Session session = cluster.connect();

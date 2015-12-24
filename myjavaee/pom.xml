@@ -12,26 +12,43 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<!-- ==========================Web========================== -->
+		<!-- ############################Web################################ -->
 		<!-- Servlet -->
 		<servlet.version>3.1.0</servlet.version>
 
-		<!-- ==========================Remoting========================== -->
-		<!-- Netty -->
-		<netty.version>4.0.33.Final</netty.version>
+		<!-- ############################Remoting############################ -->
+		<!-- ======================SOAP Webservice====================== -->
+		<!-- CXF Jaxws -->
+		<cxf.jaxws.version>3.1.1</cxf.jaxws.version>
 
+		<!-- ======================RESTful Webservice====================== -->
+		<!-- CXF Jaxrs -->
+		<cxf.jaxrs.version>3.1.1</cxf.jaxrs.version>
+		<jackson.jaxrs.json.version>2.5.4</jackson.jaxrs.json.version>
+
+		<!-- ======================RPC Framework====================== -->
 		<!-- Hessian -->
 		<hessian.version>4.0.38</hessian.version>
 
 		<!-- Dubbo -->
 		<dubbo.version>2.5.3</dubbo.version>
 
-		<!-- Webservice -->
-		<cxf.jaxws.version>3.1.1</cxf.jaxws.version>
-		<cxf.jaxrs.version>3.1.1</cxf.jaxrs.version>
-		<jackson.jaxrs.json.version>2.5.4</jackson.jaxrs.json.version>
+		<!-- ======================NIO Framework====================== -->
+		<!-- Netty -->
+		<netty.version>4.0.33.Final</netty.version>
 
-		<!-- ==========================Spring========================== -->
+		<!-- ======================XML/JSON Framework====================== -->
+		<!-- Dom4j -->
+		<dom4j.version>1.6.1</dom4j.version>
+
+		<!-- Jackson -->
+		<jackson.mapper.version>1.9.13</jackson.mapper.version>
+		<jackson.databind.versiion>2.6.3</jackson.databind.versiion>
+
+
+		<!-- ############################Enterprise############################ -->
+		<!-- ==========================Injection========================== -->
+		<!-- Spring -->
 		<spring.beans.version>4.2.3.RELEASE</spring.beans.version>
 		<spring.core.version>4.2.3.RELEASE</spring.core.version>
 		<spring.context.version>4.2.3.RELEASE</spring.context.version>
@@ -58,6 +75,18 @@
 
 		<spring.data.redis.version>1.6.1.RELEASE</spring.data.redis.version>
 		<spring.data.mongodb.version>1.8.1.RELEASE</spring.data.mongodb.version>
+
+		<!-- ==========================Aspect========================== -->
+		<!-- Aopalliance -->
+		<aopalliance.version>1.0</aopalliance.version>
+
+		<!-- Aspectj -->
+		<aspectj.version>1.8.7</aspectj.version>
+
+		<!-- Byte Code -->
+		<cglib.version>3.2.0</cglib.version>
+		<javassist.version>3.20.0-GA</javassist.version>
+		<asm.version>5.0.4</asm.version>
 
 		<!-- ==========================Database========================== -->
 		<!-- MySQL -->
@@ -101,21 +130,31 @@
 		<!-- SolrJ -->
 		<solrj.version>5.3.1</solrj.version>
 
-		<!-- ==========================Server ========================== -->
-		<!-- Jetty -->
-		<jetty.jsp.version>6.1.14</jetty.jsp.version>
-
 		<!-- ==========================Messaging========================== -->
 		<!-- ActiveMQ -->
 		<activemq.client.version>5.12.1</activemq.client.version>
 
-		<!-- ==========================Email========================== -->
-		<!-- JavaMail -->
-		<javamail.version>1.4.7</javamail.version>
+		<!-- ==========================Server ========================== -->
+		<!-- Jetty -->
+		<jetty.jsp.version>6.1.14</jetty.jsp.version>
+
+		<!-- ==========================Corrdinate========================== -->
+		<!-- Zookeeper -->
+		<zookeeper.version>3.4.6</zookeeper.version>
+
+		<!-- ==========================Workflow========================== -->
+
 
 		<!-- ==========================Schedule========================== -->
 		<!-- Quartz -->
 		<quartz.version>2.2.2</quartz.version>
+
+		<!-- ==========================Rules========================== -->
+		<drools.version>6.3.0.Final</drools.version>
+
+		<!-- ==========================Email========================== -->
+		<!-- JavaMail -->
+		<javamail.version>1.4.7</javamail.version>
 
 		<!-- ==========================Logging========================== -->
 		<!-- SLF4j -->
@@ -154,24 +193,6 @@
 		<!-- Guava -->
 		<guava.version>18.0</guava.version>
 
-		<!-- Dom4j -->
-		<dom4j.version>1.6.1</dom4j.version>
-
-		<!-- Jackson -->
-		<jackson.mapper.version>1.9.13</jackson.mapper.version>
-		<jackson.databind.versiion>2.6.3</jackson.databind.versiion>
-
-		<!-- Aspectj -->
-		<aspectj.version>1.8.7</aspectj.version>
-
-		<!-- Aopalliance -->
-		<aopalliance.version>1.0</aopalliance.version>
-
-		<!-- Dynamic Proxy -->
-		<cglib.version>3.2.0</cglib.version>
-		<javassist.version>3.20.0-GA</javassist.version>
-		<asm.version>5.0.4</asm.version>
-
 		<!-- ==========================Testing========================== -->
 		<!-- Junit -->
 		<junit.version>4.12</junit.version>
@@ -179,7 +200,7 @@
 	</properties>
 
 	<dependencies>
-		<!-- ==========================Web========================== -->
+		<!-- ############################Web############################ -->
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -188,14 +209,34 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- ==========================Remoting========================== -->
-		<!-- Netty -->
+		<!-- ############################Remoting############################ -->
+		<!-- ======================SOAP Webservice====================== -->
+		<!-- CXF Jaxws -->
 		<dependency>
-			<groupId>io.netty</groupId>
-			<artifactId>netty-all</artifactId>
-			<version>${netty.version}</version>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.jaxws.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.jaxws.version}</version>
 		</dependency>
 
+		<!-- ======================RESTful Webservice====================== -->
+		<!-- CXF Jaxrs -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
+			<version>${cxf.jaxrs.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+			<version>${jackson.jaxrs.json.version}</version>
+		</dependency>
+
+		<!-- ======================RPC Framework====================== -->
 		<!-- Hessian -->
 		<dependency>
 			<groupId>com.caucho</groupId>
@@ -216,31 +257,43 @@
 			</exclusions>
 		</dependency>
 
-		<!-- CXF Jaxws -->
+		<!-- ======================NIO Framework====================== -->
+		<!-- Netty -->
 		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-frontend-jaxws</artifactId>
-			<version>${cxf.jaxws.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-transports-http</artifactId>
-			<version>${cxf.jaxws.version}</version>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+			<version>${netty.version}</version>
 		</dependency>
 
-		<!-- CXF Jaxrs -->
+		<!-- ======================XML/JSON Framework====================== -->
+		<!-- Dom4j -->
 		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
-			<version>${cxf.jaxrs.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.jaxrs</groupId>
-			<artifactId>jackson-jaxrs-json-provider</artifactId>
-			<version>${jackson.jaxrs.json.version}</version>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>${dom4j.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>xml-apis</artifactId>
+					<groupId>xml-apis</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
-		<!-- ==========================Spring========================== -->
+		<!-- Jackson -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson.mapper.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.databind.versiion}</version>
+		</dependency>
+
+		<!-- ############################Enterprise############################ -->
+		<!-- ==========================Injection========================== -->
+		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
@@ -340,6 +393,38 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
 			<version>${spring.data.mongodb.version}</version>
+		</dependency>
+
+		<!-- ==========================Aspect========================== -->
+		<!-- Aopalliance -->
+		<dependency>
+			<groupId>aopalliance</groupId>
+			<artifactId>aopalliance</artifactId>
+			<version>${aopalliance.version}</version>
+		</dependency>
+
+		<!-- AspectJ -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectj.version}</version>
+		</dependency>
+
+		<!-- Byte Code -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>${cglib.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>${javassist.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ow2.asm</groupId>
+			<artifactId>asm</artifactId>
+			<version>${asm.version}</version>
 		</dependency>
 
 		<!-- ==========================Database========================== -->
@@ -469,6 +554,14 @@
 			<version>${solrj.version}</version>
 		</dependency>
 
+		<!-- ==========================Messaging========================== -->
+		<!-- ActiveMQ -->
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-spring</artifactId>
+			<version>${activemq.client.version}</version>
+		</dependency>
+
 		<!-- ==========================Server========================== -->
 		<!-- Jetty -->
 		<dependency>
@@ -484,21 +577,14 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- ==========================Messaging========================== -->
-		<!-- ActiveMQ -->
+		<!-- ==========================Coordinate========================== -->
 		<dependency>
-			<groupId>org.apache.activemq</groupId>
-			<artifactId>activemq-spring</artifactId>
-			<version>${activemq.client.version}</version>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>${zookeeper.version}</version>
 		</dependency>
 
-		<!-- ==========================Email========================== -->
-		<!-- JavaMail -->
-		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-			<version>${javamail.version}</version>
-		</dependency>
+		<!-- ==========================Workflow========================== -->
 
 		<!-- ==========================Schedule========================== -->
 		<!-- Quartz -->
@@ -506,6 +592,22 @@
 			<groupId>org.quartz-scheduler</groupId>
 			<artifactId>quartz</artifactId>
 			<version>${quartz.version}</version>
+		</dependency>
+
+		<!-- ==========================Rules========================== -->
+		<!-- Drools -->
+		<!-- <dependency> -->
+		<!-- <groupId>org.drools</groupId> -->
+		<!-- <artifactId>drools</artifactId> -->
+		<!-- <version>${drools.version}</version> -->
+		<!-- </dependency> -->
+
+		<!-- ==========================Email========================== -->
+		<!-- JavaMail -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>${javamail.version}</version>
 		</dependency>
 
 		<!-- ==========================Logging========================== -->
@@ -623,62 +725,6 @@
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>${guava.version}</version>
-		</dependency>
-
-		<!-- Dom4j -->
-		<dependency>
-			<groupId>dom4j</groupId>
-			<artifactId>dom4j</artifactId>
-			<version>${dom4j.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>xml-apis</artifactId>
-					<groupId>xml-apis</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<!-- Jackson -->
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>${jackson.mapper.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.databind.versiion}</version>
-		</dependency>
-
-		<!-- AspectJ -->
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>${aspectj.version}</version>
-		</dependency>
-
-		<!-- Aopalliance -->
-		<dependency>
-			<groupId>aopalliance</groupId>
-			<artifactId>aopalliance</artifactId>
-			<version>${aopalliance.version}</version>
-		</dependency>
-
-		<!-- Dynamic Proxy -->
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib</artifactId>
-			<version>${cglib.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.javassist</groupId>
-			<artifactId>javassist</artifactId>
-			<version>${javassist.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.ow2.asm</groupId>
-			<artifactId>asm</artifactId>
-			<version>${asm.version}</version>
 		</dependency>
 
 		<!-- ==========================Testing========================== -->

@@ -22,21 +22,25 @@ public class CommentDaoImpl implements CommentDao {
 	@Qualifier("sessionFactoryMyblog")
 	private SessionFactory sessionFactory;
 
+	@Override
 	public void save(CommentModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.save(model);
 	}
 
+	@Override
 	public void delete(CommentModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.delete(model);
 	}
 
+	@Override
 	public void update(CommentModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.update(model);
 	}
 
+	@Override
 	public CommentModel findById(int commentId) {
 		Session session = sessionFactory.getCurrentSession();
 		CommentModel result = (CommentModel) session.get(CommentModel.class, commentId);
@@ -51,4 +55,5 @@ public class CommentDaoImpl implements CommentDao {
 		List<CommentModel> result = query.list();
 		return result;
 	}
+
 }

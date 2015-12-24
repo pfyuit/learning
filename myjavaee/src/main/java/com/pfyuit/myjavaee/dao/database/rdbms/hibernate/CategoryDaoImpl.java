@@ -22,21 +22,25 @@ public class CategoryDaoImpl implements CategoryDao {
 	@Qualifier("sessionFactoryMyblog")
 	private SessionFactory sessionFactory;
 
+	@Override
 	public void save(CategoryModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.save(model);
 	}
 
+	@Override
 	public void delete(CategoryModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.delete(model);
 	}
 
+	@Override
 	public void update(CategoryModel model) {
 		Session session = sessionFactory.getCurrentSession();
 		session.update(model);
 	}
 
+	@Override
 	public CategoryModel findById(int categoryId) {
 		Session session = sessionFactory.getCurrentSession();
 		CategoryModel result = (CategoryModel) session.get(CategoryModel.class, categoryId);
@@ -51,4 +55,5 @@ public class CategoryDaoImpl implements CategoryDao {
 		List<CategoryModel> result = query.list();
 		return result;
 	}
+
 }

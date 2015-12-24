@@ -11,11 +11,11 @@ import org.slf4j.LoggerFactory;
  */
 public class ZooKeeperWatcher implements Watcher {
 
-	private Logger LOGGER = LoggerFactory.getLogger(ZooKeeperWatcher.class);
+	private Logger logger = LoggerFactory.getLogger(ZooKeeperWatcher.class);
 
 	@Override
 	public void process(WatchedEvent event) {
-		LOGGER.info("Watcher received new notify: {}", event.toString());
+		logger.info("Watcher received new notify: {}", event.toString());
 	}
 
 }

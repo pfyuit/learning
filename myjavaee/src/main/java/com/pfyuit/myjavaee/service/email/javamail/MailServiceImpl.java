@@ -25,7 +25,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class MailServiceImpl implements MailService {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(MailServiceImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(MailServiceImpl.class);
 
 	@Override
 	public MimeBodyPart createHTMLContent(String body) throws Exception {
@@ -90,7 +90,7 @@ public class MailServiceImpl implements MailService {
 		try {
 			Transport.send(msg);
 		} catch (MessagingException e) {
-			LOGGER.error("Email send error");
+			logger.error("Email send error");
 			e.printStackTrace();
 		}
 	}

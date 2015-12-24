@@ -12,6 +12,8 @@ import com.pfyuit.myjavaee.model.database.rdbms.mybatis.Apply;
 
 /**
  * Apply Dao interface for MyBatis.
+ * <p>
+ * It supports both annotation and XML configuration.
  * @author yupengfei
  */
 public interface ApplyMapper {

@@ -11,10 +11,10 @@ import com.pfyuit.myjavaee.model.messaging.activemq.Notify;
  */
 public class MessageConsumerServiceImpl implements MessageConsumerService {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(MessageConsumerService.class);
+	private static final Logger logger = LoggerFactory.getLogger(MessageConsumerService.class);
 
 	public void receiveMessage(Notify notify) {
-		LOGGER.info("Message received: {}==>{}", notify.getNotifyId(), notify.getNotifyMsg());
+		logger.info("Message received: {}==>{}", notify.getNotifyId(), notify.getNotifyMsg());
 	}
 
 }

@@ -15,13 +15,13 @@ import org.slf4j.LoggerFactory;
 @Path("/jaxrs")
 public class JaxrsService {
 	
-	private static Logger LOGGER = LoggerFactory.getLogger(JaxrsService.class);
+	private static Logger logger = LoggerFactory.getLogger(JaxrsService.class);
 
 	@GET
 	@Path("/get")
 	@Produces("application/json; charset=UTF-8")
 	public String testGet() {
-		LOGGER.info("Execute /get");
+		logger.info("Execute /get");
 		return "success";
 	}
 }

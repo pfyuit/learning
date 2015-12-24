@@ -18,14 +18,14 @@
 				<value>classpath:/cache/memcached/memcached.properties</value>
 				<value>classpath:/cache/redis/redis.properties</value>
 
-				<!-- Coordinate Configuration -->
-				<value>classpath:/coordinate/zookeeper/zookeeper.properties</value>
-
 				<!-- Search Configuration -->
 				<value>classpath:/search/solr/solr.properties</value>
 
 				<!-- Messaging Configuration -->
 				<value>classpath:/messaging/activemq/activemq.properties</value>
+
+				<!-- Coordinate Configuration -->
+				<value>classpath:/coordinate/zookeeper/zookeeper.properties</value>
 			</list>
 		</property>
 	</bean>

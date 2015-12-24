@@ -1,5 +1,9 @@
 package com.pfyuit.myjavaee.model.report.excel;
 
+/**
+ * Example excel model.
+ * @author yupengfei
+ */
 public class ExampleExcelModel {
 
 	public String name;
