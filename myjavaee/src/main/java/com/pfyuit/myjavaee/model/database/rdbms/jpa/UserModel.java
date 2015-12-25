@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -13,6 +15,11 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "user")
+@NamedQueries(
+{ 
+	@NamedQuery(name = "ufindById", query = "SELECT p FROM UserModel p WHERE p.userId=:userId"), 
+	@NamedQuery(name = "ufindAll", query = "SELECT p FROM UserModel p") 
+})
 public class UserModel {
 
 	@Id

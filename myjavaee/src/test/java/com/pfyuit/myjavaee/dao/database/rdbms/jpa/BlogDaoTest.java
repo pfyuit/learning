@@ -73,10 +73,31 @@ public class BlogDaoTest {
 		assertNotNull(model.getComments());
 		printModel(model);
 	};
+	
+	@Test
+	public void testFindByIdByNamedQuery() {
+		BlogModel model = blogDao.findByIdByNamedQuery(3);
+		assertNotNull(model);
+		assertNotNull(model.getComments());
+		printModel(model);
+	};
+	
+	@Test
+	public void testFindByIdByNativeQuery() {
+		BlogModel model = blogDao.findByIdByNativeQuery(3);
+		assertNotNull(model);
+		printModel(model);
+	};
 
 	@Test
 	public void testFindAll() {
 		List<BlogModel> models = blogDao.findAll();
+		assertNotNull(models);
+	};
+	
+	@Test
+	public void testFindAllByNamedQuery() {
+		List<BlogModel> models = blogDao.findAllByNamedQuery();
 		assertNotNull(models);
 	};
 

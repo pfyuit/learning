@@ -6,6 +6,6 @@ package com.pfyuit.myjavaee.remoting.rpc.hessian;
  */
 public interface HessianService {
 
-	public abstract String sayHello(String name);
+	public String sayHello(String name);
 
 }

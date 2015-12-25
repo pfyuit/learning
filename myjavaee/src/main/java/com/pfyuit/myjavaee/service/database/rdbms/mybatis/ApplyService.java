@@ -10,16 +10,16 @@ import com.pfyuit.myjavaee.model.database.rdbms.mybatis.Apply;
  */
 public interface ApplyService {
 
-	public abstract void save(Apply model);
+	public void save(Apply model);
 
-	public abstract void delete(Apply model);
+	public void delete(Apply model);
 
-	public abstract void update(Apply model);
+	public void update(Apply model);
 
-	public abstract Apply findById(int applyId);
+	public Apply findById(int applyId);
 
-	public abstract List<Apply> findByOwnerId(int ownerId);
+	public List<Apply> findByOwnerId(int ownerId);
 
-	public abstract List<Apply> findByActivityId(int activityId);
+	public List<Apply> findByActivityId(int activityId);
 
 }

@@ -10,14 +10,14 @@ import com.pfyuit.myjavaee.model.database.rdbms.hibernate.UserModel;
  */
 public interface UserDao {
 
-	public abstract void save(UserModel model);
+	public void save(UserModel model);
 
-	public abstract void delete(UserModel model);
+	public void delete(UserModel model);
 
-	public abstract void update(UserModel model);
+	public void update(UserModel model);
 
-	public abstract UserModel findById(int userId);
+	public UserModel findById(int userId);
 
-	public abstract List<UserModel> findAll();
+	public List<UserModel> findAll();
 
 }

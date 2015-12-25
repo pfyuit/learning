@@ -12,30 +12,30 @@ import com.mongodb.DBCollection;
  */
 public interface MongoDbDao {
 
-	public abstract DB getDB();
+	public DB getDB();
 
-	public abstract DBCollection createCollection(String collectionName);
+	public DBCollection createCollection(String collectionName);
 
-	public abstract <T> DBCollection createCollection(Class<T> type);
+	public <T> DBCollection createCollection(Class<T> type);
 
-	public abstract void dropCollection(String collectionName);
+	public void dropCollection(String collectionName);
 
-	public abstract <T> void dropCollection(Class<T> type);
+	public <T> void dropCollection(Class<T> type);
 
-	public abstract boolean isCollectionExists(String collectionName);
+	public boolean isCollectionExists(String collectionName);
 
-	public abstract <T> boolean isCollectionExists(Class<T> type);
+	public <T> boolean isCollectionExists(Class<T> type);
 
-	public abstract DBCollection getCollection(String collectionName);
+	public DBCollection getCollection(String collectionName);
 
-	public abstract Set<String> getCollections();
+	public Set<String> getCollections();
 
-	public abstract <T> void save(T model);
+	public <T> void save(T model);
 
-	public abstract <T> void remove(T model);
+	public <T> void remove(T model);
 
-	public abstract <T> List<T> findAll(Class<T> type);
+	public <T> List<T> findAll(Class<T> type);
 
-	public abstract <T> T findById(int id, Class<T> type);
+	public <T> T findById(int id, Class<T> type);
 
 }

@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -13,6 +15,11 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "link")
+@NamedQueries(
+{ 
+	@NamedQuery(name = "lfindById", query = "SELECT p FROM LinkModel p WHERE p.linkId=:linkId"), 
+	@NamedQuery(name = "lfindAll", query = "SELECT p FROM LinkModel p") 
+})
 public class LinkModel {
 
 	@Id

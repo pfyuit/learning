@@ -10,14 +10,14 @@ import com.pfyuit.myjavaee.model.database.rdbms.hibernate.CategoryModel;
  */
 public interface CategoryDao {
 
-	public abstract void save(CategoryModel model);
+	public void save(CategoryModel model);
 
-	public abstract void delete(CategoryModel model);
+	public void delete(CategoryModel model);
 
-	public abstract void update(CategoryModel model);
+	public void update(CategoryModel model);
 
-	public abstract CategoryModel findById(int categoryId);
+	public CategoryModel findById(int categoryId);
 
-	public abstract List<CategoryModel> findAll();
+	public List<CategoryModel> findAll();
 
 }

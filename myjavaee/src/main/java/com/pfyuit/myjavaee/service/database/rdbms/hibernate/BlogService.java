@@ -10,14 +10,14 @@ import com.pfyuit.myjavaee.model.database.rdbms.hibernate.BlogModel;
  */
 public interface BlogService {
 
-	public abstract void save(BlogModel model);
+	public void save(BlogModel model);
 
-	public abstract void delete(BlogModel model);
+	public void delete(BlogModel model);
 
-	public abstract void update(BlogModel model);
+	public void update(BlogModel model);
 
-	public abstract BlogModel findById(int blogId);
+	public BlogModel findById(int blogId);
 
-	public abstract List<BlogModel> findAll();
+	public List<BlogModel> findAll();
 
 }

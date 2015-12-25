@@ -10,14 +10,14 @@ import com.pfyuit.myjavaee.model.database.rdbms.hibernate.LinkModel;
  */
 public interface LinkDao {
 
-	public abstract void save(LinkModel model);
+	public void save(LinkModel model);
 
-	public abstract void delete(LinkModel model);
+	public void delete(LinkModel model);
 
-	public abstract void update(LinkModel model);
+	public void update(LinkModel model);
 
-	public abstract LinkModel findById(int linkId);
+	public LinkModel findById(int linkId);
 
-	public abstract List<LinkModel> findAll();
+	public List<LinkModel> findAll();
 
 }

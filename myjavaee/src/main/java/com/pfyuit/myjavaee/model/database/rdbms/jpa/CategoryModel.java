@@ -9,6 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -18,6 +20,11 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "category")
+@NamedQueries(
+{ 
+	@NamedQuery(name = "cfindById", query = "SELECT p FROM CategoryModel p WHERE p.categoryId=:categoryId"), 
+	@NamedQuery(name = "cfindAll", query = "SELECT p FROM CategoryModel p") 
+})
 public class CategoryModel {
 
 	@Id

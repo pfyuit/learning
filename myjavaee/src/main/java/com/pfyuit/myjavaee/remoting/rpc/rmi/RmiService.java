@@ -8,6 +8,6 @@ import java.rmi.RemoteException;
  */
 public interface RmiService {
 
-	public abstract String sayHello(String name) throws RemoteException;
+	public String sayHello(String name) throws RemoteException;
 
 }

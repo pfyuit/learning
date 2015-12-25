@@ -10,14 +10,14 @@ import com.pfyuit.myjavaee.model.database.rdbms.hibernate.CommentModel;
  */
 public interface CommentDao {
 
-	public abstract void save(CommentModel model);
+	public void save(CommentModel model);
 
-	public abstract void delete(CommentModel model);
+	public void delete(CommentModel model);
 
-	public abstract void update(CommentModel model);
+	public void update(CommentModel model);
 
-	public abstract CommentModel findById(int commentId);
+	public CommentModel findById(int commentId);
 
-	public abstract List<CommentModel> findAll();
+	public List<CommentModel> findAll();
 
 }

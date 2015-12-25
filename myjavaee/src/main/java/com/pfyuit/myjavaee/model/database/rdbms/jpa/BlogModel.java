@@ -11,8 +11,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * Entity model for JPA/Hibernate.
@@ -20,6 +23,11 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "blog")
+@NamedQueries(
+{ 
+	@NamedQuery(name = "findById", query = "SELECT p FROM BlogModel p WHERE p.blogId=:blogId"), 
+	@NamedQuery(name = "findAll", query = "SELECT p FROM BlogModel p") 
+})
 public class BlogModel {
 
 	@Id
@@ -55,6 +63,10 @@ public class BlogModel {
 	/** Not a real column in the table, query on demand **/
 	@OneToMany(mappedBy = "blog", fetch = FetchType.LAZY)
 	private List<CommentModel> comments;
+
+	/** Field that not persist **/
+	@Transient
+	private String name;
 
 	public int getBlogId() {
 		return blogId;
@@ -134,6 +146,14 @@ public class BlogModel {
 
 	public void setComments(List<CommentModel> comments) {
 		this.comments = comments;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

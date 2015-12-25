@@ -10,14 +10,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
- * Entity model for JPA/Hibernate.
+ * Entity model for JPA.
  * @author yupengfei
  */
 @Entity
 @Table(name = "comment")
+@NamedQueries(
+{ 
+	@NamedQuery(name = "cofindById", query = "SELECT p FROM CommentModel p WHERE p.commentId=:commentId"), 
+	@NamedQuery(name = "cofindAll", query = "SELECT p FROM CommentModel p") 
+})
 public class CommentModel {
 
 	@Id

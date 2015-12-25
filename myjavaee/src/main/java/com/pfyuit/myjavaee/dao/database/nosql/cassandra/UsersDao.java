@@ -6,16 +6,16 @@ package com.pfyuit.myjavaee.dao.database.nosql.cassandra;
  */
 public interface UsersDao {
 
-	public abstract void createKeySpace();
+	public void createKeySpace();
 
-	public abstract void createTable();
+	public void createTable();
 
-	public abstract void save();
+	public void save();
 
-	public abstract void delete();
+	public void delete();
 
-	public abstract void update();
+	public void update();
 
-	public abstract void find();
+	public void find();
 
 }

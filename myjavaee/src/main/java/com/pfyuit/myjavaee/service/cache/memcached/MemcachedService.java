@@ -5,13 +5,13 @@ package com.pfyuit.myjavaee.service.cache.memcached;
  * @author yupengfei
  */
 public interface MemcachedService {
-	
-	public abstract void check();
 
-	public abstract void set(String key, String value);
+	public void check();
 
-	public abstract String get(String key);
+	public void set(String key, String value);
 
-	public abstract void delete(String key);
+	public String get(String key);
+
+	public void delete(String key);
 
 }
