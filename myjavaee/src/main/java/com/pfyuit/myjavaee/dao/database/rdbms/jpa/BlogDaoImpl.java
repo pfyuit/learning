@@ -18,6 +18,7 @@ import com.pfyuit.myjavaee.model.database.rdbms.jpa.BlogModel;
 @Repository
 public class BlogDaoImpl implements BlogDao {
 
+	/** Container-managed EntityManager **/
 	@PersistenceContext
 	private EntityManager entityManager;
 
@@ -52,7 +53,7 @@ public class BlogDaoImpl implements BlogDao {
 	public BlogModel findByIdByNativeQuery(int blogId) {
 		Query nativeQuery = entityManager.createNativeQuery("SELECT * FROM blog WHERE blog_id=:blogId", BlogModel.class);
 		nativeQuery.setParameter("blogId", blogId);
-		return (BlogModel)nativeQuery.getResultList().get(0);
+		return (BlogModel) nativeQuery.getResultList().get(0);
 	}
 
 	@Override
