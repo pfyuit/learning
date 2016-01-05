@@ -12,59 +12,105 @@ import java.nio.file.Paths;
 public class PathTest {
 
 	public static void main(String[] args) {
-		// File path: D:/temp/
-		System.out.println("==>file path");
+		testToString();
+		testEndsWith();
+		testGetFileName();
+		testGetFileSystem();
+		testIsAbsolute();
+		testToFile();
+		testToUri();
+
+		testResolve();
+		testResolveSibling();
+		testRelativize();
+		testGetNameCount();
+		testGetName();
+		testGetRoot();
+	}
+
+	private static void testGetRoot() {
+		System.out.println("==>testGetRoot");
 		Path file = Paths.get("D:", "temp");
-		System.out.println(file);
+		System.out.println(file.getRoot());
+	}
 
-		System.out.println("==>file ends with temp?");
-		System.out.println(file.endsWith("temp"));
+	private static void testGetName() {
+		System.out.println("==>testGetName");
+		Path file = Paths.get("D:", "temp");
+		System.out.println(file.getName(0));
+	}
 
-		System.out.println("==>file name");
-		System.out.println(file.getFileName());
+	private static void testGetNameCount() {
+		System.out.println("==>testGetNameCount");
+		Path file = Paths.get("D:", "temp");
+		System.out.println(file.getNameCount());
+	}
 
-		System.out.println("==>file system");
-		System.out.println(file.getFileSystem());
-		
-		System.out.println("==>file is absolute?");
-		System.out.println(file.isAbsolute());
-		
-		System.out.println("==>file toFile");
+	private static void testRelativize() {
+		System.out.println("==>testRelativize");
+		Path file = Paths.get("D:", "temp");
+		Path file1 = Paths.get("D:", "temp1");
+		Path file2 = file.relativize(file1);
+		System.out.println(file2);
+		System.out.println(file2.isAbsolute());
+	}
+
+	private static void testResolveSibling() {
+		System.out.println("==>testResolveSibling");
+		Path file = Paths.get("D:", "temp");
+		Path file1 = file.resolveSibling("temp1");
+		System.out.println(file1);
+	}
+
+	private static void testResolve() {
+		System.out.println("==>testResolve");
+		Path file = Paths.get("D:", "temp");
+		Path file1 = file.resolve("abc.txt");
+		System.out.println(file1);
+	}
+
+	private static void testToUri() {
+		System.out.println("==>testToUri");
+		Path file = Paths.get("D:", "temp");
+		URI uri = file.toUri();
+		System.out.println(uri.toString());
+	}
+
+	private static void testToFile() {
+		System.out.println("==>testToFile");
+		Path file = Paths.get("D:", "temp");
 		File ioFile = file.toFile();
 		System.out.println(ioFile.getAbsolutePath());
-		
-		System.out.println("==>file toURI");
-		URI uri = file.toUri();
-		System.out.println(uri.toString());		
+	}
 
-		// File path: D:/temp/abc.txt
-		System.out.println("==>file2 path");
-		Path file2 = file.resolve("abc.txt");
-		System.out.println(file2);
+	private static void testIsAbsolute() {
+		System.out.println("==>testIsAbsolute");
+		Path file = Paths.get("D:", "temp");
+		System.out.println(file.isAbsolute());
+	}
 
-		// File path: D:/temp/1
-		System.out.println("==>file3 path");
-		Path file3 = file2.resolveSibling("1");
-		System.out.println(file3);
+	private static void testGetFileSystem() {
+		System.out.println("==>testGetFileSystem");
+		Path file = Paths.get("D:", "temp");
+		System.out.println(file.getFileSystem());
+	}
 
-		// File path: ../1
-		System.out.println("==>file4 relative path");
-		Path file4 = file2.relativize(file3);
-		System.out.println(file4);
+	private static void testGetFileName() {
+		System.out.println("==>testGetFileName");
+		Path file = Paths.get("D:", "temp");
+		System.out.println(file.getFileName());
+	}
 
-		System.out.println("==>file3 name count");
-		System.out.println(file3.getNameCount());
+	private static void testEndsWith() {
+		System.out.println("==>testEndsWith");
+		Path file = Paths.get("D:", "temp");
+		System.out.println(file.endsWith("temp"));
+	}
 
-		System.out.println("==>file4 name count");
-		System.out.println(file4.getNameCount());
-
-		System.out.println(file3.getName(0));
-
-		System.out.println("==>file3 root");
-		System.out.println(file3.getRoot());
-
-		System.out.println("==>file4 root");
-		System.out.println(file4.getRoot());
+	private static void testToString() {
+		System.out.println("==>testToString");
+		Path file = Paths.get("D:", "temp");
+		System.out.println(file);
 	}
 
 }

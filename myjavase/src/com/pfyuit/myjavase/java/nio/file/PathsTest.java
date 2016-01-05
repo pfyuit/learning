@@ -12,6 +12,11 @@ import java.nio.file.Paths;
 public class PathsTest {
 
 	public static void main(String[] args) throws URISyntaxException {
+		testGet();
+	}
+
+	private static void testGet() throws URISyntaxException {
+		System.out.println("==>testGet");
 		Path file = Paths.get("D:", "temp");
 		System.out.println(file);
 
