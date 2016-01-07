@@ -1,0 +1,62 @@
+package com.pfyuit.myjavaee.service.rule.drools
+
+import com.pfyuit.myjavaee.model.rule.drools.Account
+import com.pfyuit.myjavaee.service.rule.drools.BusinessService
+
+//可以定义一些函数
+function void myFunction() {
+    System.out.println("myFunction");
+}
+
+rule "accountWarning"
+  //可以定义一些控制属性
+  //no-loop true: 定义当前的规则是否不允许多次循环执行，默认是false
+  //lock-on-active true: 控制当前的规则只会被执行一次
+  //date-expires：设置规则的过期时间，默认的时间格式：“日-月-年”，中英文格式相同，但是写法要用各自对应的语言，比如中文："29-七月-2010"，但是还是推荐使用更为精确和习惯的格式，这需要手动在java代码中设置当前系统的时间格式，后续提及。属性用法举例：date-expires "2011-01-31 23:59:59" // 这里我们使用了更为习惯的时间格式
+  //date-effective：设置规则的生效时间，时间格式同上。
+  //duration：规则定时，duration 3000   3秒后执行规则
+  //salience：优先级，数值越大越先执行，这个可以控制规则的执行顺序。
+  
+  salience 100
+  
+  when
+    // eval(true)
+    
+    //常见运算符，可以组合使用
+    // >,  >=,  <,  <=,  ==,  !=,  contains, not contains,  memberOf,  not memberOf,  matches,  not matches
+  	
+  	$account : Account( balance < 100 )
+  	$businessService : BusinessService()
+  
+  then
+    //结果部分可以是纯java代码
+  	System.out.println("Warning! money running out! "+$account);
+  	
+  	//结果部分也可以调用Fact对象的方法
+  	$account.printBalance();
+  	$businessService.doBusiness();
+  	
+  	//结果部分也可以调用类的静态方法
+  	
+  	//结果部分还可以调drools提供的方法
+  	//insert：往当前workingMemory中插入一个新的Fact对象，会触发规则的再次执行，除非使用no-loop限定；
+	//update：更新
+	//modify：修改，与update语法不同，结果都是更新操作
+	//retract：删除
+	
+	//结果部分还可以调规则文件中定义的function
+	myFunction();
+	
+end
+
+rule "accountInfo"
+
+  salience 99
+  
+  when
+  	$account : Account()
+  
+  then
+  	System.out.println("Info! Your account balance "+$account);
+
+end
