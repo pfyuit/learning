@@ -1,5 +1,7 @@
 package com.pfyuit.myalgorithm.algorithm.search;
 
+import com.pfyuit.myalgorithm.datastructure.hash.HashTable;
+import com.pfyuit.myalgorithm.datastructure.hash.HashTable.DataItem;
 import com.pfyuit.myalgorithm.datastructure.tree.BinarySearchTree;
 import com.pfyuit.myalgorithm.datastructure.tree.BinarySearchTree.Node;
 
@@ -65,6 +67,20 @@ public class Search {
 		return tree.find(key);
 	}
 
+	/**
+	 * Hash search
+	 * @param data
+	 * @param key
+	 * @return
+	 */
+	public static int hashSearch(int[] data, int key) {
+		HashTable table = new HashTable(500);
+		for (int i : data) {
+			table.insert(new DataItem(i, "hello"));
+		}
+		return table.find(key).key;
+	}
+
 	public static void main(String[] args) {
 		int[] data = { 1, 3, 5, 7, 9, 23, 145, 368, 999, 1009 };
 
@@ -76,6 +92,9 @@ public class Search {
 
 		Node result1 = binarySearchTreeSearch(data, 999);
 		System.out.println("binary search tree search result: " + result1.data);
+		
+		result = hashSearch(data, 999);
+		System.out.println("hash search result: " + result);
 	}
 
 }

@@ -219,9 +219,9 @@ public class Sort {
 	}
 
 	private static void printData() {
-		for (int i = 0; i < data.length; i++) {
-			System.out.println(data[i]);
-		}
+//		for (int i = 0; i < data.length; i++) {
+//			System.out.print(data[i] + " ");
+//		}
 	}
 
 	public static void main(String[] args) {
@@ -235,6 +235,7 @@ public class Sort {
 	}
 
 	private static void testHeapSort() {
+		System.out.println("==>testHeapSort");
 		initData();
 		long start = System.currentTimeMillis();
 		heapSort(data);
@@ -243,6 +244,7 @@ public class Sort {
 	}
 
 	private static void testMergeSort() {
+		System.out.println("==>testMergeSort");
 		initData();
 		long start = System.currentTimeMillis();
 		mergeSort(data);
@@ -251,6 +253,7 @@ public class Sort {
 	}
 
 	private static void testQuickSort() {
+		System.out.println("==>testQuickSort");
 		initData();
 		long start = System.currentTimeMillis();
 		quickSort(data);
@@ -259,6 +262,7 @@ public class Sort {
 	}
 
 	private static void testShellSort() {
+		System.out.println("==>testShellSort");
 		initData();
 		long start = System.currentTimeMillis();
 		shellSort(data);
@@ -267,6 +271,7 @@ public class Sort {
 	}
 
 	private static void testInsertionSort() {
+		System.out.println("==>testInsertionSort");
 		initData();
 		long start = System.currentTimeMillis();
 		insertionSort(data);
@@ -275,6 +280,7 @@ public class Sort {
 	}
 
 	private static void testSelectionSort() {
+		System.out.println("==>testSelectionSort");
 		initData();
 		long start = System.currentTimeMillis();
 		selectionSort(data);
@@ -283,6 +289,7 @@ public class Sort {
 	}
 
 	private static void testBubbleSort() {
+		System.out.println("==>testBubbleSort");
 		initData();
 		long start = System.currentTimeMillis();
 		bubbleSort(data);

@@ -1,6 +1,7 @@
 package com.pfyuit.myalgorithm.datastructure.tree;
 
 /**
+ * Binary Search Tree: BST
  * @author yupengfei
  */
 public class BinarySearchTree {
@@ -23,6 +24,14 @@ public class BinarySearchTree {
 	 * Root node of the tree
 	 */
 	public Node root;
+
+	/**
+	 * Is tree empty
+	 * @return
+	 */
+	public boolean isEmpty() {
+		return root == null;
+	}
 
 	/**
 	 * Insert node to tree
@@ -187,14 +196,14 @@ public class BinarySearchTree {
 	/**
 	 * Traverse all tree nodes
 	 */
-	public void display() {
+	public void traverse() {
 		inOrder(root);
 	}
 
 	private void inOrder(Node node) {
 		if (node != null) {
 			inOrder(node.leftChild);
-			System.out.println(node.data);
+			System.out.print(node.data + " ");
 			inOrder(node.rightChild);
 		}
 	}
@@ -214,7 +223,7 @@ public class BinarySearchTree {
 		tree.insert(98);
 
 		// traverse
-		tree.display();
+		tree.traverse();
 		System.out.println();
 
 		// search
@@ -225,7 +234,7 @@ public class BinarySearchTree {
 		tree.delete(223);
 		tree.delete(38);
 		tree.delete(1136);
-		tree.display();
+		tree.traverse();
 	}
 
 }

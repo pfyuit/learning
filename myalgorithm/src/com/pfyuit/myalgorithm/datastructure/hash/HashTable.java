@@ -123,19 +123,19 @@ public class HashTable {
 		table.display();
 	}
 
-}
+	/**
+	 * Wrapper class of hash table data.
+	 * @author yupengfei
+	 */
+	public static class DataItem {
 
-/**
- * Wrapper class of hash table data.
- * @author yupengfei
- */
-class DataItem {
+		public int key;
+		public String value;
 
-	public int key;
-	public String value;
-
-	public DataItem(int key, String value) {
-		this.key = key;
-		this.value = value;
+		public DataItem(int key, String value) {
+			this.key = key;
+			this.value = value;
+		}
 	}
+
 }
