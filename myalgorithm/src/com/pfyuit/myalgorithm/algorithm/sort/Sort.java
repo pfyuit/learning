@@ -123,7 +123,6 @@ public class Sort {
 			int i = left;
 			int j = right;
 			while (i < j) {
-				// ���������ҵ�С�������
 				while (i < j && data[j] >= temp) {
 					j--;
 				}
@@ -131,7 +130,7 @@ public class Sort {
 					data[i] = data[j];
 					i++;
 				}
-				// ���������ҵ���������
+
 				while (i < j && data[i] < temp) {
 					i++;
 				}
@@ -141,11 +140,9 @@ public class Sort {
 				}
 			}
 			data[i] = temp;
-			// �ݹ�
 			quick_sort(data, left, i - 1);
 			quick_sort(data, i + 1, right);
 		}
-
 	}
 
 	/**
@@ -219,9 +216,9 @@ public class Sort {
 	}
 
 	private static void printData() {
-//		for (int i = 0; i < data.length; i++) {
-//			System.out.print(data[i] + " ");
-//		}
+		// for (int i = 0; i < data.length; i++) {
+		// System.out.print(data[i] + " ");
+		// }
 	}
 
 	public static void main(String[] args) {
