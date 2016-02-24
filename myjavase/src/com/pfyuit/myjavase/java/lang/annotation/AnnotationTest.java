@@ -45,7 +45,8 @@ public class AnnotationTest {
 
 	private static void printAnnotations(Annotation[] annotations) {
 		for (Annotation annotation : annotations) {
-			System.out.println(annotation.annotationType().getCanonicalName());
+			Class<? extends Annotation> clazz = annotation.annotationType();
+			System.out.println(clazz.getCanonicalName());
 		}
 	}
 

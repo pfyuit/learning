@@ -20,7 +20,7 @@ public class GenericTest {
 		Generic1<Integer, String> generic1 = new Generic1<>(1, "hello");
 		System.out.println(generic1.getkey() + ":" + generic1.getValue());
 
-		// Generic type with one restricted parameter.
+		// Generic type with one restricted parameter(one super class).
 		Generic2<String> generic2 = new Generic2<>("hello");
 		System.out.println(generic2.getTarget());
 
@@ -55,6 +55,8 @@ public class GenericTest {
 		Generic<? super Manager> employee3 = new Generic<>(new Employee());
 		Generic<? super Manager> employee4 = new Generic<>(new Manager());
 		System.out.println(employee3.getClass().equals(employee4.getClass()));
+		
+		Factory<String, File> factory = new FactoryImpl();
 	}
 
 }
