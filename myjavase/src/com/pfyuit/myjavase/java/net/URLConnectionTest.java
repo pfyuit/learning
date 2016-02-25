@@ -8,9 +8,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
- * Operations for URLConnection
+ * Operations for URLConnection: High level operations for web.
  * @author yupengfei
  */
 public class URLConnectionTest {
@@ -19,10 +20,13 @@ public class URLConnectionTest {
 		HttpURLConnection connection;
 		try {
 			connection = (HttpURLConnection) new URL("http://www.baidu.com").openConnection();
-			connection.setDoOutput(false);
+			connection.setConnectTimeout(5000);
+			connection.setReadTimeout(5000);
 			connection.setDoInput(true);
-			connection.setUseCaches(false);
-			connection.setAllowUserInteraction(true);
+			connection.setDoOutput(false);
+			connection.setUseCaches(false); // Applet only
+			connection.setAllowUserInteraction(true);// Applet only
+			connection.setIfModifiedSince(5000);
 
 			// Set HTTP request method.
 			connection.setRequestMethod("GET");
@@ -33,6 +37,27 @@ public class URLConnectionTest {
 
 			Thread.sleep(10000);
 
+			// Read HTTP response
+			System.out.println(connection.getResponseCode());
+			System.out.println(connection.getResponseMessage());
+
+			// Read HTTP header
+			System.out.println(connection.getContentType());
+			System.out.println(connection.getContentLength());
+			System.out.println(connection.getIfModifiedSince());
+			System.out.println(connection.getExpiration());
+			System.out.println(connection.getLastModified());
+
+			Map<String, List<String>> headers = connection.getHeaderFields();
+			for (String headerFieldName : headers.keySet()) {
+				System.out.print(headerFieldName + " ");
+				List<String> values = headers.get(headerFieldName);
+				for (String value : values) {
+					System.out.println(value);
+				}
+			}
+
+			// Read HTTP body
 			List<String> output = new ArrayList<String>();
 			InputStream is = connection.getInputStream();
 			BufferedReader bufreader = new BufferedReader(new InputStreamReader(is));
