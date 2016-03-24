@@ -20,7 +20,8 @@ public class RemoveDuplicatesFromSortedList {
 		if(head == null || head.next == null){
 			return head;
 		}
-		
+		//TODO: 
+		return null;
 	}
 
 	public static class ListNode {
