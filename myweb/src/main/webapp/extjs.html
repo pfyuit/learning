@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all-neptune.css" />
+
+<script type="text/javascript" src="extjs/bootstrap.js"></script>
+<script type="text/javascript" src="extjs/locale/ext-lang-zh_CN.js"></script>
+
+</head>
+<body>
+	<script type="text/javascript">
+		Ext.onReady(function() {
+			//Ext.MessageBox.alert("hello", "Hello,ExtJS4");
+
+			Ext.create('Ext.Button', {
+				text : 'Click me',
+				renderTo : Ext.getBody(),
+				handler : function() {
+					alert('You clicked the button!');
+				}
+			});
+
+			Ext.create('Ext.tab.Panel', {
+				width : 400,
+				height : 400,
+				renderTo : document.body,
+				items : [ {
+					title : 'Foo'
+				}, {
+					title : 'Bar',
+					tabConfig : {
+						title : 'Custom Title',
+						tooltip : 'A button tooltip'
+					}
+				} ]
+			});
+
+		});
+	</script>
+</body>
+</html>
