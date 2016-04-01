@@ -1,26 +1,32 @@
 ===web===
 spec: servlet, jsp, jstl, el, jsf, websocket, jsonp
 mvc: springmvc, struts
-layout: sitemesh
-view: freemarker
+layout: sitemesh, tiles
+view: freemarker, velocity
 
-===webservice===
+===remoting===
 spec: jaxp, jaxm, jaxr, jaxb, saaj, web service metadata, jaxrpc, jaxws, jaxrs
-soap: cxf(jaxws)
+soap: cxf(jaxws), axis(jaxrpc), axis2(jaxws)
 restful: springmvc, cxf(jaxrs), jersy(jaxrs)
-remoting: hessian
+rpc: hessian, dubbo, rmi, protobuffer, thrift
 
 ===enterprise===
 spec: jpa, jca, jta, batch application, bean validation, common annotations, concurrency utilities, cdi, di, ejb, jms, javamail
 inject: spring
-orm: hibernate, mybatis
+aop: spring
+database: c3p0, dbcp, tomcat jdbc, atomikos, hibernate, jpa, mybatis
 oxm: xstream
+cache: spymemcached, jedis, ehcache, guava cache
 search: lucence, solr
-transaction: atomikos
-server: apache, nginx, tomcat, jetty, glassfish
 message: activemq
+server: apache, nginx, tomcat, jetty, glassfish
+coordinate: zookeeper
 workflow: activiti
 scheduler: quartz
+rules: drools
+logging: slf4j, log4j, logback
+report: poi, itext
+email: javamail
 
 ===security===
 spec: jacc, jaas
