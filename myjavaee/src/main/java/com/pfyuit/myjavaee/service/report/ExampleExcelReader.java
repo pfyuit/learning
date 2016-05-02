@@ -4,8 +4,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -68,7 +70,7 @@ public class ExampleExcelReader implements Reader<ExampleExcelModel> {
 		return list;
 	}
 
-	private Workbook createWorkbook(File file, FileInputStream fis) throws IOException {
+	private static Workbook createWorkbook(File file, FileInputStream fis) throws IOException {
 		Workbook workbook = null;
 		if (file.getName().toLowerCase().endsWith("xlsx")) {
 			workbook = new XSSFWorkbook(fis);
@@ -76,6 +78,31 @@ public class ExampleExcelReader implements Reader<ExampleExcelModel> {
 			workbook = new HSSFWorkbook(fis);
 		}
 		return workbook;
+	}
+	
+	public static void main(String[] args){
+		try {
+			File file = new File("C:\\topsku_soldout.xls");
+			FileInputStream fis = new FileInputStream(file);
+			Workbook workbook = createWorkbook(file, fis);
+			int sheetNumbers = workbook.getNumberOfSheets();
+			Set<String> lsins = new HashSet<String>();			
+
+			for (int i = 0; i < sheetNumbers; i++) {
+				Sheet sheet = workbook.getSheetAt(i);
+				Iterator<Row> rowIterator = sheet.iterator();
+				while (rowIterator.hasNext()) {
+					Row row = rowIterator.next();
+					Cell cell = row.getCell(1);
+					lsins.add(cell.getStringCellValue());
+				}
+			}
+			
+			System.out.println(lsins);
+			fis.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

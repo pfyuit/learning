@@ -36,6 +36,8 @@ fruits=['Apple','Orange','Banana']
 for fruit in fruits:
     print(fruit)
 print("Good bye!")
+for index in range(len(fruits)):
+    print(fruits[index])
 
 print("==>pass statement")
 if True:

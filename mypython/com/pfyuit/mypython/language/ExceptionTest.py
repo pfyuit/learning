@@ -21,4 +21,4 @@ try:
 except BaseException:
    print("Error: unexpected exception")
 finally:
-   print("Error: can\'t find file or read data")
+   print("Finally end")

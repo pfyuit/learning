@@ -36,3 +36,9 @@ dictionary['key2']='value2'
 print(dictionary)
 print(dictionary['key1'])
 print(dictionary['key2'])
+
+print("==>multi variable value")
+a,b,c=1,2,'hello'
+print(a)
+print(b)
+print(c)
