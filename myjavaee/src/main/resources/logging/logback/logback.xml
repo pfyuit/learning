@@ -8,9 +8,9 @@
 	</appender>
 
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>${HOME}/log/myjavaee.log</file>
+		<file>${user.home}/myjavaee/log/myjavaee.log</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>${HOME}/log/myjavaee.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<fileNamePattern>${user.home}/myjavaee/log/myjavaee.log.%d{yyyy-MM-dd}</fileNamePattern>
 			<maxHistory>30</maxHistory>
 		</rollingPolicy>
 		<encoder>
@@ -18,11 +18,18 @@
 		</encoder>
 	</appender>
 
-	<logger name="org.springframework" level="WARN" />
-	<logger name="org.hibernate" level="WARN" />
+	<logger name="org.springframework" level="DEBUG" />
+	
+	<logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE" />
+	<logger name="org.hibernate.type.descriptor.sql.BasicExtractor" level="DEBUG" />
+	<logger name="org.hibernate.engine.QueryParameters" level="DEBUG" />
+	<logger name="org.hibernate.engine.query.HQLQueryPlan" level="DEBUG" />
+	<logger name="org.hibernate.SQL" level="DEBUG" />
+	<logger name="org.hibernate.type" level="TRACE" />
 
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
 	</root>
 
 </configuration>
