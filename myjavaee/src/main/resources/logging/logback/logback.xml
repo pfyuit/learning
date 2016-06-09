@@ -9,7 +9,7 @@
 
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${user.home}/myjavaee/log/myjavaee.log</file>
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolhsdicy">
 			<fileNamePattern>${user.home}/myjavaee/log/myjavaee.log.%d{yyyy-MM-dd}</fileNamePattern>
 			<maxHistory>30</maxHistory>
 		</rollingPolicy>
@@ -18,7 +18,7 @@
 		</encoder>
 	</appender>
 
-	<logger name="org.springframework" level="DEBUG" />
+	<logger name="org.springframework" level="INFO" />
 	
 	<logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE" />
 	<logger name="org.hibernate.type.descriptor.sql.BasicExtractor" level="DEBUG" />
