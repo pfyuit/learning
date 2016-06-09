@@ -4,6 +4,7 @@ import java.io.Console;
 
 /**
  * Operations for java.io.Console
+ * @since 1.6
  * @author yupengfei
  */
 public class ConsoleTest {

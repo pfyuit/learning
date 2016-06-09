@@ -24,6 +24,7 @@ public class IntrospectorTest {
 		System.out.println("==>PropertyDescriptor");
 		PropertyDescriptor[] propDescs = beanInfo.getPropertyDescriptors();
 		for (PropertyDescriptor propDesc : propDescs) {
+			System.out.println(propDesc.getDisplayName());
 			Method methodR = propDesc.getReadMethod();
 			if (methodR != null) {
 				System.out.println(methodR.getName());

@@ -1,12 +1,34 @@
 package com.pfyuit.myjavase.java.io;
 
-/** 
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+
+/**
  * @author yupengfei
  */
 public class FileTest {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	private static final String TEST_FILE = "test.txt";
+
+	public static void main(String[] args) throws IOException {
+		URL url = FileTest.class.getResource(TEST_FILE);
+		File file = new File(url.getPath());
+
+		System.out.println("File getAbsolutePath(): " + file.getAbsolutePath());
+		System.out.println("File lastModified(): " + file.lastModified());
+		System.out.println("File getCanonicalPath(): " + file.getCanonicalPath());
+		System.out.println("File length(): " + file.length());
+		System.out.println("File getFreeSpace(): " + file.getFreeSpace());
+		System.out.println("File getName(): " + file.getName());
+		System.out.println("File getParent(): " + file.getParent());
+		System.out.println("File getPath(): " + file.getPath());
+		System.out.println("File getTotalSpace(): " + file.getTotalSpace());
+		System.out.println("File toURI(): " + file.toURI());
+		System.out.println("File canExecute(): " + file.canExecute());
+		System.out.println("File canRead(): " + file.canRead());
+		System.out.println("File canWrites(): " + file.canWrite());
+		
 
 	}
 

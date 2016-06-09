@@ -27,6 +27,7 @@ public class UserBeanInfo extends SimpleBeanInfo {
 			namePropertyDescriptor = new PropertyDescriptor("name", User.class);
 		} catch (IntrospectionException e) {
 			e.printStackTrace();
+			throw new IllegalStateException(e);
 		}
 		namePropertyDescriptor.setPropertyEditorClass(UserNamePropertyEditor.class);
 		return new PropertyDescriptor[] { namePropertyDescriptor };
