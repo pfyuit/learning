@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
 	<!-- Import Base Configuration -->
-	<import resource="classpath:/spring/myjavaee-base.xml" />
+	<import resource="classpath:/spring/myjavaee-properties.xml" />
 
 	<!-- Configuration for Scanning -->
 	<context:component-scan base-package="com.pfyuit.myjavaee.dao.database.rdbms.hibernate"></context:component-scan>

@@ -150,7 +150,7 @@
 		<quartz.version>2.2.2</quartz.version>
 
 		<!-- ==========================Rules========================== -->
-		<drools.version>6.3.0.Final</drools.version>
+		<drools.version>6.4.0.Final</drools.version>
 
 		<!-- ==========================Logging========================== -->
 		<!-- SLF4j -->
@@ -602,6 +602,11 @@
 
 		<!-- ==========================Rules========================== -->
 		<!-- Drools -->
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-core</artifactId>
+			<version>${drools.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.drools</groupId>
 			<artifactId>drools-compiler</artifactId>

@@ -6,7 +6,7 @@
      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
 	<!-- Import Base Configuration -->
-	<import resource="classpath:/spring/myjavaee-base.xml" />
+	<import resource="classpath:/spring/myjavaee-properties.xml" />
 
 	<!-- Import Remoting Configuration -->
 	<import resource="classpath:/remoting/soap/jaxws/myjavaee-remoting-soap-jaxws.xml" />
