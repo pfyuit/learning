@@ -19,7 +19,7 @@
 	<import resource="classpath:/database/rdbms/jta/myjavaee-database-rdbms-jta.xml" />
 	<import resource="classpath:/database/rdbms/mybatis/myjavaee-database-rdbms-mybatis.xml" />
 	<!-- <import resource="classpath:/database/nosql/cassandra/myjavaee-database-nosql-cassandra.xml" /> -->
-	<!-- <import resource="classpath:/database/nosql/mongodb/myjavaee-database-nosql-mongodb.xml" /> -->
+	<import resource="classpath:/database/nosql/mongodb/myjavaee-database-nosql-mongodb.xml" />
 
 	<!-- Import Cache Configuration -->
 	<import resource="classpath:/cache/memcached/myjavaee-cache-memcached.xml" />
@@ -29,10 +29,10 @@
 	<import resource="classpath:/search/solr/myjavaee-search-solr.xml" />
 
 	<!-- Import Messaging Configuration -->
-	<!-- <import resource="classpath:/messaging/activemq/myjavaee-messaging-activemq.xml" /> -->
+	<import resource="classpath:/messaging/activemq/myjavaee-messaging-activemq.xml" />
 
 	<!-- Import Coordinate Configuration -->
-	<!-- <import resource="classpath:/coordinate/zookeeper/myjavaee-coordinate-zookeeper.xml" /> -->
+	<import resource="classpath:/coordinate/zookeeper/myjavaee-coordinate-zookeeper.xml" />
 
 	<!-- Import Schedule Configuration -->
 	<import resource="classpath:/schedule/quartz/myjavaee-schedule-quartz.xml" />
