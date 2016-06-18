@@ -5,13 +5,14 @@
      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-	<!-- Import Base Configuration -->
+	<!-- Import Properties Configuration -->
 	<import resource="classpath:/spring/myjavaee-properties.xml" />
 
 	<!-- Import Remoting Configuration -->
 	<import resource="classpath:/remoting/soap/jaxws/myjavaee-remoting-soap-jaxws.xml" />
 	<import resource="classpath:/remoting/rest/jaxrs/myjavaee-remoting-rest-jaxrs.xml" />
 	<!-- <import resource="classpath:/remoting/rpc/dubbo/myjavaee-remoting-rpc-dubbo.xml" /> -->
+	<import resource="classpath:/remoting/rpc/hessian/myjavaee-remoting-rpc-hessian.xml" />
 	<import resource="classpath:/remoting/rpc/rmi/myjavaee-remoting-rpc-rmi.xml" />
 
 	<!-- Import Database Configuration -->
@@ -37,7 +38,7 @@
 	<!-- Import Schedule Configuration -->
 	<import resource="classpath:/schedule/quartz/myjavaee-schedule-quartz.xml" />
 
-	<!-- Import EMail Configuration -->
+	<!-- Import Email Configuration -->
 	<import resource="classpath:/email/javamail/myjavaee-email-javamail.xml" />
 
 	<!-- Import Validation Configuration -->

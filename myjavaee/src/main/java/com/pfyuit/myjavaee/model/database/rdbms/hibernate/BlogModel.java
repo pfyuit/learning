@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * Entity model for JPA/Hibernate.
+ * Entity model for Hibernate.
  * @author yupengfei
  */
 @Entity
@@ -48,6 +48,7 @@ public class BlogModel {
 	@Column(name = "read_count")
 	private Long readCount;
 
+	/** Foreign key of table category **/
 	@ManyToOne(targetEntity = CategoryModel.class)
 	@JoinColumn(name = "category_id")
 	private CategoryModel category;

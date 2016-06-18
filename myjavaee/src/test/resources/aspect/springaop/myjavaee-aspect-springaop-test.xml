@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<!-- Configuration for Scanning -->
+	<context:component-scan base-package="com.pfyuit.myjavaee.service.aspect.springaop"></context:component-scan>
+
+	<!-- Configuration for Proxy for Advice Testing -->
+	<bean id="animalBeforeAdviceTest" class="org.springframework.aop.framework.ProxyFactoryBean" p:proxyInterfaces="com.pfyuit.myjavaee.service.aspect.springaop.Animal"
+		p:target-ref="target" p:interceptorNames="animalBeforeAdvice" />
+
+	<bean id="animalAfterAdviceTest" class="org.springframework.aop.framework.ProxyFactoryBean" p:proxyInterfaces="com.pfyuit.myjavaee.service.aspect.springaop.Animal"
+		p:target-ref="target" p:interceptorNames="animalAfterAdvice" />
+
+	<bean id="animalAroundAdviceTest" class="org.springframework.aop.framework.ProxyFactoryBean" p:proxyInterfaces="com.pfyuit.myjavaee.service.aspect.springaop.Animal"
+		p:target-ref="target" p:interceptorNames="animalAroundAdvice" />
+
+	<bean id="animalThrowsAdviceTest" class="org.springframework.aop.framework.ProxyFactoryBean" p:proxyInterfaces="com.pfyuit.myjavaee.service.aspect.springaop.Animal"
+		p:target-ref="target" p:interceptorNames="animalThrowsAdvice" />
+
+	<!-- Configuration for Proxy for Advisor Testing -->
+	<bean id="animalStaticMethodMatcherPointcutAdvisor" class="com.pfyuit.myjavaee.service.aspect.springaop.AnimalStaticMethodMatcherPointcutAdvisor"
+		p:advice-ref="animalAroundAdvice" />
+	<bean id="testStaticMethodMatcherPointcutAdvisor" class="org.springframework.aop.framework.ProxyFactoryBean"
+		p:proxyInterfaces="com.pfyuit.myjavaee.service.aspect.springaop.Animal" p:target-ref="target"
+		p:interceptorNames="animalStaticMethodMatcherPointcutAdvisor" />
+
+	<bean id="animalRegexpMethodPointcutAdvisor" class="com.pfyuit.myjavaee.service.aspect.springaop.AnimalRegexpMethodPointcutAdvisor"
+		p:advice-ref="animalAroundAdvice" p:patterns=".*eat*." />
+	<bean id="testRegexpMethodPointcutAdvisor" class="org.springframework.aop.framework.ProxyFactoryBean"
+		p:proxyInterfaces="com.pfyuit.myjavaee.service.aspect.springaop.Animal" p:target-ref="target" p:interceptorNames="animalRegexpMethodPointcutAdvisor" />
+
+	<bean id="animalDynamicMethodMatcherPointcut" class="com.pfyuit.myjavaee.service.aspect.springaop.AnimalDynamicMethodMatcherPointcut" />
+	<bean id="animalDefaultPointcutAdvisor" class="com.pfyuit.myjavaee.service.aspect.springaop.AnimalDefaultPointcutAdvisor"
+		p:pointcut-ref="animalDynamicMethodMatcherPointcut" p:advice-ref="animalAroundAdvice" />
+	<bean id="testDefaultPointcutAdvisor" class="org.springframework.aop.framework.ProxyFactoryBean"
+		p:proxyInterfaces="com.pfyuit.myjavaee.service.aspect.springaop.Animal" p:target-ref="target" p:interceptorNames="animalDefaultPointcutAdvisor" />
+
+</beans>
+  

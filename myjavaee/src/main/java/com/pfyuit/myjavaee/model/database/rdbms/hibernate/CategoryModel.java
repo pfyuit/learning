@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * Entity model for JPA/Hibernate.
+ * Entity model for Hibernate.
  * @author yupengfei
  */
 @Entity

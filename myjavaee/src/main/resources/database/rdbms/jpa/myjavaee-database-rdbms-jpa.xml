@@ -10,16 +10,25 @@
 
 	<!-- Configuration for Scanning -->
 	<context:component-scan base-package="com.pfyuit.myjavaee.dao.database.rdbms.jpa"></context:component-scan>
+	<context:component-scan base-package="com.pfyuit.myjavaee.service.database.rdbms.jpa"></context:component-scan>
 
 	<!-- Configuration for Myblog Data Source -->
-	<bean id="dataSourceMyblog" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="${jdbc.db.myblog.driverClassName}" />
-		<property name="url" value="${jdbc.db.myblog.url}" />
-		<property name="username" value="${jdbc.db.myblog.username}" />
+	<bean id="dataSourceMyblog" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="minPoolSize" value="${c3p0.minPoolSize}" />
+		<property name="maxPoolSize" value="${c3p0.maxPoolSize}" />
+		<property name="maxStatementsPerConnection" value="${c3p0.maxStatementsPerConnection}" />
+
+		<property name="maxIdleTime" value="${c3p0.maxIdleTime}" />
+		<property name="idleConnectionTestPeriod" value="${c3p0.idleConnectionTestPeriod}" />
+		<property name="preferredTestQuery" value="${c3p0.preferredTestQuery}" />
+
+		<property name="driverClass" value="${jdbc.db.myblog.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.db.myblog.url}" />
+		<property name="user" value="${jdbc.db.myblog.username}" />
 		<property name="password" value="${jdbc.db.myblog.password}" />
 	</bean>
 
-	<!-- Configuration for Entity Manager Factory -->
+	<!-- Configuration for Entity Manager Factory Using Myblog Data Source -->
 	<!-- The simplest way that has limited power (application-managed), not recommended -->
 	<!-- <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean"> -->
 	<!-- <property name="persistenceUnitName" value="xxx" /> -->

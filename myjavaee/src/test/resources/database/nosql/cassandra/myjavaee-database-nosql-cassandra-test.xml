@@ -8,6 +8,9 @@
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
+	<!-- Import Base Configuration -->
+	<import resource="classpath:/spring/myjavaee-properties.xml" />
+
 	<!-- Configuration for Scanning -->
 	<context:component-scan base-package="com.pfyuit.myjavaee.dao.database.nosql.cassandra"></context:component-scan>
 	<context:component-scan base-package="com.pfyuit.myjavaee.service.database.nosql.cassandra"></context:component-scan>

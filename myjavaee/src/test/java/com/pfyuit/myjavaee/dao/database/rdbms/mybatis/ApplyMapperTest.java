@@ -19,8 +19,7 @@ import com.pfyuit.myjavaee.dao.database.rdbms.mybatis.ApplyMapper;
 import com.pfyuit.myjavaee.model.database.rdbms.mybatis.Apply;
 
 /**
- * The transaction is rolled back by default when setting
- * "defaultRollback = true".
+ * The transaction is rolled back by default when setting "defaultRollback = true".
  * @author yupengfei
  */
 @RunWith(SpringJUnit4ClassRunner.class)

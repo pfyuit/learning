@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.database.rdbms.hibernate;
+package com.pfyuit.myjavaee.service.database.rdbms.jpa;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -14,16 +14,16 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.pfyuit.myjavaee.model.database.rdbms.hibernate.BlogModel;
-import com.pfyuit.myjavaee.service.database.rdbms.hibernate.BlogService;
+import com.pfyuit.myjavaee.model.database.rdbms.jpa.BlogModel;
+import com.pfyuit.myjavaee.service.database.rdbms.jpa.BlogService;
 
 /**
  * The transaction is rolled back by default when setting "defaultRollback = true".
  * @author yupengfei
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath*:/database/rdbms/hibernate/myjavaee-database-rdbms-hibernate-test.xml" })
-@TransactionConfiguration(transactionManager = "transactionManagerMyblog", defaultRollback = true)
+@ContextConfiguration(locations = { "classpath*:/database/rdbms/jpa/myjavaee-database-rdbms-jpa-test.xml" })
+@TransactionConfiguration(transactionManager = "transactionManagerMyblogJpa", defaultRollback = true)
 @Transactional
 public class BlogServiceTest {
 

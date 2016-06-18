@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
- * Entity model for JPA/Hibernate.
+ * Entity model for Hibernate.
  * @author yupengfei
  */
 @Entity
@@ -34,6 +34,7 @@ public class CommentModel {
 	@Column(name = "comment_content")
 	private String commentContent;
 
+	/** Foreign key of table blog **/
 	@ManyToOne(targetEntity = BlogModel.class, fetch = FetchType.LAZY)
 	@JoinColumn(name = "blog_id")
 	private BlogModel blog;
