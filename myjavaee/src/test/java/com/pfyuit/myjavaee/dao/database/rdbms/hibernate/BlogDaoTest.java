@@ -48,18 +48,18 @@ public class BlogDaoTest {
 		model.setLastModified(new Timestamp(new Date().getTime()));
 		model.setReadCount(new Long(0));
 		model.setCategory(category);
-		blogDao.save(model);
+		blogDao.saveWithSession(model);
 	};
 
 	@Test
 	public void testDelete() {
-		BlogModel model = blogDao.findById(3);
-		blogDao.delete(model);
+		BlogModel model = blogDao.findByIdWithSession(3);
+		blogDao.deleteWithSession(model);
 	};
 
 	@Test
 	public void testUpdate() {
-		BlogModel model = blogDao.findById(3);
+		BlogModel model = blogDao.findByIdWithSession(3);
 		model.setBlogAuthor("Updated Blog Author");
 		model.setBlogContent("Updated Blog Content");
 		model.setBlogOriginal("Updated Blog Original");
@@ -67,12 +67,12 @@ public class BlogDaoTest {
 		model.setCreateDate(new Timestamp(new Date().getTime()));
 		model.setLastModified(new Timestamp(new Date().getTime()));
 		model.setReadCount(new Long(1));
-		blogDao.update(model);
+		blogDao.updateWithSession(model);
 	};
 
 	@Test
 	public void testFindById() {
-		BlogModel model = blogDao.findById(3);
+		BlogModel model = blogDao.findByIdWithSession(3);
 		assertNotNull(model);
 		assertNotNull(model.getComments());
 		printModel(model);
@@ -80,7 +80,7 @@ public class BlogDaoTest {
 
 	@Test
 	public void testFindAll() {
-		List<BlogModel> models = blogDao.findAll();
+		List<BlogModel> models = blogDao.findByAllWithHQLQuery();
 		assertNotNull(models);
 	};
 

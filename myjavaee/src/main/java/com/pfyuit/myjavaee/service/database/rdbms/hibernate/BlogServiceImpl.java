@@ -23,32 +23,32 @@ public class BlogServiceImpl implements BlogService {
 	@Override
 	@Transactional(value = "myblog")
 	public void save(BlogModel model) {
-		blogDao.save(model);
+		blogDao.saveWithSession(model);
 	}
 
 	@Override
 	@Transactional(value = "myblog")
 	public void delete(BlogModel model) {
-		blogDao.delete(model);
+		blogDao.deleteWithSession(model);
 	}
 
 	@Override
 	@Transactional(value = "myblog")
 	public void update(BlogModel model) {
-		blogDao.update(model);
+		blogDao.updateWithSession(model);
 	}
 
 	@Override
 	@Transactional(value = "myblog", readOnly = true)
 	public BlogModel findById(int blogId) {
-		BlogModel model = blogDao.findById(blogId);
+		BlogModel model = blogDao.findByIdWithSession(blogId);
 		return model;
 	}
 
 	@Override
 	@Transactional(value = "myblog", readOnly = true)
 	public List<BlogModel> findAll() {
-		List<BlogModel> models = blogDao.findAll();
+		List<BlogModel> models = blogDao.findByAllWithHQLQuery();
 		return models;
 	}
 

@@ -36,7 +36,7 @@ public class CommentDaoTest {
 
 	@Test
 	public void testSave() {
-		BlogModel blog = blogDao.findById(3);
+		BlogModel blog = blogDao.findByIdWithSession(3);
 
 		CommentModel model = new CommentModel();
 		model.setCommentAuthor("Example Comment Author");

@@ -10,14 +10,22 @@ import com.pfyuit.myjavaee.model.database.rdbms.hibernate.BlogModel;
  */
 public interface BlogDao {
 
-	public void save(BlogModel model);
+	public void saveWithSession(BlogModel model);
 
-	public void delete(BlogModel model);
+	public void deleteWithSession(BlogModel model);
 
-	public void update(BlogModel model);
+	public void updateWithSession(BlogModel model);
 
-	public BlogModel findById(int blogId);
+	public BlogModel findByIdWithSession(int blogId);
 
-	public List<BlogModel> findAll();
+	public BlogModel findByIdWithHQLQuery(int blogId);
+
+	public BlogModel findByIdWithSQLQuery(int blogId);
+	
+	public BlogModel findByIdWithCriteria(int blogId);
+
+	public List<BlogModel> findByAllWithHQLQuery();
+
+	public List<BlogModel> findByAllWithSQLQuery();
 
 }
