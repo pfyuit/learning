@@ -13,10 +13,10 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pfyuit.myjavaee.model.database.rdbms.hibernate.UserModel;
+import com.pfyuit.myjavaee.util.BeanUtil;
 
 /**
- * The transaction is rolled back by default when setting
- * "defaultRollback = true".
+ * The transaction is rolled back by default when setting "defaultRollback = true".
  * @author yupengfei
  */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -34,34 +34,34 @@ public class UserDaoTest {
 		model.setUserName("Example User Name");
 		model.setUserPassword("Example User Password");
 		model.setUserNotes("Example User Notes");
-		userDao.save(model);
+		userDao.saveWithSession(model);
 	};
 
 	@Test
 	public void testDelete() {
-		UserModel model = userDao.findById(1);
-		userDao.delete(model);
+		UserModel model = userDao.findByIdWithSession(1);
+		userDao.deleteWithSession(model);
 	};
 
 	@Test
 	public void testUpdate() {
-		UserModel model = userDao.findById(1);
+		UserModel model = userDao.findByIdWithSession(1);
 		model.setUserName("Updated User Name");
 		model.setUserPassword("Updated User Password");
 		model.setUserNotes("Updated User Notes");
-		userDao.update(model);
+		userDao.updateWithSession(model);
 	};
 
 	@Test
 	public void testFindById() {
-		UserModel model = userDao.findById(1);
+		UserModel model = userDao.findByIdWithSession(1);
 		assertNotNull(model);
-		BlogDaoTest.printModel(model);
+		BeanUtil.printModel(model);
 	};
 
 	@Test
 	public void testFindAll() {
-		List<UserModel> models = userDao.findAll();
+		List<UserModel> models = userDao.findByAllWithHQLQuery();
 		assertNotNull(models);
 	};
 

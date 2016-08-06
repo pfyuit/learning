@@ -14,9 +14,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.pfyuit.myjavaee.dao.database.rdbms.hibernate.BlogDaoTest;
-import com.pfyuit.myjavaee.dao.database.rdbms.mybatis.ApplyMapper;
 import com.pfyuit.myjavaee.model.database.rdbms.mybatis.Apply;
+import com.pfyuit.myjavaee.util.BeanUtil;
 
 /**
  * The transaction is rolled back by default when setting "defaultRollback = true".
@@ -61,7 +60,7 @@ public class ApplyMapperTest {
 	public void testFindById() {
 		Apply model = applyMapper.findById(36);
 		assertNotNull(model);
-		BlogDaoTest.printModel(model);
+		BeanUtil.printModel(model);
 	};
 
 	@Test

@@ -38,6 +38,14 @@ public class CategoryModel {
 	@OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
 	private List<BlogModel> blogs;
 
+	public CategoryModel() {
+	}
+
+	public CategoryModel(String categoryName, Timestamp createTime) {
+		this.categoryName = categoryName;
+		this.createTime = createTime;
+	}
+
 	public int getCategoryId() {
 		return categoryId;
 	}

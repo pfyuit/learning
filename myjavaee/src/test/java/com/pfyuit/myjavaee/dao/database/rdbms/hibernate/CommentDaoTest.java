@@ -16,10 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.pfyuit.myjavaee.model.database.rdbms.hibernate.BlogModel;
 import com.pfyuit.myjavaee.model.database.rdbms.hibernate.CommentModel;
+import com.pfyuit.myjavaee.util.BeanUtil;
 
 /**
- * The transaction is rolled back by default when setting
- * "defaultRollback = true".
+ * The transaction is rolled back by default when setting "defaultRollback = true".
  * @author yupengfei
  */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -43,36 +43,36 @@ public class CommentDaoTest {
 		model.setCommentContent("Example Comment Content");
 		model.setCreateTime(new Timestamp(new Date().getTime()));
 		model.setBlog(blog);
-		commentDao.save(model);
+		commentDao.saveWithSession(model);
 	};
 
 	@Test
 	public void testDelete() {
-		CommentModel model = commentDao.findById(3994);
-		commentDao.delete(model);
+		CommentModel model = commentDao.findByIdWithSession(3994);
+		commentDao.deleteWithSession(model);
 	};
 
 	@Test
 	public void testUpdate() {
-		CommentModel model = commentDao.findById(3994);
+		CommentModel model = commentDao.findByIdWithSession(3994);
 		model.setCommentAuthor("Updated Comment Author");
 		model.setCommentContent("Updated Comment Content");
 		model.setCreateTime(new Timestamp(new Date().getTime()));
-		commentDao.update(model);
+		commentDao.updateWithSession(model);
 	};
 
 	@Test
 	public void testFindById() {
-		CommentModel model = commentDao.findById(3994);
+		CommentModel model = commentDao.findByIdWithSession(3994);
 		assertNotNull(model);
 		assertNotNull(model.getBlog());
-		BlogDaoTest.printModel(model);
-		BlogDaoTest.printModel(model.getBlog());
+		BeanUtil.printModel(model);
+		BeanUtil.printModel(model.getBlog());
 	};
 
 	@Test
 	public void testFindAll() {
-		List<CommentModel> models = commentDao.findAll();
+		List<CommentModel> models = commentDao.findByAllWithHQLQuery();
 		assertNotNull(models);
 	};
 

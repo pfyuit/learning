@@ -10,14 +10,32 @@ import com.pfyuit.myjavaee.model.database.rdbms.hibernate.CommentModel;
  */
 public interface CommentDao {
 
-	public void save(CommentModel model);
+	public void saveWithSession(CommentModel model);
 
-	public void delete(CommentModel model);
+	public void deleteWithSession(CommentModel model);
 
-	public void update(CommentModel model);
+	public void deleteWithHQLQuery(int commentId);
 
-	public CommentModel findById(int commentId);
+	public void deleteWithSQLQuery(int commentId);
 
-	public List<CommentModel> findAll();
+	public void updateWithSession(CommentModel model);
+
+	public void updateWithHQLQuery(int commentId);
+
+	public void updateWithSQLQuery(int commentId);
+
+	public CommentModel findByIdWithSession(int commentId);
+
+	public CommentModel findByIdWithHQLQuery(int commentId);
+
+	public CommentModel findByIdWithSQLQuery(int commentId);
+
+	public CommentModel findByIdWithCriteria(int commentId);
+
+	public List<CommentModel> findByAllWithHQLQuery();
+
+	public List<CommentModel> findByAllWithSQLQuery();
+
+	public List<CommentModel> findByAllWithCriteria();
 
 }

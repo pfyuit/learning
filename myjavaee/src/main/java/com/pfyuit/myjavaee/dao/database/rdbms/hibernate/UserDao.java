@@ -10,14 +10,32 @@ import com.pfyuit.myjavaee.model.database.rdbms.hibernate.UserModel;
  */
 public interface UserDao {
 
-	public void save(UserModel model);
+	public void saveWithSession(UserModel model);
 
-	public void delete(UserModel model);
+	public void deleteWithSession(UserModel model);
 
-	public void update(UserModel model);
+	public void deleteWithHQLQuery(int userId);
 
-	public UserModel findById(int userId);
+	public void deleteWithSQLQuery(int userId);
 
-	public List<UserModel> findAll();
+	public void updateWithSession(UserModel model);
+
+	public void updateWithHQLQuery(int userId);
+
+	public void updateWithSQLQuery(int userId);
+
+	public UserModel findByIdWithSession(int userId);
+
+	public UserModel findByIdWithHQLQuery(int userId);
+
+	public UserModel findByIdWithSQLQuery(int userId);
+
+	public UserModel findByIdWithCriteria(int userId);
+
+	public List<UserModel> findByAllWithHQLQuery();
+
+	public List<UserModel> findByAllWithSQLQuery();
+
+	public List<UserModel> findByAllWithCriteria();
 
 }

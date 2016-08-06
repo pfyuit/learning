@@ -57,6 +57,14 @@ public class BlogModel {
 	@OneToMany(mappedBy = "blog", fetch = FetchType.LAZY)
 	private List<CommentModel> comments;
 
+	public BlogModel() {
+	}
+
+	public BlogModel(String blogTitle, String blogAuthor) {
+		this.blogTitle = blogTitle;
+		this.blogAuthor = blogAuthor;
+	}
+
 	public int getBlogId() {
 		return blogId;
 	}

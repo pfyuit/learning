@@ -2,7 +2,6 @@ package com.pfyuit.myjavaee.dao.database.rdbms.hibernate;
 
 import static org.junit.Assert.assertNotNull;
 
-import java.lang.reflect.Field;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
@@ -15,12 +14,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.pfyuit.myjavaee.info.database.rdbms.hibernate.BlogInfo;
 import com.pfyuit.myjavaee.model.database.rdbms.hibernate.BlogModel;
 import com.pfyuit.myjavaee.model.database.rdbms.hibernate.CategoryModel;
+import com.pfyuit.myjavaee.util.BeanUtil;
 
 /**
- * The transaction is rolled back by default when setting
- * "defaultRollback = true".
+ * The transaction is rolled back by default when setting "defaultRollback = true".
  * @author yupengfei
  */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -36,9 +36,8 @@ public class BlogDaoTest {
 	private CategoryDao categoryDao;
 
 	@Test
-	public void testSave() {
-		CategoryModel category = categoryDao.findById(5);
-
+	public void saveWithSession() {
+		CategoryModel category = categoryDao.findByIdWithSession(5);
 		BlogModel model = new BlogModel();
 		model.setBlogAuthor("Example Blog Author");
 		model.setBlogContent("Example Blog Content");
@@ -49,16 +48,26 @@ public class BlogDaoTest {
 		model.setReadCount(new Long(0));
 		model.setCategory(category);
 		blogDao.saveWithSession(model);
-	};
+	}
 
 	@Test
-	public void testDelete() {
+	public void deleteWithSession() {
 		BlogModel model = blogDao.findByIdWithSession(3);
 		blogDao.deleteWithSession(model);
-	};
+	}
 
 	@Test
-	public void testUpdate() {
+	public void deleteWithHQLQuery() {
+		blogDao.deleteWithHQLQuery(3);
+	}
+
+	@Test
+	public void deleteWithSQLQuery() {
+		blogDao.deleteWithSQLQuery(3);
+	}
+
+	@Test
+	public void updateWithSession() {
 		BlogModel model = blogDao.findByIdWithSession(3);
 		model.setBlogAuthor("Updated Blog Author");
 		model.setBlogContent("Updated Blog Content");
@@ -68,34 +77,65 @@ public class BlogDaoTest {
 		model.setLastModified(new Timestamp(new Date().getTime()));
 		model.setReadCount(new Long(1));
 		blogDao.updateWithSession(model);
-	};
+	}
 
 	@Test
-	public void testFindById() {
+	public void updateWithHQLQuery() {
+		blogDao.updateWithHQLQuery(3);
+	}
+
+	@Test
+	public void updateWithSQLQuery() {
+		blogDao.updateWithSQLQuery(3);
+	}
+
+	@Test
+	public void findByIdWithSession() {
 		BlogModel model = blogDao.findByIdWithSession(3);
 		assertNotNull(model);
 		assertNotNull(model.getComments());
-		printModel(model);
-	};
+		BeanUtil.printModel(model);
+	}
 
 	@Test
-	public void testFindAll() {
+	public void findByIdWithHQLQuery() {
+		BlogModel model = blogDao.findByIdWithHQLQuery(3);
+		assertNotNull(model);
+		assertNotNull(model.getComments());
+		BeanUtil.printModel(model);
+	}
+
+	@Test
+	public void findByIdWithSQLQuery() {
+		BlogInfo model = blogDao.findByIdWithSQLQuery(3);
+		assertNotNull(model);
+		BeanUtil.printModel(model);
+	}
+
+	@Test
+	public void findByIdWithCriteria() {
+		BlogModel model = blogDao.findByIdWithCriteria(3);
+		assertNotNull(model);
+		assertNotNull(model.getComments());
+		BeanUtil.printModel(model);
+	}
+
+	@Test
+	public void findByAllWithHQLQuery() {
 		List<BlogModel> models = blogDao.findByAllWithHQLQuery();
 		assertNotNull(models);
-	};
+	}
 
-	public static <T> void printModel(T model) {
-		Field[] fields = model.getClass().getDeclaredFields();
-		StringBuilder sb = new StringBuilder();
-		for (Field field : fields) {
-			field.setAccessible(true);
-			try {
-				sb.append(field.get(model)).append("::");
-			} catch (IllegalArgumentException | IllegalAccessException e) {
-				e.printStackTrace();
-			}
-		}
-		System.out.println(sb.toString());
+	@Test
+	public void findByAllWithSQLQuery() {
+		List<BlogModel> models = blogDao.findByAllWithHQLQuery();
+		assertNotNull(models);
+	}
+
+	@Test
+	public void findByAllWithCriteria() {
+		List<BlogModel> models = blogDao.findByAllWithHQLQuery();
+		assertNotNull(models);
 	}
 
 }

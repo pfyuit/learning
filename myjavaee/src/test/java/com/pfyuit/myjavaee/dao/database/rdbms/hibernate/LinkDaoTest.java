@@ -13,10 +13,10 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pfyuit.myjavaee.model.database.rdbms.hibernate.LinkModel;
+import com.pfyuit.myjavaee.util.BeanUtil;
 
 /**
- * The transaction is rolled back by default when setting
- * "defaultRollback = true".
+ * The transaction is rolled back by default when setting "defaultRollback = true".
  * @author yupengfei
  */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -33,33 +33,33 @@ public class LinkDaoTest {
 		LinkModel model = new LinkModel();
 		model.setLinkName("Example Link Name");
 		model.setLinkUrl("Example Link Url");
-		linkDao.save(model);
+		linkDao.saveWithSession(model);
 	};
 
 	@Test
 	public void testDelete() {
-		LinkModel model = linkDao.findById(1);
-		linkDao.delete(model);
+		LinkModel model = linkDao.findByIdWithSession(1);
+		linkDao.deleteWithSession(model);
 	};
 
 	@Test
 	public void testUpdate() {
-		LinkModel model = linkDao.findById(1);
+		LinkModel model = linkDao.findByIdWithSession(1);
 		model.setLinkName("Updated Link Name");
 		model.setLinkUrl("Updated Link Url");
-		linkDao.update(model);
+		linkDao.updateWithSession(model);
 	};
 
 	@Test
 	public void testFindById() {
-		LinkModel model = linkDao.findById(1);
+		LinkModel model = linkDao.findByIdWithSession(1);
 		assertNotNull(model);
-		BlogDaoTest.printModel(model);
+		BeanUtil.printModel(model);
 	};
 
 	@Test
 	public void testFindAll() {
-		List<LinkModel> models = linkDao.findAll();
+		List<LinkModel> models = linkDao.findByAllWithHQLQuery();
 		assertNotNull(models);
 	};
 
