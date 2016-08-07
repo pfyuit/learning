@@ -1,4 +1,4 @@
-package com.pfyuit.myalgorithm.algorithm.free;
+package com.pfyuit.myalgorithm.algorithm.training;
 
 import java.util.HashMap;
 import java.util.Map;

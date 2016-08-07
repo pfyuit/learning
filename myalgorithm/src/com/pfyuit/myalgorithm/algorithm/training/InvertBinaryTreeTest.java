@@ -1,4 +1,4 @@
-package com.pfyuit.myalgorithm.algorithm.free;
+package com.pfyuit.myalgorithm.algorithm.training;
 
 /**
  * 核心思想：递归

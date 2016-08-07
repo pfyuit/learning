@@ -1,4 +1,4 @@
-package com.pfyuit.myalgorithm.algorithm.free;
+package com.pfyuit.myalgorithm.algorithm.training;
 
 /**
  * Given two binary trees, write a function to check if they are equal or not. Two binary trees are considered equal if

@@ -1,4 +1,4 @@
-package com.pfyuit.myalgorithm.algorithm.free;
+package com.pfyuit.myalgorithm.algorithm.training;
 
 /**
  * Get common array from two arrays, then print the max size of the common

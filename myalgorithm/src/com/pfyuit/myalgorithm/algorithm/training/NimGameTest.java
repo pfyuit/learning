@@ -1,4 +1,4 @@
-package com.pfyuit.myalgorithm.algorithm.free;
+package com.pfyuit.myalgorithm.algorithm.training;
 
 /**
  * You are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you

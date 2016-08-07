@@ -1,4 +1,4 @@
-package com.pfyuit.myalgorithm.algorithm.free;
+package com.pfyuit.myalgorithm.algorithm.training;
 
 /**
  * Given a binary tree, find its maximum depth. The maximum depth is the number of nodes along the longest path from the

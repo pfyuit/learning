@@ -1,4 +1,4 @@
-package com.pfyuit.myalgorithm.algorithm.free;
+package com.pfyuit.myalgorithm.algorithm.training;
 
 /**
  * Related to question Excel Sheet Column Title Given a column title as appear in an Excel sheet, return its

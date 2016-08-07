@@ -1,4 +1,4 @@
-package com.pfyuit.myalgorithm.algorithm.free;
+package com.pfyuit.myalgorithm.algorithm.training;
 
 /**
  * Write a function to delete a node (except the tail) in a singly linked list, given only access to that node. Supposed
