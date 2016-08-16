@@ -5,6 +5,9 @@
      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
+	<!-- Import Base Configuration -->
+	<import resource="classpath:/spring/myjavaee-properties.xml" />
+	
 	<!-- Configuration for Scanning -->
 	<context:component-scan base-package="com.pfyuit.myjavaee.service.messaging.activemq"></context:component-scan>
 
@@ -15,7 +18,7 @@
 
 	<!-- Configuration for Connection Factory -->
 	<bean id="connectinFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
-		<property name="brokerURL" value="tcp://activemq-server:61616" />
+		<property name="brokerURL" value="${activemq.url}" />
 	</bean>
 
 	<!-- Configuration for Jms Template -->
