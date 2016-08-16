@@ -1,13 +1,17 @@
 package com.pfyuit.myjavase.java.lang;
 
-/** 
+/**
  * @author yupengfei
  */
 public class ThreadTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		System.out.println(Thread.MAX_PRIORITY);
+		System.out.println(Thread.MIN_PRIORITY);
+		System.out.println(Thread.NORM_PRIORITY);
+		Thread.dumpStack();
+		
+		
 	}
 
 }
