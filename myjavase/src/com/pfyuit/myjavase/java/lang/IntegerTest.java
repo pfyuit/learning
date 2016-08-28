@@ -6,8 +6,8 @@ package com.pfyuit.myjavase.java.lang;
 public class IntegerTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		System.out.println(new Integer(1) == new Integer(1));
+		System.out.println(new Integer(1) == 1);
 	}
 
 }

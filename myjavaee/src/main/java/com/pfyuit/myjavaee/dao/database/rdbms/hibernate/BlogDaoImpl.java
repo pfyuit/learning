@@ -19,7 +19,32 @@ import com.pfyuit.myjavaee.model.database.rdbms.hibernate.BlogModel;
 import com.pfyuit.myjavaee.model.database.rdbms.hibernate.CommentModel;
 
 /**
- * Blog Dao implement for Hibernate.
+ * Blog Dao implement for Hibernate. <br/>
+ * Criteria,Criterion,Oder,Restrictions,Property <br/>
+ * = Restrictions.eq() <br/>
+ * <> Restrictions.not(Exprission.eq()) <br/>
+ * > Restrictions.gt() <br/>
+ * >= Restrictions.ge() <br/>
+ * < Restrictions.lt() <br/>
+ * <= Restrictions.le() <br/>
+ * is null Restrictions.isNull() <br/>
+ * is not null Restrictions.isNotNull() <br/>
+ * like Restrictions.like() <br/>
+ * and Restrictions.and() <br/>
+ * and Restrictions.conjunction() <br/>
+ * or Restrictions.or() <br/>
+ * or Restrictions.disjunction() <br/>
+ * not Restrictions.not() <br/>
+ * in() Restrictions.in() <br/>
+ * not in() Restrictions.not(Restrictions.in()) <br/>
+ * between x and y Restrictions.between() <br/>
+ * not between x and y Restrictions.not(Restrictions..between()) <br/>
+ * Restrictions.eqProperty<br/>
+ * <p>
+ * createAlias(String associationPath, String alias) <br/>
+ * createAlias(String associationPath, String alias, int joinType) <br/>
+ * createCriteria(String associationPath) <br/>
+ * createCriteria(String associationPath, int joinType) <br/>
  * @author yupengfei
  */
 @Repository
