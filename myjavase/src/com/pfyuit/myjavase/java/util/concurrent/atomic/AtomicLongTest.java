@@ -1,14 +1,14 @@
 package com.pfyuit.myjavase.java.util.concurrent.atomic;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * @author yupengfei
  */
-public class AtomicIntegerTest {
+public class AtomicLongTest {
 
 	public static void main(String[] args) {
-		AtomicInteger ai = new AtomicInteger(1);
+		AtomicLong ai = new AtomicLong(1);
 		System.out.println(ai.get());
 
 		System.out.println(ai.getAndIncrement()); // i++
