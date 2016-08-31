@@ -1,8 +1,14 @@
 package com.pfyuit.myjavase.java.util.concurrent;
 
-/** 
-* @author yupengfei
-*/
+/**
+ * Queue<--BlockingQueue<--ArrayBlockingQueue
+ *                      <--LinkedBlockingQueue
+ *                      <--PriorityBlockingQueue
+ *                      <--SynchronousQueue
+ *                      <--TransferQueue<--LinkedTransferQueue
+ *                      <--BlockingDeque<--LinkedBlockingDeque
+ * @author yupengfei
+ */
 public class BlockingQueueTest {
 
 }

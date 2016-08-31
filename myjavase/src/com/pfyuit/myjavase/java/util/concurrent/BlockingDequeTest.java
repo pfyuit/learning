@@ -1,8 +1,9 @@
 package com.pfyuit.myjavase.java.util.concurrent;
 
-/** 
-* @author yupengfei
-*/
+/**
+ * Queue<--Deque<--BlockingDeque<--LinkedBlockingDeque
+ * @author yupengfei
+ */
 public class BlockingDequeTest {
 
 }

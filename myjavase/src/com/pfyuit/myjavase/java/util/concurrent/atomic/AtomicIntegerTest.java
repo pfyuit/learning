@@ -3,6 +3,7 @@ package com.pfyuit.myjavase.java.util.concurrent.atomic;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ * CAS (compare and swap) + volatile + native to implement the atomic.
  * @author yupengfei
  */
 public class AtomicIntegerTest {

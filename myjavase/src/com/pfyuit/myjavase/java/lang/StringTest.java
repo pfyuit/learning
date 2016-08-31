@@ -25,6 +25,18 @@ public class StringTest {
 		substring();
 		charArray();
 		getBytes();
+
+		String a = "abc";
+		String b = "abc";
+		String c = new String("abc");
+		String d = "ab" + "c";
+		String str = "ab";
+		String e = str + "c";
+
+		System.out.println(a == b);
+		System.out.println(a == c);
+		System.out.println(a == d);
+		System.out.println(a == e);
 	}
 
 	public static void valueOf() {
