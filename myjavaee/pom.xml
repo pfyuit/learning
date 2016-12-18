@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion> 
 	<groupId>com.pfyuit</groupId>
 	<artifactId>myjavaee</artifactId>
 	<packaging>war</packaging>
@@ -139,6 +139,9 @@
 		<!-- ==========================Messaging========================== -->
 		<!-- ActiveMQ -->
 		<activemq.client.version>5.12.1</activemq.client.version>
+
+		<!-- Kafka -->
+		<kafka.version>0.8.2.2</kafka.version>
 
 		<!-- ==========================Server ========================== -->
 		<!-- Jetty -->
@@ -597,6 +600,19 @@
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-spring</artifactId>
 			<version>${activemq.client.version}</version>
+		</dependency>
+
+		<!-- Kafka -->
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka_2.10</artifactId>
+			<version>${kafka.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<!-- ==========================Server========================== -->

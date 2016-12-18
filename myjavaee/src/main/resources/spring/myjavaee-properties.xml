@@ -25,6 +25,7 @@
 
 				<!-- Messaging Configuration -->
 				<value>classpath:/messaging/activemq/activemq.properties</value>
+				<value>classpath:/messaging/kafka/kafka.properties</value>
 
 				<!-- Distribute Configuration -->
 				<value>classpath:/distribute/zookeeper/zookeeper.properties</value>
