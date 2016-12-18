@@ -16,11 +16,11 @@
 	<import resource="classpath:/remoting/rpc/rmi/myjavaee-remoting-rpc-rmi.xml" />
 
 	<!-- Import Database Configuration -->
-	<import resource="classpath:/database/rdbms/hibernate/myjavaee-database-rdbms-hibernate.xml" />
-	<import resource="classpath:/database/rdbms/jta/myjavaee-database-rdbms-jta.xml" />
-	<import resource="classpath:/database/rdbms/mybatis/myjavaee-database-rdbms-mybatis.xml" />
-	<!-- <import resource="classpath:/database/nosql/cassandra/myjavaee-database-nosql-cassandra.xml" /> -->
-	<import resource="classpath:/database/nosql/mongodb/myjavaee-database-nosql-mongodb.xml" />
+	<import resource="classpath:/database/hibernate/myjavaee-database-hibernate.xml" />
+	<import resource="classpath:/database/jta/myjavaee-database-jta.xml" />
+	<import resource="classpath:/database/mybatis/myjavaee-database-mybatis.xml" />
+	<!-- <import resource="classpath:/database/cassandra/myjavaee-database-cassandra.xml" /> -->
+	<import resource="classpath:/database/mongodb/myjavaee-database-mongodb.xml" />
 
 	<!-- Import Cache Configuration -->
 	<import resource="classpath:/cache/memcached/myjavaee-cache-memcached.xml" />
@@ -32,8 +32,8 @@
 	<!-- Import Messaging Configuration -->
 	<import resource="classpath:/messaging/activemq/myjavaee-messaging-activemq.xml" />
 
-	<!-- Import Coordinate Configuration -->
-	<import resource="classpath:/coordinate/zookeeper/myjavaee-coordinate-zookeeper.xml" />
+	<!-- Import Distribute Configuration -->
+	<import resource="classpath:/distribute/zookeeper/myjavaee-distribute-zookeeper.xml" />
 
 	<!-- Import Schedule Configuration -->
 	<import resource="classpath:/schedule/quartz/myjavaee-schedule-quartz.xml" />
@@ -42,7 +42,7 @@
 	<import resource="classpath:/email/javamail/myjavaee-email-javamail.xml" />
 
 	<!-- Import Validation Configuration -->
-	<import resource="classpath:/validation/beanvalidation/myjavaee-validation-beanvalidation.xml" />
+	<import resource="classpath:/validation/beanval/myjavaee-validation-beanval.xml" />
 
 
 </beans>

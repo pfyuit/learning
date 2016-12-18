@@ -20,7 +20,7 @@ cache: spymemcached, jedis, ehcache, guava cache
 search: lucence, solr
 message: activemq
 server: apache, nginx, tomcat, jetty, glassfish
-coordinate: zookeeper
+distribute: zookeeper
 workflow: activiti
 scheduler: quartz
 rules: drools

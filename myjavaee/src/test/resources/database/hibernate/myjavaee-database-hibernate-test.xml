@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<!-- Import Base Configuration -->
+	<import resource="classpath:/spring/myjavaee-properties.xml" />
+
+	<!-- Configuration for Scanning -->
+	<context:component-scan base-package="com.pfyuit.myjavaee.dao.database.hibernate"></context:component-scan>
+
+	<!-- Configuration for Myblog Data Source -->
+	<bean id="dataSourceMyblog" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="minPoolSize" value="${c3p0.minPoolSize}" />
+		<property name="maxPoolSize" value="${c3p0.maxPoolSize}" />
+		<property name="maxStatementsPerConnection" value="${c3p0.maxStatementsPerConnection}" />
+
+		<property name="maxIdleTime" value="${c3p0.maxIdleTime}" />
+		<property name="idleConnectionTestPeriod" value="${c3p0.idleConnectionTestPeriod}" />
+		<property name="preferredTestQuery" value="${c3p0.preferredTestQuery}" />
+
+		<property name="driverClass" value="${jdbc.db.myblog.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.db.myblog.url}" />
+		<property name="user" value="${jdbc.db.myblog.username}" />
+		<property name="password" value="${jdbc.db.myblog.password}" />
+	</bean>
+
+	<!-- Configuration for Hibernate 4 Using Myblog Data Source -->
+	<bean id="sessionFactoryMyblog" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSourceMyblog" />
+		<property name="annotatedClasses">
+			<list>
+				<value>com.pfyuit.myjavaee.model.database.hibernate.BlogModel</value>
+				<value>com.pfyuit.myjavaee.model.database.hibernate.CategoryModel</value>
+				<value>com.pfyuit.myjavaee.model.database.hibernate.CommentModel</value>
+				<value>com.pfyuit.myjavaee.model.database.hibernate.LinkModel</value>
+				<value>com.pfyuit.myjavaee.model.database.hibernate.UserModel</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionManagerMyblog" class="org.springframework.orm.hibernate4.HibernateTransactionManager"
+		p:sessionFactory-ref="sessionFactoryMyblog">
+		<qualifier value="myblog" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManagerMyblog" />
+
+</beans>
+  
