@@ -9,7 +9,7 @@
 	<import resource="classpath:/spring/myjavaee-properties.xml" />
 
 	<!-- Configuration for Scanning -->
-	<context:component-scan base-package="com.pfyuit.myjavaee.service.cache.redis"></context:component-scan>
+	<context:component-scan base-package="com.pfyuit.myjavaee.dao.cache.redis"></context:component-scan>
 
 	<!-- Configuration for Redis Client -->
 	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">

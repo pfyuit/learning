@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.pfyuit.myjavaee.model.database.rdbms.hibernate.BlogModel;
-import com.pfyuit.myjavaee.service.database.rdbms.hibernate.BlogService;
+import com.pfyuit.myjavaee.model.database.hibernate.BlogModel;
+import com.pfyuit.myjavaee.service.database.hibernate.BlogService;
 
 /**
  * Spring MVC controller. It typically used in the Java web design. Access
