@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.messaging.activemq;
+package com.pfyuit.myjavaee.dao.messaging.activemq;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

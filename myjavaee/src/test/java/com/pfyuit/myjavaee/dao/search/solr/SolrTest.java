@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.search.solr;
+package com.pfyuit.myjavaee.dao.search.solr;
 
 import static org.junit.Assert.assertNotNull;
 

@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.messaging.kafka;
+package com.pfyuit.myjavaee.dao.messaging.kafka;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

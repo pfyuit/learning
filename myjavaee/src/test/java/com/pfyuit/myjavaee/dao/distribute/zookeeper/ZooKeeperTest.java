@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.distribute.zookeeper;
+package com.pfyuit.myjavaee.dao.distribute.zookeeper;
 
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
