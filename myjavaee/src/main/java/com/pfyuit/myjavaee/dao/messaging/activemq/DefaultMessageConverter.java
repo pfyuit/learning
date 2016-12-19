@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.messaging.activemq;
+package com.pfyuit.myjavaee.dao.messaging.activemq;
 
 import javax.jms.JMSException;
 import javax.jms.Message;

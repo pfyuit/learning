@@ -10,14 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.pfyuit.myjavaee.service.distribute.zookeeper.ZooKeeperService;
+import com.pfyuit.myjavaee.dao.distribute.zookeeper.ZooKeeperDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath*:/distribute/zookeeper/myjavaee-distribute-zookeeper-test.xml" })
 public class ZooKeeperTest {
 
 	@Autowired
-	private ZooKeeperService zooKeeperService;
+	private ZooKeeperDao zooKeeperService;
 
 	@Before
 	public void init() throws KeeperException, InterruptedException {

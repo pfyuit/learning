@@ -9,7 +9,7 @@
 	<import resource="classpath:/spring/myjavaee-properties.xml" />
 
 	<!-- Configuration for Scanning -->
-	<context:component-scan base-package="com.pfyuit.myjavaee.service.search.solr"></context:component-scan>
+	<context:component-scan base-package="com.pfyuit.myjavaee.dao.search.solr"></context:component-scan>
 
 </beans>
   

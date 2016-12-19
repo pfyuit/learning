@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.search.solr;
+package com.pfyuit.myjavaee.dao.search.solr;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,11 +14,11 @@ import org.springframework.stereotype.Service;
 import com.pfyuit.myjavaee.model.search.solr.SearchItem;
 
 /**
- * Solr search service implementation.
+ * Solr search dao implementation.
  * @author yupengfei
  */
 @Service
-public class SolrServiceImpl implements SolrService {
+public class SolrDaoImpl implements SolrDao {
 
 	@Autowired
 	private SolrConfig solrConfig;

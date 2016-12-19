@@ -9,7 +9,7 @@
 	<import resource="classpath:/spring/myjavaee-properties.xml" />
 	
 	<!-- Configuration for Scanning -->
-	<context:component-scan base-package="com.pfyuit.myjavaee.service.messaging.activemq"></context:component-scan>
+	<context:component-scan base-package="com.pfyuit.myjavaee.dao.messaging.activemq"></context:component-scan>
 
 	<!-- Configuration for Destination -->
 	<bean id="testQueue" class="org.apache.activemq.command.ActiveMQQueue">

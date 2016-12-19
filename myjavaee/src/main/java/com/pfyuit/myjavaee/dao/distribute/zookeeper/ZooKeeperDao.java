@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.distribute.zookeeper;
+package com.pfyuit.myjavaee.dao.distribute.zookeeper;
 
 import java.util.List;
 
@@ -8,11 +8,11 @@ import org.apache.zookeeper.data.ACL;
 import org.apache.zookeeper.data.Stat;
 
 /**
- * ZooKeeper service interface. It provides the functionality to create, delete,
+ * ZooKeeper dao interface. It provides the functionality to create, delete,
  * setData, getData.
  * @author yupengfei
  */
-public interface ZooKeeperService {
+public interface ZooKeeperDao {
 
 	public boolean exists(String path, boolean watch) throws KeeperException, InterruptedException;
 

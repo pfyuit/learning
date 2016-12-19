@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.messaging.activemq;
+package com.pfyuit.myjavaee.dao.messaging.activemq;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

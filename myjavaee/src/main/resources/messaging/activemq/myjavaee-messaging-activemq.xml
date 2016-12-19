@@ -6,7 +6,7 @@
      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
 	<!-- Configuration for Scanning -->
-	<context:component-scan base-package="com.pfyuit.myjavaee.service.messaging.activemq"></context:component-scan>
+	<context:component-scan base-package="com.pfyuit.myjavaee.dao.messaging.activemq"></context:component-scan>
 
 	<!-- Configuration for Destination -->
 	<bean id="testQueue" class="org.apache.activemq.command.ActiveMQQueue">

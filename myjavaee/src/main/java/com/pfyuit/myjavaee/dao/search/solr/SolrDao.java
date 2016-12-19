@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.search.solr;
+package com.pfyuit.myjavaee.dao.search.solr;
 
 import java.io.IOException;
 import java.util.List;
@@ -6,10 +6,10 @@ import java.util.List;
 import org.apache.solr.client.solrj.SolrServerException;
 
 /**
- * Solr search service interface.
+ * Solr search dao interface.
  * @author yupengfei
  */
-public interface SolrService {
+public interface SolrDao {
 
 	public List<Integer> searchBlog(String key) throws SolrServerException, IOException;
 

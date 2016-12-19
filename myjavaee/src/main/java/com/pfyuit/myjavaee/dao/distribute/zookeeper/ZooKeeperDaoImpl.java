@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.distribute.zookeeper;
+package com.pfyuit.myjavaee.dao.distribute.zookeeper;
 
 import java.util.List;
 
@@ -12,12 +12,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 /**
- * ZooKeeper service implementation. It provides the functionality to create,
+ * ZooKeeper dao implementation. It provides the functionality to create,
  * delete, setData, getData.
  * @author yupengfei
  */
 @Service
-public class ZooKeeperServiceImpl implements ZooKeeperService {
+public class ZooKeeperDaoImpl implements ZooKeeperDao {
 
 	@Autowired
 	@Qualifier("zooKeeper")

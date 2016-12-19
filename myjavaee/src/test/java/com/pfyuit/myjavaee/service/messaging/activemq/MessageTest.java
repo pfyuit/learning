@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.pfyuit.myjavaee.dao.messaging.activemq.MessageProducerService;
 import com.pfyuit.myjavaee.model.messaging.activemq.Notify;
 
 @RunWith(SpringJUnit4ClassRunner.class)
