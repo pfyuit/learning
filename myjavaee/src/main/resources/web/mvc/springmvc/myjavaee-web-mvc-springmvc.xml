@@ -8,7 +8,7 @@
            http://www.springframework.org/schema/context   
            http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
-	<!-- Configuration for Scanning -->
+	<!-- Configuration for Scanning --> 
 	<context:component-scan base-package="com.pfyuit.myjavaee.web.mvc.springmvc" />
 	<mvc:annotation-driven />
 
