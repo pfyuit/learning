@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.pfyuit</groupId>
-	<artifactId>myjavaee-service</artifactId>
+	<artifactId>myjavaee-web</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>myjavaee Maven Webapp</name>
