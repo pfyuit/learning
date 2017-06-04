@@ -9,7 +9,7 @@
 	</parent>
 	<artifactId>myjavaee-web</artifactId>
 	<packaging>war</packaging>
-	<name>myjavaee Maven Webapp</name>
+	<name>myjavaee-web</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
