@@ -426,6 +426,14 @@
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.pfyuit</groupId>
+			<artifactId>myjavaee-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.pfyuit</groupId>
+			<artifactId>myjavaee-service</artifactId>
+		</dependency>
 	</dependencies>
 
 	<profiles>

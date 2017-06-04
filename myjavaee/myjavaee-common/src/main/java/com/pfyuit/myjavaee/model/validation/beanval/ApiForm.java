@@ -4,9 +4,6 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import com.pfyuit.myjavaee.service.validation.beanval.Format;
-import com.pfyuit.myjavaee.service.validation.beanval.Method;
-
 /**
  * Api form with bean validation (JSR-303).
  * @author yupengfei

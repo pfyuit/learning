@@ -1,4 +1,4 @@
-package com.pfyuit.myjavaee.service.validation.beanval;
+package com.pfyuit.myjavaee.model.validation.beanval;
 
 import java.util.Arrays;
 import java.util.Collections;
