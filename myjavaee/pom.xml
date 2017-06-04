@@ -10,6 +10,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk.version>1.7</jdk.version>
 		<servlet.version>3.1.0</servlet.version>
 		<cxf.jaxws.version>3.1.1</cxf.jaxws.version>
 		<cxf.jaxrs.version>3.1.1</cxf.jaxrs.version>
