@@ -336,7 +336,7 @@
 	</build>
 
 	<modules>
-		<module>myjavaee</module>
+		<module>myjavaee-service</module>
 	</modules>
 
 </project>
