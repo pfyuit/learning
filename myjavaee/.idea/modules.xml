@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/myjavaee.iml" filepath="$PROJECT_DIR$/myjavaee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myjavaee-common/myjavaee-common.iml" filepath="$PROJECT_DIR$/myjavaee-common/myjavaee-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myjavaee-dao/myjavaee-dao.iml" filepath="$PROJECT_DIR$/myjavaee-dao/myjavaee-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myjavaee-service/myjavaee-service.iml" filepath="$PROJECT_DIR$/myjavaee-service/myjavaee-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myjavaee-web/myjavaee-web.iml" filepath="$PROJECT_DIR$/myjavaee-web/myjavaee-web.iml" />
+    </modules>
+  </component>
+</project>
