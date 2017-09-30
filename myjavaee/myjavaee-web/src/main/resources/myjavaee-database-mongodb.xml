@@ -9,7 +9,6 @@
 
 	<!-- Configuration for Scanning -->
 	<context:component-scan base-package="com.pfyuit.myjavaee.dao.database.mongodb"></context:component-scan>
-	<context:component-scan base-package="com.pfyuit.myjavaee.service.database.mongodb"></context:component-scan>
 
 	<!-- Configuration for MongoDb -->
 	<mongo:mongo host="${mongodb.host}" port="${mongodb.port}" />

@@ -31,7 +31,7 @@
 	<!-- Configuration for MyBatis Using Pinche Data Source -->
 	<bean id="sqlSessionFactoryPinche" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSourcePinche" />
-		<property name="configLocation" value="classpath:/database/mybatis/mybatis-config.xml" />
+		<property name="configLocation" value="classpath:/myjavaee-database-mybatis-config.xml" />
 	</bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">

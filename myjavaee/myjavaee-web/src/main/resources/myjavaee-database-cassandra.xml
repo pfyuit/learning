@@ -10,7 +10,6 @@
  
 	<!-- Configuration for Scanning -->
 	<context:component-scan base-package="com.pfyuit.myjavaee.dao.database.cassandra"></context:component-scan>
-	<context:component-scan base-package="com.pfyuit.myjavaee.service.database.cassandra"></context:component-scan>
 
 </beans>
   

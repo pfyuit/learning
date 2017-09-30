@@ -7,6 +7,7 @@
 
 	<!-- Configuration for Scanning -->
 	<context:component-scan base-package="com.pfyuit.myjavaee.dao.distribute.zookeeper"></context:component-scan>
+	<context:component-scan base-package="com.pfyuit.myjavaee.service.admin"></context:component-scan>
 
 </beans>
   

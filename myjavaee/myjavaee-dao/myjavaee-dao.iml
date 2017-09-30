@@ -107,7 +107,6 @@
     <orderEntry type="library" name="Maven: org.apache.hbase:hbase-protocol:1.2.4" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.9" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.4" level="project" />
-    <orderEntry type="library" name="Maven: com.google.guava:guava:12.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:2.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.htrace:htrace-core:3.1.0-incubating" level="project" />
     <orderEntry type="library" name="Maven: org.jruby.jcodings:jcodings:1.0.8" level="project" />
@@ -176,6 +175,7 @@
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-grouping:5.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-spatial:5.2.1" level="project" />
     <orderEntry type="library" name="Maven: com.spatial4j:spatial4j:0.4.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:18.0" level="project" />
     <orderEntry type="library" name="Maven: com.carrotsearch:hppc:0.7.1" level="project" />
     <orderEntry type="library" name="Maven: joda-time:joda-time:2.8.2" level="project" />
     <orderEntry type="library" name="Maven: org.joda:joda-convert:1.2" level="project" />

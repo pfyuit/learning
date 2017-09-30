@@ -10,25 +10,25 @@
 		<property name="locations">
 			<list>
 				<!-- Database Configuration -->
-				<value>classpath:/database/mysql/mysql.properties</value>
-				<value>classpath:/database/cassandra/cassandra.properties</value>
-				<value>classpath:/database/mongodb/mongodb.properties</value>
+				<value>classpath:/myjavaee-database-mongodb.properties</value>
+				<value>classpath:/myjavaee-database-cassandra.properties</value>
+				<value>classpath:/myjavaee-database-mybatis.properties</value>
 
 				<!-- Cache Configuration -->
-				<value>classpath:/cache/memcached/memcached.properties</value>
-				<value>classpath:/cache/couchbase/couchbase.properties</value>
-				<value>classpath:/cache/redis/redis.properties</value>
+				<value>classpath:/myjavaee-cache-memcached.properties</value>
+				<value>classpath:/myjavaee-cache-couchbase.properties</value>
+				<value>classpath:/myjavaee-cache-redis.properties</value>
 
 				<!-- Search Configuration -->
-				<value>classpath:/search/solr/solr.properties</value>
-				<value>classpath:/search/elastic/elastic.properties</value>
+				<value>classpath:/myjavaee-search-elastic.properties</value>
+				<value>classpath:/myjavaee-search-solr.properties</value>
 
 				<!-- Messaging Configuration -->
-				<value>classpath:/messaging/activemq/activemq.properties</value>
-				<value>classpath:/messaging/kafka/kafka.properties</value>
+				<value>classpath:/myjavaee-messaging-activemq.properties</value>
+				<value>classpath:/myjavaee-messaging-kafka.properties</value>
 
 				<!-- Distribute Configuration -->
-				<value>classpath:/distribute/zookeeper/zookeeper.properties</value>
+				<value>classpath:/myjavaee-email-javamail.properties</value>
 			</list>
 		</property>
 	</bean>

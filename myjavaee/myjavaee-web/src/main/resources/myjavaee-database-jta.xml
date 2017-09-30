@@ -46,12 +46,12 @@
 	<!-- Configuration for MyBatis Using Global Data Source -->
 	<bean id="sqlSessionFactoryGlobalMyblog" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSourceGlobalMyblog" />
-		<property name="configLocation" value="classpath:/database/mybatis/mybatis-config.xml" />
+		<property name="configLocation" value="classpath:/myjavaee-database-mybatis-config.xml" />
 	</bean>
 
 	<bean id="sqlSessionFactoryGlobalPinche" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSourceGlobalPinche" />
-		<property name="configLocation" value="classpath:/database/mybatis/mybatis-config.xml" />
+		<property name="configLocation" value="classpath:/myjavaee-database-mybatis-config.xml" />
 	</bean>
 
 	<bean id="atomikosTransactionManager" class="com.atomikos.icatch.jta.UserTransactionManager" init-method="init"
