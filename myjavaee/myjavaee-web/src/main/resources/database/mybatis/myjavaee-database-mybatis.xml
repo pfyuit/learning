@@ -36,7 +36,7 @@
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryPinche" />
-		<property name="basePackage" value="com.pfyuit.myjavaee.dao.database.rdbms.mybatis" />
+		<property name="basePackage" value="com.pfyuit.myjavaee.dao.database.mybatis" />
 	</bean>
 
 	<bean id="transactionManagerPinche" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
