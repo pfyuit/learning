@@ -20,7 +20,7 @@
         <netty.version>4.0.33.Final</netty.version>
         <dom4j.version>1.6.1</dom4j.version>
         <jackson.mapper.version>1.9.13</jackson.mapper.version>
-        <jackson.databind.versiion>2.6.3</jackson.databind.versiion>
+        <jackson.databind.versiion>2.5.4</jackson.databind.versiion>
         <spring.beans.version>4.2.3.RELEASE</spring.beans.version>
         <spring.core.version>4.2.3.RELEASE</spring.core.version>
         <spring.context.version>4.2.3.RELEASE</spring.context.version>

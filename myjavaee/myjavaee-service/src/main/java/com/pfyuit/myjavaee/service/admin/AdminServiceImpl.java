@@ -158,20 +158,20 @@ public class AdminServiceImpl implements AdminService {
         model.setStatus("start");
         applyMapper.save(model);
 
-        model = applyMapper.findById(36);
-        applyMapper.delete(model);
-
-        model = applyMapper.findById(36);
-        model.setStatus("finished");
-        model.setLastModify(new Timestamp(new Date().getTime()));
-        applyMapper.update(model);
-
-        model = applyMapper.findById(36);
-        BeanUtil.printModel(model);
-
-        List<Apply> models = applyMapper.findByOwnerId(10);
-
-        models = applyMapper.findByActivityId(8);
+//        model = applyMapper.findById(36);
+//        applyMapper.delete(model);
+//
+//        model = applyMapper.findById(36);
+//        model.setStatus("finished");
+//        model.setLastModify(new Timestamp(new Date().getTime()));
+//        applyMapper.update(model);
+//
+//        model = applyMapper.findById(36);
+//        BeanUtil.printModel(model);
+//
+//        List<Apply> models = applyMapper.findByOwnerId(10);
+//
+//        models = applyMapper.findByActivityId(8);
     }
 
     private void checkMemcached() {
@@ -238,19 +238,19 @@ public class AdminServiceImpl implements AdminService {
     }
 
     private void checkZookeeper() throws KeeperException, InterruptedException {
-        if (zookeeperDao.exists("/test", false)) {
-            zookeeperDao.delete("/test/child1", -1);
-            zookeeperDao.delete("/test/child2", -1);
-            zookeeperDao.delete("/test/child3", -1);
-            zookeeperDao.delete("/test", -1);
+        if (zookeeperDao.exists("/testdata", false)) {
+            zookeeperDao.delete("/testdata/child1", -1);
+            zookeeperDao.delete("/testdata/child2", -1);
+            zookeeperDao.delete("/testdata/child3", -1);
+            zookeeperDao.delete("/testdata", -1);
         }
-        zookeeperDao.create("/test", "testdata".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
-        zookeeperDao.create("/test/child1", "child1data".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
-        zookeeperDao.create("/test/child2", "child2data".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
-        zookeeperDao.create("/test/child3", "child3data".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+        zookeeperDao.create("/testdata", "testdata".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+        zookeeperDao.create("/testdata/child1", "child1data".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+        zookeeperDao.create("/testdata/child2", "child2data".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+        zookeeperDao.create("/testdata/child3", "child3data".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
 
-        zookeeperDao.setData("/test/child1", "child1data_update".getBytes(), -1);
-        byte[] bytes = zookeeperDao.getData("/test/child1", false, null);
+        zookeeperDao.setData("/testdata/child1", "child1data_update".getBytes(), -1);
+        byte[] bytes = zookeeperDao.getData("/testdata/child1", false, null);
         System.out.println(new String(bytes));
     }
 
