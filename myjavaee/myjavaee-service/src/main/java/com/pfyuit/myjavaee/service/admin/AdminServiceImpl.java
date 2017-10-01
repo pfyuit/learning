@@ -23,6 +23,8 @@ import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.ZooDefs;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +36,8 @@ import java.util.Set;
 
 @Service
 public class AdminServiceImpl implements AdminService {
+
+    private Logger logger = LoggerFactory.getLogger(AdminServiceImpl.class);
 
     @Autowired
     private HBaseDao hbaseDao;
@@ -97,9 +101,11 @@ public class AdminServiceImpl implements AdminService {
     }
 
     private void checkHbase() throws IOException {
+        logger.info("===Start check hbase settings");
         hbaseDao.put("test", "1", "d", "name", "tom");
         hbaseDao.put("test", "2", "d", "age", "20");
-        System.out.println(hbaseDao.get("test", "1", "d", "name"));
+        logger.info(hbaseDao.get("test", "1", "d", "name"));
+        logger.info("===End check hbase settings");
     }
 
     private void checkMongoDb() {
@@ -147,6 +153,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     private void checkMySQL() {
+        logger.info("===Start check mysql settings");
         Apply model = new Apply();
         model.setActivityId(1);
         model.setApplyTime(new Timestamp(new Date().getTime()));
@@ -155,9 +162,11 @@ public class AdminServiceImpl implements AdminService {
         model.setOwnerName("tom");
         model.setStatus("start");
         applyMapper.save(model);
+        logger.info("===End check mysql settings");
     }
 
     private void checkMemcached() {
+        logger.info("===Start check memcached settings");
         memcachedDao.check();
 
         memcachedDao.set("key1", "value1");
@@ -171,6 +180,7 @@ public class AdminServiceImpl implements AdminService {
         memcachedDao.delete("key1");
         memcachedDao.delete("key2");
         memcachedDao.delete("anexamplekey");
+        logger.info("===End check memcached settings");
     }
 
     private void checkCouchbase() {
@@ -179,6 +189,7 @@ public class AdminServiceImpl implements AdminService {
     }
 
     private void checkRedis() {
+        logger.info("===Start check redis settings");
         redisDao.stringSet("key1", "value1");
         redisDao.stringGet("key1");
 
@@ -187,9 +198,11 @@ public class AdminServiceImpl implements AdminService {
 
         redisDao.listGetAll("key2");
         redisDao.listDelete("key2", 0, "value1");
+        logger.info("===End check redis settings");
     }
 
     private void checkElastic() {
+        logger.info("===Start check elasticsearch settings");
         User model = new User();
         model.setUserId("10001");
         model.setUserName("Andrew");
@@ -201,6 +214,7 @@ public class AdminServiceImpl implements AdminService {
         model.setUserName("Andrew");
         model.setUserFavorite("Software");
         searchDao.upsertUser("10001", model);
+        logger.info("===End check elasticsearch settings");
     }
 
     private void checkSolr() throws IOException, SolrServerException {
@@ -221,6 +235,8 @@ public class AdminServiceImpl implements AdminService {
     }
 
     private void checkZookeeper() throws KeeperException, InterruptedException {
+        logger.info("===Start check zookeeper settings");
+
         if (zookeeperDao.exists("/testdata", false)) {
             zookeeperDao.delete("/testdata/child1", -1);
             zookeeperDao.delete("/testdata/child2", -1);
@@ -234,7 +250,8 @@ public class AdminServiceImpl implements AdminService {
 
         zookeeperDao.setData("/testdata/child1", "child1data_update".getBytes(), -1);
         byte[] bytes = zookeeperDao.getData("/testdata/child1", false, null);
-        System.out.println(new String(bytes));
+        logger.info(new String(bytes));
+        logger.info("===End check zookeeper settings");
     }
 
 }
