@@ -54,7 +54,7 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     private MemcachedDao memcachedDao;
 
-    //@Autowired
+    @Autowired
     private CouchbaseDao couchbaseDao;
 
     @Autowired
@@ -85,7 +85,7 @@ public class AdminServiceImpl implements AdminService {
 
         //Check cache
         checkMemcached();
-        //checkCouchbase();
+        checkCouchbase();
         checkRedis();
 
         //Check search
@@ -184,8 +184,10 @@ public class AdminServiceImpl implements AdminService {
     }
 
     private void checkCouchbase() {
+        logger.info("===Start check couchbase settings");
         couchbaseDao.insert("key1", "value1");
-        couchbaseDao.get("key1");
+        logger.info(couchbaseDao.get("key1").toString());
+        logger.info("===End check couchbase settings");
     }
 
     private void checkRedis() {

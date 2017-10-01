@@ -16,15 +16,15 @@
     <!--<import resource="classpath:/myjavaee-remoting-rpc-rmi.xml" />-->
 
     <!-- Import Database Configuration -->
+    <import resource="classpath:/myjavaee-database-mybatis.xml"/>
     <import resource="classpath:/myjavaee-database-hibernate.xml"/>
     <import resource="classpath:/myjavaee-database-jta.xml"/>
-    <import resource="classpath:/myjavaee-database-mybatis.xml"/>
-    <!--<import resource="classpath:myjavaee-database-cassandra.xml" />-->
     <import resource="classpath:/myjavaee-database-hbase.xml"/>
     <import resource="classpath:/myjavaee-database-mongodb.xml"/>
+    <!--<import resource="classpath:myjavaee-database-cassandra.xml" />-->
 
     <!-- Import Cache Configuration -->
-    <!--<import resource="classpath:/myjavaee-cache-couchbase.xml"/>-->
+    <import resource="classpath:/myjavaee-cache-couchbase.xml"/>
     <import resource="classpath:/myjavaee-cache-memcached.xml"/>
     <import resource="classpath:/myjavaee-cache-redis.xml"/>
 

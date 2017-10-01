@@ -37,7 +37,7 @@
 	<!-- The complex way that has more power (container-managed), recommended -->
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<!-- <property name="persistenceUnitManager" ref="persistenceUnitManager"/> -->
-		<property name="persistenceXmlLocation" value="classpath:/database/jpa/persistence.xml" />
+		<property name="persistenceXmlLocation" value="classpath:/myjavaee-database-jpa-persistence.xml" />
 		<property name="dataSource" ref="dataSourceMyblog" />
 		<property name="persistenceProvider" ref="persistenceProvider" />
 		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
@@ -54,7 +54,7 @@
 
 	<!-- Define the persistenceUnitManager, not used yet -->
 	<!-- <bean id="persistenceUnitManager" class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager" -->
-	<!-- p:default-data-source-ref="dataSourceMyblog" p:persistence-xml-locations="classpath:/database/rdbms/jpa/persistence.xml"> -->
+	<!-- p:default-data-source-ref="dataSourceMyblog" p:persistence-xml-locations="classpath:/database/rdbms/jpa/myjavaee-database-jpa-persistence.xml"> -->
 	<!-- <property name="loadTimeWeaver"> -->
 	<!-- <bean class="org.springframework.instrument.classloading.ReflectiveLoadTimeWeaver" /> -->
 	<!-- </property> -->
