@@ -58,7 +58,7 @@
         <mybatis.version>3.3.0</mybatis.version>
         <mybatis.ehcache.version>1.0.0</mybatis.ehcache.version>
         <mybatis.spring.version>1.2.3</mybatis.spring.version>
-        <hbase.version>1.2.4</hbase.version>
+        <hbase.version>0.98.6-cdh5.2.0-qiyi-1.0</hbase.version>
         <mongodb.driver.version>2.13.3</mongodb.driver.version>
         <cassandra.driver.version>2.1.9</cassandra.driver.version>
         <spymemcached.version>2.12.0</spymemcached.version>
@@ -582,11 +582,11 @@
                 <version>${commons.pool.version}</version>
             </dependency>
             <!-- Guava -->
-            <!-- <dependency> -->
-            <!-- <groupId>com.google.guava</groupId> -->
-            <!-- <artifactId>guava</artifactId> -->
-            <!-- <version>${guava.version}</version> -->
-            <!-- </dependency> -->
+             <dependency>
+             <groupId>com.google.guava</groupId>
+             <artifactId>guava</artifactId>
+             <version>${guava.version}</version>
+             </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>

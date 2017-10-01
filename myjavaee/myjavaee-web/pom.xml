@@ -410,11 +410,10 @@
 			<groupId>commons-pool</groupId>
 			<artifactId>commons-pool</artifactId>
 		</dependency>
-		<!-- Guava -->
-		<!-- <dependency> -->
-		<!-- <groupId>com.google.guava</groupId> -->
-		<!-- <artifactId>guava</artifactId> -->
-		<!-- </dependency> -->
+		 <dependency>
+		 <groupId>com.google.guava</groupId>
+		 <artifactId>guava</artifactId>
+		 </dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

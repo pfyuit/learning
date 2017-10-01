@@ -38,11 +38,11 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     private HBaseDao hbaseDao;
 
-    @Autowired
+    //@Autowired
     private MongoDbDao mongoDbDao;
 
-//    @Autowired
-//    private UsersDao usersDao;
+    //@Autowired
+    private UsersDao usersDao;
 
     @Autowired
     private ApplyMapper applyMapper;
@@ -50,47 +50,47 @@ public class AdminServiceImpl implements AdminService {
     @Autowired
     private MemcachedDao memcachedDao;
 
-//    @Autowired
-//    private CouchbaseDao couchbaseDao;
+    //@Autowired
+    private CouchbaseDao couchbaseDao;
 
     @Autowired
     private RedisDao redisDao;
 
-//    @Autowired
-//    private ElasticSearchDao searchDao;
+    @Autowired
+    private ElasticSearchDao searchDao;
 
-//    @Autowired
-//    private MessageProducerService messageProducer;
+    //@Autowired
+    private MessageProducerService messageProducer;
 
     @Autowired
     private ZooKeeperDao zookeeperDao;
 
-    @Autowired
+    //@Autowired
     private KafkaDao kafkaDao;
 
-    @Autowired
+    //@Autowired
     private SolrDao solrDao;
 
     @Override
     public void check() throws Exception {
         //Check database
         checkHbase();
-        checkMongoDb();
-        checkCassandra();
+        //checkMongoDb();
+        //checkCassandra();
         checkMySQL();
 
         //Check cache
         checkMemcached();
-        checkCouchbase();
+        //checkCouchbase();
         checkRedis();
 
         //Check search
         checkElastic();
-        checkSolr();
+        //checkSolr();
 
         //Check message
-        checkActiveMQ();
-        checkKafka();
+        //checkActiveMQ();
+        //checkKafka();
 
         //Check distributed
         checkZookeeper();
@@ -103,49 +103,47 @@ public class AdminServiceImpl implements AdminService {
     }
 
     private void checkMongoDb() {
-//        DB db = mongoDbDao.getDB();
-//        System.out.println(db.toString());
-//
-//        if (mongoDbDao.isCollectionExists("Boy")) {
-//            return;
-//        }
-//        DBCollection collection = mongoDbDao.createCollection("Boy");
-//        System.out.println(collection.toString());
-//
-//        if (mongoDbDao.isCollectionExists(Task.class)) {
-//            return;
-//        }
-//        collection = mongoDbDao.createCollection(Task.class);
-//        System.out.println(collection.toString());
-//
-//        boolean result = mongoDbDao.isCollectionExists("Boy");
-//        System.out.println(result);
-//
-//        result = mongoDbDao.isCollectionExists(Task.class);
-//        System.out.println(result);
-//
-//        Set<String> collections = mongoDbDao.getCollections();
-//        System.out.println(collections);
-//
-//        Task task = new Task();
-//        task.setName("pfyuit");
-//        task.setAge(20);
-//        mongoDbDao.save(task);
-//
-//        List<Task> tasks = mongoDbDao.findAll(Task.class);
-//        for (Task taska : tasks) {
-//            System.out.println(taska.getName() + ":" + taska.getAge());
-//        }
+        DB db = mongoDbDao.getDB();
+        System.out.println(db.toString());
 
+        if (mongoDbDao.isCollectionExists("Boy")) {
+            return;
+        }
+        DBCollection collection = mongoDbDao.createCollection("Boy");
+        System.out.println(collection.toString());
+
+        if (mongoDbDao.isCollectionExists(Task.class)) {
+            return;
+        }
+        collection = mongoDbDao.createCollection(Task.class);
+        System.out.println(collection.toString());
+
+        boolean result = mongoDbDao.isCollectionExists("Boy");
+        System.out.println(result);
+
+        result = mongoDbDao.isCollectionExists(Task.class);
+        System.out.println(result);
+
+        Set<String> collections = mongoDbDao.getCollections();
+        System.out.println(collections);
+
+        Task task = new Task();
+        task.setName("pfyuit");
+        task.setAge(20);
+        mongoDbDao.save(task);
+
+        List<Task> tasks = mongoDbDao.findAll(Task.class);
+        for (Task taska : tasks) {
+            System.out.println(taska.getName() + ":" + taska.getAge());
+        }
     }
 
     private void checkCassandra() {
-//        usersDao.createKeySpace();
-//        usersDao.createTable();
-//        usersDao.save();
-//        usersDao.update();
-//        usersDao.find();
-        // usersDao.delete();
+        usersDao.createKeySpace();
+        usersDao.createTable();
+        usersDao.save();
+        usersDao.update();
+        usersDao.find();
     }
 
     private void checkMySQL() {
@@ -157,21 +155,6 @@ public class AdminServiceImpl implements AdminService {
         model.setOwnerName("tom");
         model.setStatus("start");
         applyMapper.save(model);
-
-//        model = applyMapper.findById(36);
-//        applyMapper.delete(model);
-//
-//        model = applyMapper.findById(36);
-//        model.setStatus("finished");
-//        model.setLastModify(new Timestamp(new Date().getTime()));
-//        applyMapper.update(model);
-//
-//        model = applyMapper.findById(36);
-//        BeanUtil.printModel(model);
-//
-//        List<Apply> models = applyMapper.findByOwnerId(10);
-//
-//        models = applyMapper.findByActivityId(8);
     }
 
     private void checkMemcached() {
@@ -191,8 +174,8 @@ public class AdminServiceImpl implements AdminService {
     }
 
     private void checkCouchbase() {
-//        couchbaseDao.insert("key1", "value1");
-//        couchbaseDao.get("key1");
+        couchbaseDao.insert("key1", "value1");
+        couchbaseDao.get("key1");
     }
 
     private void checkRedis() {
@@ -207,34 +190,34 @@ public class AdminServiceImpl implements AdminService {
     }
 
     private void checkElastic() {
-//        User model = new User();
-//        model.setUserId("10001");
-//        model.setUserName("Andrew");
-//        model.setUserFavorite("Aireplane");
-//        searchDao.indexUser("10001", model);
-//
-//        model = new User();
-//        model.setUserId("10001");
-//        model.setUserName("Andrew");
-//        model.setUserFavorite("Software");
-//        searchDao.upsertUser("10001", model);
+        User model = new User();
+        model.setUserId("10001");
+        model.setUserName("Andrew");
+        model.setUserFavorite("Aireplane");
+        searchDao.indexUser("10001", model);
+
+        model = new User();
+        model.setUserId("10001");
+        model.setUserName("Andrew");
+        model.setUserFavorite("Software");
+        searchDao.upsertUser("10001", model);
     }
 
     private void checkSolr() throws IOException, SolrServerException {
-//        List<Integer> blogIds = solrDao.searchBlog("mysql");
+        List<Integer> blogIds = solrDao.searchBlog("mysql");
     }
 
     private void checkActiveMQ() {
-//        Notify notify = new Notify();
-//        notify.setNotifyId("N100001");
-//        notify.setNotifyMsg("This is a test message from Jms");
-//        messageProducer.sendMessage(notify);
+        Notify notify = new Notify();
+        notify.setNotifyId("N100001");
+        notify.setNotifyMsg("This is a test message from Jms");
+        messageProducer.sendMessage(notify);
     }
 
     private void checkKafka() {
-//        for (int i = 0; i < 100; i++) {
-//            kafkaDao.sendMessage("mykey", "myvalue" + i);
-//        }
+        for (int i = 0; i < 100; i++) {
+            kafkaDao.sendMessage("mykey", "myvalue" + i);
+        }
     }
 
     private void checkZookeeper() throws KeeperException, InterruptedException {
